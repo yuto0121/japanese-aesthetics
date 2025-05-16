@@ -3,11 +3,11 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const categories = [
-  { title: "Aesthetic Concepts", slug: "concepts", description: "侘び寂び、幽玄など日本独自の美学を学ぶ" },
-  { title: "Cultural Practices", slug: "practices", description: "茶の湯、生け花など体験を通じた美" },
-  { title: "Architecture & Spaces", slug: "architecture", description: "書院造り・茶室など空間デザイン" },
-  { title: "Modern Applications", slug: "modern", description: "プロダクトデザインやインテリアへの応用" },
-  { title: "Resources", slug: "resources", description: "用語集・文献・リンク集" },
+  { title: "Aesthetic Concepts", slug: "concepts", description: "Explore unique Japanese aesthetics like Wabi-Sabi and Yūgen" },
+  { title: "Cultural Practices", slug: "practices", description: "Experience beauty through tea ceremony and ikebana" },
+  { title: "Architecture & Spaces", slug: "architecture", description: "Discover traditional space design like Shoin-zukuri and tea rooms" },
+  { title: "Modern Applications", slug: "modern", description: "Applications in product design and interior decoration" },
+  { title: "Resources", slug: "resources", description: "Glossary, references, and useful links" },
 ];
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <section className={styles.hero}>
-          <h2>日本の美意識を、日常に。</h2>
+          <h2>Bringing Japanese Aesthetics to Your Daily Life</h2>
         </section>
 
         <section className={styles.grid}>
