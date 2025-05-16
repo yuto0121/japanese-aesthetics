@@ -14,6 +14,12 @@
   border-bottom: 1px solid #eaeaea;
 }
 
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
 .nav {
   display: flex;
   gap: 1rem;
@@ -25,9 +31,10 @@
 }
 
 .hero {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   height: 40vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: url('/zen-bg.jpg') center center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +43,6 @@
 .hero h2 {
   color: #333;
   font-size: 2rem;
-  background: rgba(255, 255, 255, 0.65);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
@@ -49,23 +55,48 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   margin-top: 2rem;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: 0;
 }
 
 .card {
-  padding: 1.5rem;
-  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100vw;
+  max-width: none;
+  min-height: 320px;
+  background: #fff;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  padding: 0;
 }
 
-.card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px);
+.cardContent {
+  flex: 1 1 0;
+  padding: 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardImage {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 50vw;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .footer {
@@ -73,4 +104,60 @@
   padding: 1rem;
   border-top: 1px solid #eaeaea;
   text-align: center;
+}
+
+.menuWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: 1.5rem;
+}
+
+.menuBar {
+  width: 28px;
+  height: 3px;
+  background: #222;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.menuNav {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  z-index: 100;
+}
+
+.menuNavLink {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.menuNavLink:hover {
+  color: #0070f3;
 }
