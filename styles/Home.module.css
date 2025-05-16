@@ -34,7 +34,7 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   height: 40vh;
-  background: url('images/zen-bg.jpg') center center/cover no-repeat;
+  background: url('/images/zen-bg.jpg') center center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
