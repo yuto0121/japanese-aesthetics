@@ -1,0 +1,114 @@
+.mainTitle {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 7rem 0 2rem 0;
+    line-height: 1.1;
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.mainTitleLine {
+    border-bottom: 2px solid #111;
+    width: calc(100% - 4rem);
+    margin: 7rem 0 2.5rem 2rem;
+}
+
+.aboutImage {
+    width: 100%;
+    max-width: 100vw;
+    margin: 7rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    display: block;
+    object-fit: cover;
+    height: 500px;
+}
+
+.visionRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3rem;
+    gap: 0;
+}
+
+.visionTextWrapCentered {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.visionTitleCentered {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 4rem 0 2rem 0;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.visionTextCentered {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #6B2E12;
+    margin: 2rem;
+    text-align: center;
+}
+
+.visionImageWrap {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.visionImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .visionRow {
+        flex-direction: column;
+    }
+
+    .visionImageWrap,
+    .visionTextWrapCentered {
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 0;
+    }
+
+    .visionTextWrapCentered {
+        padding: 2rem 1rem;
+        align-items: center;
+    }
+
+    .visionTitleCentered {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .visionTextCentered {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+
+/* メインコンテンツの下部余白 */
+.container {
+    padding-bottom: 10rem;
+}
+
+.visionRow {
+    margin-bottom: 10rem;
+}

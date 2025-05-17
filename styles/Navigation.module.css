@@ -1,0 +1,46 @@
+.navigation {
+    background-color: #fff;
+    padding: 0 2rem 1.2rem 2rem;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation li {
+    flex: 1 1 1 1 auto;
+    text-align: center;
+}
+
+.navigation li:first-child {
+    text-align: left;
+}
+
+.navigation li:last-child {
+    text-align: right;
+}
+
+.navigation a {
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1.2rem;
+}
+
+.navigation a:hover {
+    color: #666;
+}
+
+.navLine {
+    border-bottom: 2px solid #111;
+    width: calc(100% - 4rem);
+    margin: 0.5rem 0 2.5rem 2rem;
+}

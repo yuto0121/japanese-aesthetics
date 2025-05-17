@@ -1,0 +1,17 @@
+
+# Next.js のビルド成果物
+.next/
+
+# npm / yarn のモジュール
+node_modules/
+
+# 環境変数ファイル（もしあれば）
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# エディタ／OS 固有ファイル（任意追加）
+.DS_Store
+.idea/
+.vscode/
