@@ -1,0 +1,32 @@
+.mainTitle {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 7rem 0 2rem 0;
+    line-height: 1.1;
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.mainTitleLine {
+    border-bottom: 2px solid #111;
+    width: calc(100% - 4rem);
+    margin: 7rem 0 2.5rem 2rem;
+}
+
+.aboutImage {
+    width: 100%;
+    max-width: 100vw;
+    margin: 7rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    display: block;
+    object-fit: cover;
+    height: 500px;
+}
+
+.visionImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

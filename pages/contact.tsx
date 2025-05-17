@@ -1,12 +1,24 @@
 import Navigation from '../components/Navigation';
+import styles from '../styles/Contact.module.css';
 
-export default function Contact() {
+export default function About() {
     return (
         <div>
             <Navigation />
             <main className="container">
-                <h1>Contact</h1>
-                <p>お問い合わせフォームをここに配置します。</p>
+                <h1 className={styles.mainTitle}>Contact</h1>
+                <div className={styles.mainTitleLine}></div>
+                <section className={styles.visionRow}>
+                    <div className={styles.visionImageWrap}>
+                        <img src="/images/contact.jpg" alt="Contact" className={styles.visionImage} />
+                    </div>
+                    <div className={styles.visionTextWrapCentered}>
+                        <h2 className={styles.visionTitleCentered}>Contact</h2>
+                        <p className={styles.visionTextCentered}>
+                            "Bringing the Essence of Japanese Beauty to the World"
+                        </p>
+                    </div>
+                </section>
             </main>
         </div>
     );

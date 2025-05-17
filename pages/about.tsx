@@ -15,7 +15,7 @@ export default function About() {
                     <div className={styles.visionTextWrapCentered}>
                         <h2 className={styles.visionTitleCentered}>Our Vision</h2>
                         <p className={styles.visionTextCentered}>
-                            “Bringing the Essence of Japanese Beauty to the World”
+                            "Bringing the Essence of Japanese Beauty to the World"
                         </p>
                     </div>
                 </section>
