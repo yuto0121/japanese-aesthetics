@@ -1,83 +1,55 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import styles from "../styles/Home.module.css";
-
-const categories = [
-  { title: "Aesthetic Concepts", slug: "concepts", description: "Explore unique Japanese aesthetics like Wabi-Sabi and Yūgen", image: "/images/concepts.jpg" },
-  { title: "Cultural Practices", slug: "practices", description: "Experience beauty through tea ceremony and ikebana", image: "/images/practices.jpg" },
-  { title: "Architecture & Spaces", slug: "architecture", description: "Discover traditional space design like Shoin-zukuri and tea rooms", image: "/images/architecture.jpg" },
-  { title: "Modern Applications", slug: "modern", description: "Applications in product design and interior decoration", image: "/images/modern.jpg" },
-  { title: "Resources", slug: "resources", description: "Glossary, references, and useful links", image: "/images/resources.jpg" },
-];
+import Image from 'next/image';
+import Navigation from '../components/Navigation';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Japanese-Aesthetics</title>
-        <meta name="description" content="Discover the essence of Japanese aesthetics" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+      <Navigation />
+      <main className="container">
+        <h1 className={styles.mainTitle}>Japanese<br />
+          <span className={styles.indent}></span>Aesthetics.</h1>
+        <div className={styles.mainTitleLine}></div>
 
-      <header className={styles.header}>
-        <h1>Japanese‑Aesthetics</h1>
-        <div className={styles.menuWrapper}>
-          <button
-            className={styles.menuButton}
-            aria-label="Open menu"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span className={styles.menuBar}></span>
-            <span className={styles.menuBar}></span>
-            <span className={styles.menuBar}></span>
-          </button>
-          {menuOpen && (
-            <nav className={styles.menuNav}>
-              {categories.map(cat => (
-                <Link key={cat.slug} href={`/${cat.slug}`} className={styles.menuNavLink} onClick={() => setMenuOpen(false)}>
-                  {cat.title}
-                </Link>
-              ))}
-            </nav>
-          )}
-        </div>
-      </header>
-
-      <main className={styles.main}>
-        <section className={styles.hero}>
-          <h2>Bringing Japanese Aesthetics to Your Daily Life</h2>
+        {/* Fashion セクション */}
+        <section className={styles.sectionRow}>
+          <div className={styles.kanjiLeft}>
+            <Image src="/images/kanji_fashion.png" alt="衣" width={300} height={300} />
+          </div>
+          <div className={styles.sectionTextRight}>
+            <h2>Fashion</h2>
+            <p>
+              Discover the beauty in simplicity, where time-worn textiles tell their own stories. From hand-woven hemp to indigo dyed cotton, each fabric celebrates imperfection. Learn how traditional garments inspire cutting-edge designers around the world. See how "slow fashion" meets sustainability in Japanese artisan studios. Step into a world where every thread weaves past and present into style.
+            </p>
+          </div>
         </section>
 
-        <section className={styles.grid}>
-          {categories.map(cat => (
-            <div key={cat.slug} className={styles.card}>
-              <div className={styles.cardContent}>
-                <h3>{cat.title}</h3>
-                <p>{cat.description}</p>
-                <Link href={`/${cat.slug}`} className={styles.navlink} style={{ marginTop: '1rem', fontWeight: 600 }}>Learn more →</Link>
-              </div>
-              <div style={{ position: 'relative', width: '100%', maxWidth: '50vw', minWidth: 320, aspectRatio: '16/9' }}>
-                <Image
-                  src={cat.image}
-                  alt={cat.title}
-                  fill
-                  style={{ objectFit: 'cover', borderRadius: '0 10px 10px 0' }}
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                  priority={cat.slug === 'concepts'}
-                />
-              </div>
-            </div>
-          ))}
+        {/* Cuisine セクション */}
+        <section className={styles.sectionRowReverse}>
+          <div className={styles.kanjiRight}>
+            <Image src="/images/kanji_cuisine.png" alt="食" width={300} height={300} />
+          </div>
+          <div className={styles.sectionTextLeft}>
+            <h2>Cuisine</h2>
+            <p>
+              Savor the art of balance, where humble ingredients shine at their peak. Explore time-honored recipes—from one-dish meals to seasonal sweets. Learn the rituals behind tea, miso, and the umami-rich foundations of flavor. Discover how respect for nature guides every chop, stir, and serving. Join us on a culinary journey that nourishes body, mind, and spirit.
+            </p>
+          </div>
+        </section>
+
+        {/* Living セクション */}
+        <section className={styles.sectionRow}>
+          <div className={styles.kanjiLeft}>
+            <Image src="/images/kanji_living.png" alt="住" width={300} height={300} />
+          </div>
+          <div className={styles.sectionTextRight}>
+            <h2>Living</h2>
+            <p>
+              Experience spaces shaped by wood, light, and a mindful embrace of empty space. Uncover how ancient joinery techniques withstand earthquakes without nails. See how tatami, shoji, and tokonoma define harmony in home design. Learn how minimalism and warmth coexist in traditional and modern homes. Step into tranquil interiors that bring calm, clarity, and connection to daily life.
+            </p>
+          </div>
         </section>
       </main>
-
-      <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} Japanese‑Aesthetics
-      </footer>
     </div>
   );
 }
