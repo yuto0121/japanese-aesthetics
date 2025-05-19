@@ -6,8 +6,13 @@ import styles from '../../styles/ArticleLiving.module.css';
 export default function ArticleLiving() {
     return (
         <div>
-            <header className={styles.headerWithImage}>
-                <Navigation />
+            <Navigation />
+
+            <div className={styles.headerContent}>
+                <div className={styles.titleWrapper}>
+                    <h1 className={styles.mainTitle}>Living</h1>
+                    <div className={styles.mainTitleLine} />
+                </div>
                 <Image
                     src="/images/living_article.png"
                     alt="Living"
@@ -16,29 +21,23 @@ export default function ArticleLiving() {
                     className={styles.sideImage}
                     priority
                 />
-            </header>
+            </div>
 
             <main className="container">
-                <h1 className={styles.mainTitle}>Living</h1>
-                <div className={styles.mainTitleLine} />
-
-                {/* ヒーロー画像 */}
                 <Image
-                    src="/images/contact.png"
-                    alt="Living"
+                    src="/images/living_hero.png"
+                    alt="Living Hero"
                     className={styles.aboutImage}
                     width={1920}
                     height={500}
                     priority
                 />
-
-                {/* 本文エリア */}
                 <section>
                     <p>
                         Experience spaces shaped by wood, light, and a mindful embrace of empty space.
-                        Ancient joinery withstands earthquakes without nails, while tatami, shoji,
-                        and tokonoma define harmony at home. Minimalism and warmth coexist—bringing calm,
-                        clarity, and connection to daily life.
+                        Ancient joinery withstands earthquakes without nails, while tatami, shoji, and tokonoma
+                        define harmony at home. Minimalism and warmth coexist—bringing calm, clarity,
+                        and connection to daily life.
                     </p>
                 </section>
             </main>

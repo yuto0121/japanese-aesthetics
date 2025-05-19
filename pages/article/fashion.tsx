@@ -6,8 +6,13 @@ import styles from '../../styles/ArticleFashion.module.css';
 export default function ArticleFashion() {
     return (
         <div>
-            <header className={styles.headerWithImage}>
-                <Navigation />
+            <Navigation />
+
+            <div className={styles.headerContent}>
+                <div className={styles.titleWrapper}>
+                    <h1 className={styles.mainTitle}>Fashion</h1>
+                    <div className={styles.mainTitleLine} />
+                </div>
                 <Image
                     src="/images/fashion_article.png"
                     alt="Fashion"
@@ -16,28 +21,22 @@ export default function ArticleFashion() {
                     className={styles.sideImage}
                     priority
                 />
-            </header>
+            </div>
 
             <main className="container">
-                <h1 className={styles.mainTitle}>Fashion</h1>
-                <div className={styles.mainTitleLine} />
-
-                {/* ヒーロー画像 */}
                 <Image
-                    src="/images/contact.png"
-                    alt="Fashion"
+                    src="/images/fashion_hero.png"
+                    alt="Fashion Hero"
                     className={styles.aboutImage}
                     width={1920}
                     height={500}
                     priority
                 />
-
-                {/* 本文エリア */}
                 <section>
                     <p>
                         Discover the beauty in simplicity, where time-worn textiles tell their own stories.
                         From hand-woven hemp to indigo-dyed cotton, each fabric celebrates imperfection.
-                        Traditional silhouettes inspire cutting-edge designers while "slow fashion" meets
+                        Traditional silhouettes inspire cutting-edge designers while “slow fashion” meets
                         sustainability in artisan studios across Japan.
                     </p>
                 </section>

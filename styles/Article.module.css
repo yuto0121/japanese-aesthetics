@@ -1,3 +1,4 @@
+/* ======== 見出しまわり ======================================= */
 .mainTitle {
     font-size: 80px;
     font-weight: bold;
@@ -13,20 +14,147 @@
     margin: 7rem 0 2.5rem 2rem;
 }
 
-.aboutImage {
-    width: 100%;
-    max-width: 100vw;
-    margin: 7rem;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    display: block;
-    object-fit: cover;
-    height: 500px;
+/* ======== 検索＋タグ ======================================= */
+.searchSection {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    margin: 0 2rem 6rem 2rem;
 }
 
-.visionImage {
+.searchBox {
+    flex: 1 1 45%;
+}
+
+.searchLabel {
+    font-size: 28px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.searchInput {
+    width: 100%;
+    font-size: 24px;
+    border: none;
+    border-bottom: 2px solid #111;
+    padding: 0.25rem 0;
+    outline: none;
+}
+
+.tagsBox {
+    flex: 1 1 55%;
+    background: #e0e0e0;
+    padding: 2rem;
+}
+
+.tagsTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.tagsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    row-gap: 0.75rem;
+}
+
+.tagButton {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.tagButton:hover,
+.tagButton:focus {
+    text-decoration: underline;
+}
+
+/* ======== プレビュー行（Fashion / Cuisine / Living） ======== */
+.previewRow {
+    display: flex;
+    gap: 4rem;
+    margin: 0 2rem 8rem 2rem;
+}
+
+/* 画像ラッパー */
+.previewImageWrap {
+    margin-left: auto;
+    /* ← これで画像が右端にくっつく */
+}
+
+/* 左カラム */
+.previewTextBox {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.previewTitle {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0 0 3rem 0;
+}
+
+.previewSubcats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.previewLink {
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 4rem;
+}
+
+.arrow {
+    display: inline-block;
+}
+
+/* 右カラム */
+.previewImageWrap {
+    flex: 0 0 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.previewImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* ======== レスポンシブ対応 =================================== */
+@media (max-width: 768px) {
+
+    .searchSection,
+    .previewRow {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .previewTextBox {
+        flex: none;
+    }
+
+    .previewImageWrap {
+        flex: none;
+        height: 300px;
+        /* スマホ時は高さ固定 */
+    }
 }

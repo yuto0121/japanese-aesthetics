@@ -1,62 +1,46 @@
+/* styles/ArticleCuisine.module.css */
+
+.headerContent {
+    display: flex;
+    align-items: flex-start;
+    margin: 7rem 2rem 2rem 2rem;
+}
+
+.titleWrapper {
+    flex: 1;
+}
+
+.sideImage {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-left: 2rem;
+}
+
+/* 既存スタイルをそのまま流用 */
 .mainTitle {
     font-size: 80px;
     font-weight: bold;
-    margin: 7rem 0 2rem 0;
+    margin: 0;
     line-height: 1.1;
-    margin-left: 2rem;
-    text-align: left;
 }
 
 .mainTitleLine {
     border-bottom: 2px solid #111;
-    width: calc(100% - 4rem);
-    margin: 7rem 0 2.5rem 2rem;
+    width: 100%;
+    margin: 7rem 0 2.5rem 0;
 }
 
 .aboutImage {
     width: 100%;
     max-width: 100vw;
-    margin: 7rem;
+    margin: 7rem 0;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     display: block;
     object-fit: cover;
     height: 500px;
-}
-
-/* 既存の visionImage 名を流用する場合用 */
-.visionImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/*―― ページ固有のアクセントカラー例 ――*/
-.aboutImage {
     border: 4px solid #4A3620;
-    /* 深い土色 */
-}
-
-.headerWithImage {
-    display: flex;
-    align-items: center;
-    /* 高さを中央揃え */
-    justify-content: space-between;
-    /* ナビと画像を左右に振り分け */
-    padding: 1rem 2rem;
-    /* お好みで余白調整してください */
-    background: #fff;
-    /* 背景色が必要なら */
-}
-
-/* 右側に置く小画像 */
-.sideImage {
-    flex-shrink: 0;
-    /* サイズ固定 */
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border: 4px solid #4A3620;
-    /* 必要であればアクセント枠も */
+    /* アクセント枠 */
 }
