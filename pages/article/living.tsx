@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Navigation from '../../components/Navigation';
-import styles from '../styles/ArticleLiving.module.css';
+import styles from '../../styles/ArticleLiving.module.css';
 
 export default function ArticleLiving() {
     return (

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Navigation from '../../components/Navigation';
-import styles from '../styles/ArticleFashion.module.css';
+import styles from '../../styles/ArticleFashion.module.css';
 
 export default function ArticleFashion() {
     return (
