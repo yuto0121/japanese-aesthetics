@@ -1,3 +1,4 @@
+/* ====== 見出しまわり ===================================== */
 .mainTitle {
     font-size: 80px;
     font-weight: bold;
@@ -13,20 +14,120 @@
     margin: 7rem 0 2.5rem 2rem;
 }
 
-.aboutImage {
-    width: 100%;
-    max-width: 100vw;
-    margin: 7rem;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    display: block;
-    object-fit: cover;
-    height: 500px;
+/* ====== 2 カラムレイアウト =============================== */
+.contactRow {
+    display: flex;
+    gap: 4rem;
+    margin: 0 2rem 8rem 2rem;
 }
 
-.visionImage {
+/* ---------- 左カラム ---------- */
+.leftPane {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftImage {
     width: 100%;
-    height: 100%;
+    height: 600px;
     object-fit: cover;
     display: block;
+}
+
+.contactInfo {
+    margin-top: 0;
+}
+
+.email {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.social {
+    display: flex;
+    gap: 2rem;
+    font-size: 22px;
+}
+
+.social a {
+    color: #111;
+    transition: opacity 0.2s;
+}
+
+.social a:hover {
+    opacity: 0.6;
+}
+
+/* ---------- 右カラム（フォーム） ---------- */
+.formWrapper {
+    flex: 0 0 46%;
+    padding: 3rem 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formHeading {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 2.5rem 0;
+}
+
+.form label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+.form button {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 8px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: opacity 0.2s;
+}
+
+.form button:hover {
+    opacity: 0.8;
+}
+
+/* ====== レスポンシブ対応 ================================= */
+@media (max-width: 768px) {
+    .contactRow {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .leftPane,
+    .formWrapper {
+        flex: none;
+    }
+
+    .leftImage {
+        height: 300px;
+    }
 }
