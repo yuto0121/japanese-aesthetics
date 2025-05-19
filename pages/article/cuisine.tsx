@@ -1,3 +1,4 @@
+// pages/article/cuisine.tsx
 import Image from 'next/image';
 import Navigation from '../../components/Navigation';
 import styles from '../../styles/ArticleCuisine.module.css';
@@ -5,8 +6,15 @@ import styles from '../../styles/ArticleCuisine.module.css';
 export default function ArticleCuisine() {
     return (
         <div>
-            <header className={styles.headerWithImage}>
-                <Navigation />
+            {/* ナビゲーション */}
+            <Navigation />
+
+            {/* タイトル＋小画像 */}
+            <div className={styles.headerContent}>
+                <div className={styles.titleWrapper}>
+                    <h1 className={styles.mainTitle}>Cuisine</h1>
+                    <div className={styles.mainTitleLine} />
+                </div>
                 <Image
                     src="/images/cuisine_article.png"
                     alt="Cuisine"
@@ -15,22 +23,20 @@ export default function ArticleCuisine() {
                     className={styles.sideImage}
                     priority
                 />
-                +      </header>
-            <main className="container">
-                <h1 className={styles.mainTitle}>Cuisine</h1>
-                <div className={styles.mainTitleLine} />
+            </div>
 
+            <main className="container">
                 {/* ヒーロー画像 */}
                 <Image
-                    src="/images/contact.jpg"
-                    alt="Cuisine"
+                    src="/images/cuisine_hero.png"
+                    alt="Cuisine Hero"
                     className={styles.aboutImage}
                     width={1920}
                     height={500}
                     priority
                 />
 
-                {/* 本文エリア（自由に挿入） */}
+                {/* 本文エリア */}
                 <section>
                     <p>
                         Savor the art of balance, where humble ingredients shine at their peak.
