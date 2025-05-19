@@ -38,7 +38,7 @@ export default function Home() {
         </section>
 
         {/* ── Fashion セクション ───────────────────── */}
-        <Link href="/fashion" passHref legacyBehavior>
+        <Link href="article/fashion" passHref legacyBehavior>
           <a className={styles.linkReset}>
             <section className={styles.sectionRow}>
               <div className={styles.kanjiLeft}>
@@ -65,7 +65,7 @@ export default function Home() {
         </Link>
 
         {/* ── Cuisine セクション ───────────────────── */}
-        <Link href="/cuisine" passHref legacyBehavior>
+        <Link href="article/cuisine" passHref legacyBehavior>
           <a className={styles.linkReset}>
             <section className={styles.sectionRowReverse}>
               <div className={styles.sectionTextLeft}>
@@ -92,7 +92,7 @@ export default function Home() {
         </Link>
 
         {/* ── Living セクション ────────────────────── */}
-        <Link href="/living" passHref legacyBehavior>
+        <Link href="article/living" passHref legacyBehavior>
           <a className={styles.linkReset}>
             <section className={styles.sectionRow}>
               <div className={styles.kanjiLeft}>
