@@ -147,3 +147,96 @@
     justify-content: center !important;
   }
 }
+
+.visionRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 3rem;
+  gap: 0;
+}
+
+.visionTextWrapCentered {
+  flex: 1 1 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.visionTitleCentered {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 4rem 0 2rem 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.visionTextCentered {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #6B2E12;
+  margin: 2rem;
+  text-align: center;
+}
+
+.visionImageWrap {
+  flex: 1 1 50%;
+  max-width: 50%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.visionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 2rem;
+}
+
+@media (max-width: 800px) {
+  .visionRow {
+    flex-direction: column;
+  }
+
+  .visionImageWrap,
+  .visionTextWrapCentered {
+    max-width: 100%;
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .visionTextWrapCentered {
+    padding: 2rem 1rem;
+    align-items: center;
+  }
+
+  .visionTitleCentered {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .visionTextCentered {
+    text-align: center;
+  }
+}
+
+.visionRow {
+  margin-bottom: 10rem;
+}
+
+.linkReset {
+  display: block;
+  /* セクション全体をクリック可能に */
+  color: inherit;
+  /* テキストカラーを継承 */
+  text-decoration: none;
+  /* 下線を消す */
+}
