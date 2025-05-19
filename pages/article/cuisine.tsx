@@ -5,14 +5,24 @@ import styles from '../../styles/ArticleCuisine.module.css';
 export default function ArticleCuisine() {
     return (
         <div>
-            <Navigation />
+            <header className={styles.headerWithImage}>
+                <Navigation />
+                <Image
+                    src="/images/cuisine_article.png"
+                    alt="Cuisine"
+                    width={250}
+                    height={250}
+                    className={styles.sideImage}
+                    priority
+                />
+                +      </header>
             <main className="container">
                 <h1 className={styles.mainTitle}>Cuisine</h1>
                 <div className={styles.mainTitleLine} />
 
                 {/* ヒーロー画像 */}
                 <Image
-                    src="/images/cuisine_article.png"
+                    src="/images/contact.jpg"
                     alt="Cuisine"
                     className={styles.aboutImage}
                     width={1920}

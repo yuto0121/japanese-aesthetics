@@ -37,3 +37,26 @@
     border: 4px solid #4A3620;
     /* 深い土色 */
 }
+
+.headerWithImage {
+    display: flex;
+    align-items: center;
+    /* 高さを中央揃え */
+    justify-content: space-between;
+    /* ナビと画像を左右に振り分け */
+    padding: 1rem 2rem;
+    /* お好みで余白調整してください */
+    background: #fff;
+    /* 背景色が必要なら */
+}
+
+/* 右側に置く小画像 */
+.sideImage {
+    flex-shrink: 0;
+    /* サイズ固定 */
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 4px solid #4A3620;
+    /* 必要であればアクセント枠も */
+}
