@@ -219,7 +219,37 @@
 /* 追加：モバイル用ブレークポイント */
 @media (max-width: 768px) {
 
-    /* ヘッダー */
+    /* ★ カテゴリを１カラムに */
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* 横の余白を header と合わせたいなら左右 padding を入れてもOK */
+        padding: 0 2rem;
+    }
+
+    /* ★ カード内パディング（左右は .categories で取るなら 0 に） */
+    .categoryCard {
+        padding: 2.5rem 0 3rem;
+    }
+
+    /* ★ カード同士の区切り線（横線） */
+    .categoryCard:not(:last-child)::after {
+        content: '';
+        position: absolute;
+
+        /* デスクトップで入れていた top:0 をリセット */
+        top: auto;
+
+        /* 下端にだけ高さ 2px の線を描画 */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+
+        background: #111;
+    }
+
+    /* ↓他のモバイル調整（fonts, featured, grid など）↓ */
     .header {
         flex-direction: column;
         align-items: flex-start;
