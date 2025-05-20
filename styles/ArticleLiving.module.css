@@ -1,46 +1,10 @@
-/* styles/ArticleLiving.module.css */
+/* Living はテーマカラーを深緑にした例 (自由に変更可) */
+@import './ArticleFashion.module.css';
 
-.headerContent {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin: 7rem 2rem 2rem 2rem;
+.categoryNo {
+    color: #1b6d46;
 }
 
-.titleWrapper {
-    flex: 1;
-}
-
-.sideImage {
-    flex-shrink: 0;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    margin-left: 2rem;
-}
-
-/* 既存スタイル */
-.mainTitle {
-    font-size: 80px;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.1;
-}
-
-.mainTitleLine {
-    border-bottom: 2px solid #111;
-    width: 100%;
-    margin: 7rem 0 2.5rem 0;
-}
-
-.aboutImage {
-    width: 100%;
-    max-width: 100vw;
-    margin: 7rem 0;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    display: block;
-    object-fit: cover;
-    height: 500px;
-    border: 4px solid #4A3620;
+.cardMeta {
+    color: #1b6d46;
 }

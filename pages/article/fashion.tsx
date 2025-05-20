@@ -38,7 +38,7 @@ export default function ArticleFashion() {
 
       {/* ── featured article ───────────────────────── */}
       <section className={styles.featured}>
-        <h2 className={styles.sectionHeadline}>Featured Article</h2>
+        <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
         <div className={styles.featuredBody}>
           <Image
@@ -59,42 +59,53 @@ export default function ArticleFashion() {
       </section>
 
       {/* ── article list ───────────────────────────── */}
-      <section className={styles.articleList}>
-        <h2 className={styles.sectionHeadline}>Articles</h2>
+      <section className={styles.articleGridSection}>
+        <h2 className={styles.articlesHeadline}>Articles</h2>
 
-        {/* row 1 */}
-        <article className={styles.articleRow}>
-          <div className={styles.articleImgWrap}>
-            <Image
-              src="/images/article/fashion_article1.jpg"
-              alt=""
-              fill
-              className={styles.articleImg}
-            />
-            <h3 className={styles.articleOverlayTitle}>Article 1</h3>
-          </div>
+        {/* カード 6 枚 */}
+        <div className={styles.articleGrid}>
+          {[
+            {
+              src: '/images/article/fashion_article1.jpg',
+              title: 'Branding: What Real Customers Have to Say',
+            },
+            {
+              src: '/images/article/fashion_article2.jpg',
+              title: 'Branding: Pros and Cons They Don’t Tell You',
+            },
+            {
+              src: '/images/article/fashion_article3.jpg',
+              title: 'How to Spot the Best Branding for You: Signs and Features',
+            },
+            {
+              src: '/images/article/fashion_article4.jpg',
+              title: 'How Much Should I Spend on Branding?',
+            },
+            {
+              src: '/images/article/fashion_article5.jpg',
+              title: 'Rookie Mistakes You’re Making With Your Branding',
+            },
+            {
+              src: '/images/article/fashion_article6.jpg',
+              title: 'Real Branding Customer Reviews You Need to See',
+            },
+          ].map(({ src, title }) => (
+            <article key={title} className={styles.card}>
+              <div className={styles.cardImgWrap}>
+                <Image src={src} alt={title} fill className={styles.cardImg} />
+              </div>
 
-          <p className={styles.articleLead}>
-            The Timeless Art of Hand-woven Hemp: Rediscovering Rustic Elegance
-          </p>
-        </article>
+              <span className={styles.cardMeta}>BRANDING、DESIGN</span>
+              <h3 className={styles.cardTitle}>{title}</h3>
+            </article>
+          ))}
+        </div>
 
-        {/* row 2 */}
-        <article className={styles.articleRow}>
-          <div className={styles.articleImgWrap}>
-            <Image
-              src="/images/fashion_article2.jpg"
-              alt=""
-              fill
-              className={styles.articleImg}
-            />
-            <h3 className={styles.articleOverlayTitle}>Article 2</h3>
-          </div>
-
-          <p className={styles.articleLead}>
-            Indigo Inspirations: How Japanese Dyeing Shapes Modern Wardrobe
-          </p>
-        </article>
+        {/* ── pagination buttons ── */}
+        <div className={styles.pagination}>
+          <button className={styles.navBtn}>PREVIOUS</button>
+          <button className={styles.navBtn}>NEXT</button>
+        </div>
       </section>
     </>
   );
