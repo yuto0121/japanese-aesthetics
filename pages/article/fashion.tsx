@@ -13,7 +13,7 @@ export default function ArticleFashion() {
       <header className={styles.header}>
         <h1 className={styles.title}>Fashion</h1>
         <Image
-          src="/images/fashion.png" // 「衣」の筆文字
+          src="/images/kanji_fashion.png" // 「衣」の筆文字
           alt="Kanji for clothing"
           width={150}
           height={150}
