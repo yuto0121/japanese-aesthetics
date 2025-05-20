@@ -42,7 +42,7 @@ export default function ArticleFashion() {
 
         <div className={styles.featuredBody}>
           <Image
-            src="/images/article/fashion_article1.jpg"
+            src="/images/article/fashion_featured_article.jpg"
             alt="Indigo–dyed boro fabric"
             width={180}
             height={180}
@@ -66,7 +66,7 @@ export default function ArticleFashion() {
         <article className={styles.articleRow}>
           <div className={styles.articleImgWrap}>
             <Image
-              src="/images/article/fashion_article2.jpg"
+              src="/images/article/fashion_article1.jpg"
               alt=""
               fill
               className={styles.articleImg}
@@ -83,7 +83,7 @@ export default function ArticleFashion() {
         <article className={styles.articleRow}>
           <div className={styles.articleImgWrap}>
             <Image
-              src="/images/indigo_strips.jpg"
+              src="/images/fashion_article2.jpg"
               alt=""
               fill
               className={styles.articleImg}
