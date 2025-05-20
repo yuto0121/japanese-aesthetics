@@ -1,7 +1,8 @@
 // pages/article/fashion.tsx
 import Image from 'next/image';
-import Navigation from '../../components/Navigation';
-import styles from '../../styles/ArticleFashion.module.css';
+import Link from 'next/link';
+import Navigation from '../../../components/Navigation';
+import styles from '../../../styles/ArticleSub.module.css';
 
 export default function ArticleFashion() {
   return (
@@ -13,7 +14,7 @@ export default function ArticleFashion() {
       <header className={styles.header}>
         <h1 className={styles.title}>Fashion</h1>
         <Image
-          src="/images/kanji_fashion.png" // 「衣」の筆文字
+          src="/images/kanji_fashion.png" 
           alt="Kanji for clothing"
           width={150}
           height={150}
@@ -24,16 +25,20 @@ export default function ArticleFashion() {
 
       {/* ── categories ─────────────────────────────── */}
       <section className={styles.categories}>
-        {[
-          { no: '01', label: 'Textiles' },
-          { no: '02', label: 'Garments' },
-          { no: '03', label: 'Brand' },
-        ].map(({ no, label }) => (
-          <div key={no} className={styles.categoryCard}>
-            <span className={styles.categoryNo}>{no}</span>
-            <span className={styles.categoryLabel}>{label}</span>
-          </div>
-        ))}
+      {[
+        { no: '01', label: 'Textiles', slug: 'textiles' },
+        { no: '02', label: 'Garments', slug: 'garments' },
+        { no: '03', label: 'Brand',    slug: 'brand'    },
+      ].map(({ no, label, slug }) => (
+        <Link
+          key={slug}
+          href={`/article/fashion/${slug}`}
+          className={styles.categoryCard}
+        >
+          <span className={styles.categoryNo}>{no}</span>
+          <span className={styles.categoryLabel}>{label}</span>
+        </Link>
+      ))}
       </section>
 
       {/* ── featured article ───────────────────────── */}
@@ -52,7 +57,7 @@ export default function ArticleFashion() {
           <p className={styles.featuredText}>
             In Japan, the art of <em>boro</em> (襤褸) patchwork—mending
             indigo-dyed scraps into layered textiles—celebrates resilience and
-            sustainability through the beauty of imperfection. […] Work in small
+            sustainability through the beauty of imperfection. Work in small
             sections—10 to 15 minutes at a time—to build a meditative rhythm.
           </p>
         </div>

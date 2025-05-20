@@ -1,9 +1,10 @@
 // pages/article/living.tsx
 import Image from 'next/image';
-import Navigation from '../../components/Navigation';
-import styles from '../../styles/ArticleFashion.module.css';
+import Link from 'next/link';
+import Navigation from '../../../components/Navigation';
+import styles from '../../../styles/ArticleSub.module.css';
 
-export default function ArticleCuisine() {
+export default function ArticleLiving() {
   return (
     <>
       {/* ── global nav ─────────────────────────────── */}
@@ -11,10 +12,10 @@ export default function ArticleCuisine() {
 
       {/* ── page header ────────────────────────────── */}
       <header className={styles.header}>
-        <h1 className={styles.title}>Cuisine</h1>
+        <h1 className={styles.title}>Living</h1>
         <Image
-          src="/images/kanji_cuisine.png" // 「衣」の筆文字
-          alt="Kanji for cuisine"
+          src="/images/kanji_living.png" // 「衣」の筆文字
+          alt="Kanji for licing"
           width={150}
           height={150}
           className={styles.kanji}
@@ -24,15 +25,19 @@ export default function ArticleCuisine() {
 
       {/* ── categories ─────────────────────────────── */}
       <section className={styles.categories}>
-        {[
-          { no: '01', label: 'One-Dish Meals' },
-          { no: '02', label: 'Seasonal Sweats' },
-          { no: '03', label: 'Tea Ceremony' },
-        ].map(({ no, label }) => (
-          <div key={no} className={styles.categoryCard}>
+      {[
+        { no: '01', label: 'Architecture', slug: 'architecture' },
+        { no: '02', label: 'Interior', slug: 'interior' },
+        { no: '03', label: 'Furniture', slug: 'furniture' },
+      ].map(({ no, label, slug }) => (
+        <Link
+          key={slug} 
+          href={`/article/living/${slug}`}
+          className={styles.categoryCard}
+        >
             <span className={styles.categoryNo}>{no}</span>
             <span className={styles.categoryLabel}>{label}</span>
-          </div>
+          </Link>
         ))}
       </section>
 
@@ -42,8 +47,8 @@ export default function ArticleCuisine() {
 
         <div className={styles.featuredBody}>
           <Image
-            src="/images/article/cuisine_featured_article.jpg"
-            alt="Japanese Cuisine"
+            src="/images/article/living_featured_article.jpg"
+            alt="Traditional architecture"
             width={180}
             height={180}
             className={styles.featuredImg}
@@ -63,27 +68,27 @@ export default function ArticleCuisine() {
         <div className={styles.articleGrid}>
           {[
             {
-              src: '/images/article/cuisine_article1.jpg',
+              src: '/images/article/fashion_article1.jpg',
               title: 'Branding: What Real Customers Have to Say',
             },
             {
-              src: '/images/article/cuisine_article2.jpg',
+              src: '/images/article/living_article2.jpg',
               title: 'Branding: Pros and Cons They Don’t Tell You',
             },
             {
-              src: '/images/article/cuisine_article3.jpg',
+              src: '/images/article/living_article3.jpg',
               title: 'How to Spot the Best Branding for You: Signs and Features',
             },
             {
-              src: '/images/article/cuisine_article4.jpg',
+              src: '/images/article/living_article4.jpg',
               title: 'How Much Should I Spend on Branding?',
             },
             {
-              src: '/images/article/cuisine_article5.jpg',
+              src: '/images/article/living_article5.jpg',
               title: 'Rookie Mistakes You’re Making With Your Branding',
             },
             {
-              src: '/images/article/cuisine_article6.jpg',
+              src: '/images/article/living_article6.jpg',
               title: 'Real Branding Customer Reviews You Need to See',
             },
           ].map(({ src, title }) => (

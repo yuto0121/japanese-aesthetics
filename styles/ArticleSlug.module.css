@@ -10,8 +10,8 @@
 }
 
 /*************************************************
-  *  HEADER
-  *************************************************/
+    *  HEADER
+    *************************************************/
 .header {
     display: flex;
     justify-content: space-between;
@@ -45,8 +45,8 @@
 }
 
 /*************************************************
-  *  CATEGORIES
-  *************************************************/
+    *  CATEGORIES
+    *************************************************/
 .categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -96,8 +96,8 @@
 }
 
 /*************************************************
-  *  FEATURED ARTICLE
-  *************************************************/
+    *  FEATURED ARTICLE
+    *************************************************/
 .featured {
     padding: 6rem 0 4rem;
     position: relative;
@@ -129,14 +129,15 @@
 
 .featuredText {
     max-width: 48ch;
-    line-height: 1.6;
+    line-height: 1.2;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 400;
+    margin-left: 2rem;
 }
 
 /*************************************************
-  *  ARTICLE GRID
-  *************************************************/
+    *  ARTICLE GRID
+    *************************************************/
 .articleGridSection {
     padding: 4rem 0 6rem;
     position: relative;
@@ -192,8 +193,8 @@
 }
 
 /*************************************************
-  *  PAGINATION
-  *************************************************/
+    *  PAGINATION
+    *************************************************/
 .pagination {
     display: flex;
     justify-content: space-between;
