@@ -67,8 +67,16 @@ export default function Home() {
         {/* ── Cuisine セクション ───────────────────── */}
         <Link href="article/cuisine" passHref legacyBehavior>
           <a className={styles.linkReset}>
-            <section className={styles.sectionRowReverse}>
-              <div className={styles.sectionTextLeft}>
+            <section className={styles.sectionRow}>
+            <div className={styles.kanjiLeft}>
+                <Image
+                  src="/images/kanji_cuisine.png"
+                  alt="食"
+                  width={300}
+                  height={300}
+                />
+              </div>
+              <div className={styles.sectionTextRight}>
                 <h2>Cuisine</h2>
                 <p>
                   Savor the art of balance, where humble ingredients shine at
@@ -77,15 +85,6 @@ export default function Home() {
                   umami-rich foundations of flavor. Discover how respect for
                   nature guides every chop, stir, and serving.
                 </p>
-              </div>
-
-              <div className={styles.kanjiRight}>
-                <Image
-                  src="/images/kanji_cuisine.png"
-                  alt="食"
-                  width={300}
-                  height={300}
-                />
               </div>
             </section>
           </a>
