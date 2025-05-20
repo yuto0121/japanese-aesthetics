@@ -240,3 +240,108 @@
   text-decoration: none;
   /* 下線を消す */
 }
+
+
+/* ───────────────────────────────────────────────
+   さらに小さいスマホ向けスタイル（max-width: 480px）
+─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* ナビ・ヘッダー */
+  .topNav {
+    padding: 0.5rem 1rem;
+  }
+
+  .siteHeader {
+    margin: 2rem 0;
+    font-size: 2.2rem;
+  }
+
+  /* カテゴリリンク（Home の場合は不要なら消す） */
+  .categoryLinks a {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* メインタイトル */
+  .mainTitle {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 1rem;
+    line-height: 1.2;
+  }
+
+  .mainTitleLine {
+    width: calc(100% - 2rem);
+    margin: 3rem 0 1.5rem 1rem;
+    border-bottom-width: 1.5px;
+  }
+
+  /* sectionRow 全体を縦積み */
+  .sectionRow,
+  .sectionRowReverse {
+    flex-direction: column;
+    margin: 1.5rem 0;
+  }
+
+  /* かんじ＆テキスト領域 */
+  .kanjiLeft,
+  .kanjiRight {
+    width: 100vw;
+    margin: 0 0 1rem 0;
+    padding: 0 1rem;
+  }
+
+  .kanjiLeft img,
+  .kanjiRight img {
+    max-width: 80vw;
+    height: auto;
+  }
+
+  .sectionTextRight,
+  .sectionTextLeft {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .sectionTextRight h2,
+  .sectionTextLeft h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .sectionTextRight p,
+  .sectionTextLeft p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* ビジョンセクション */
+  .visionRow {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .visionImageWrap,
+  .visionTextWrapCentered {
+    max-width: 100%;
+    flex: none;
+    padding: 0 1rem;
+  }
+
+  .visionImage {
+    height: 250px;
+    margin: 1rem auto;
+  }
+
+  .visionTitleCentered {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .visionTextCentered {
+    font-size: 1rem;
+    margin: 1rem 0 2rem;
+  }
+}
