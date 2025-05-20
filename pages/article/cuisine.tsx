@@ -1,7 +1,8 @@
 // pages/article/living.tsx
 import Image from 'next/image';
+import Link from 'next/link';
 import Navigation from '../../components/Navigation';
-import styles from '../../styles/ArticleFashion.module.css';
+import styles from '../../styles/ArticleCuisine.module.css';
 
 export default function ArticleCuisine() {
   return (
@@ -25,14 +26,18 @@ export default function ArticleCuisine() {
       {/* ── categories ─────────────────────────────── */}
       <section className={styles.categories}>
         {[
-          { no: '01', label: 'One-Dish Meals' },
-          { no: '02', label: 'Seasonal Sweats' },
-          { no: '03', label: 'Tea Ceremony' },
-        ].map(({ no, label }) => (
-          <div key={no} className={styles.categoryCard}>
+           { no: '01', label: 'One-Dish Meals', slug: 'oneDishMeals' },
+           { no: '02', label: 'Seasonal Sweats', slug: 'seasonalSweats' },
+           { no: '03', label: 'Tea Ceremony', slug: 'teaCeremony' },
+        ].map(({ no, label, slug }) => (
+        <Link
+          key={slug} 
+          href={`/article/cuisine/${slug}`}
+          className={styles.categoryCard}
+        >
             <span className={styles.categoryNo}>{no}</span>
             <span className={styles.categoryLabel}>{label}</span>
-          </div>
+          </Link>
         ))}
       </section>
 
