@@ -1,173 +1,217 @@
+/*************************************************
+ *  見出し（Featured / Articles）
+ *************************************************/
+.featuredHeadline,
+.articlesHeadline {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 2rem 2rem;
+    /* ← 左側 2rem */
+}
+
+/*************************************************
+    *  HEADER
+    *************************************************/
 .header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--spacing-lg) 0;
-    background-color: #f9f9f9;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4.5rem 2rem 0;
+    /* ← 左右 2rem */
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
 }
 
 .title {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-xs);
-    font-weight: bold;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
 }
 
 .kanji {
-    border-radius: 50%;
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
 }
 
+/*************************************************
+    *  CATEGORIES
+    *************************************************/
 .categories {
-    display: flex;
-    gap: var(--spacing-sm);
-    justify-content: center;
-    margin: var(--spacing-lg) 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+.categories::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
 }
 
 .categoryCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--spacing-sm);
-    background-color: #fff;
-    box-shadow: var(--shadow-sm);
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    padding: 4rem 1rem 5rem;
+    position: relative;
 }
 
-.categoryCard:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+.categoryCard:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    background: #111;
 }
 
 .categoryNo {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 6rem;
+    font-weight: 700;
+    color: #f37021;
+    line-height: 1;
 }
 
 .categoryLabel {
-    margin-top: var(--spacing-xs);
-    font-size: 1rem;
+    display: block;
+    /* span → block に */
+    margin-top: 1rem;
+    /* 数字とのあいだに隙間 */
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
+/*************************************************
+    *  FEATURED ARTICLE
+    *************************************************/
 .featured {
-    margin: var(--spacing-lg) 0;
-    text-align: center;
+    padding: 6rem 0 4rem;
+    position: relative;
 }
 
-.featuredHeadline {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-md);
+.featured::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
 }
 
 .featuredBody {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 2rem;
+    /* ← 左右 2rem */
 }
 
 .featuredImg {
-    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .featuredText {
-    max-width: 600px;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.articleGridSection {
-    margin: var(--spacing-lg) 0;
-}
-
-.articlesHeadline {
+    max-width: 48ch;
+    line-height: 1.2;
     font-size: 2rem;
-    margin-bottom: var(--spacing-md);
-    text-align: center;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+
+/*************************************************
+    *  ARTICLE GRID
+    *************************************************/
+.articleGridSection {
+    padding: 4rem 0 6rem;
+    position: relative;
+}
+
+.articleGridSection::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
 }
 
 .articleGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
 }
 
 .card {
-    background-color: #fff;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
 }
 
 .cardImgWrap {
     position: relative;
-    width: 100%;
-    padding-bottom: 75%;
-    /* 4:3 aspect ratio */
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .cardImg {
     object-fit: cover;
-    border-top-left-radius: var(--radius-md);
-    border-top-right-radius: var(--radius-md);
 }
 
 .cardMeta {
-    font-size: 0.75rem;
-    color: #666;
-    margin: var(--spacing-xs) var(--spacing-sm) 0;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
+    color: #6b6b6b;
 }
 
 .cardTitle {
-    font-size: 1.125rem;
-    margin: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm);
-    font-weight: 500;
+    margin-top: 0.25rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
+/*************************************************
+    *  PAGINATION
+    *************************************************/
 .pagination {
     display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+    justify-content: space-between;
+    margin: 2.5rem 2rem 0;
+    /* ← 左右 2rem */
 }
 
 .navBtn {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--radius-sm);
+    background: none;
+    border: 1px solid #bfbfbf;
+    padding: 0.4rem 1.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 0.875rem;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    transition: background-color 0.2s;
 }
 
 .navBtn:hover {
-    background-color: #333;
-}
-
-.backWrap {
-    margin: var(--spacing-lg) 0;
-    text-align: center;
-}
-
-.articleBody {
-    padding: var(--spacing-lg) var(--spacing-md);
-    font-size: 1rem;
-    line-height: 1.6;
+    background: #f7f7f7;
 }

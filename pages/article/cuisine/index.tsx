@@ -1,8 +1,8 @@
 // pages/article/living.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import Navigation from '../../components/Navigation';
-import styles from '../../styles/ArticleCuisine.module.css';
+import Navigation from '../../../components/Navigation';
+import styles from '../../../styles/ArticleSub.module.css';
 
 export default function ArticleCuisine() {
   return (

@@ -26,7 +26,7 @@ export default function FashionCategoryPage() {
       {/* ── page header ──────────────────────────── */}
       <header className={styles.header}>
         <h1 className={styles.title}>
-          {no}&nbsp;&nbsp;{title}
+          {title}
         </h1>
         <Image
           src={hero}
@@ -41,7 +41,7 @@ export default function FashionCategoryPage() {
       {/* ── main content ─────────────────────────── */}
       <main className={styles.articleBody}>
         <p style={{ fontStyle: 'italic' }}>
-          （ここに&nbsp;{title}&nbsp;カテゴリ専用の記事一覧や説明を実装）
+          Here is the explanation.
         </p>
       </main>
 

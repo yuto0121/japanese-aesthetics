@@ -26,7 +26,7 @@ export default function LivingCategoryPage() {
       {/* ── page header ──────────────────────────── */}
       <header className={styles.header}>
         <h1 className={styles.title}>
-          {no}&nbsp;&nbsp;{title}
+          {title}
         </h1>
         <Image
           src={hero}
@@ -41,7 +41,7 @@ export default function LivingCategoryPage() {
       {/* ── main content ─────────────────────────── */}
       <main className={styles.articleBody}>
         <p style={{ fontStyle: 'italic' }}>
-          （ここに&nbsp;{title}&nbsp;カテゴリ専用の記事一覧や説明を実装）
+          explanation.
         </p>
       </main>
 
