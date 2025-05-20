@@ -1,4 +1,4 @@
-// pages/article/living.tsx
+// pages/article/cuisine.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 import Navigation from '../../../components/Navigation';

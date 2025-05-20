@@ -44,6 +44,24 @@ const PREVIEWS = [
     },
 ];
 
+const toSlug = (str: string) => {
+    // 1) 先にハイフンをスペースに  2) 英数字と空白以外を除去  3) 空白で分割
+    const words = str
+      .trim()
+      .replace(/-/g, ' ')
+      .replace(/[^a-zA-Z0-9\s]/g, '')
+      .split(/\s+/);
+  
+    // 先頭は全て小文字、2単語目以降は先頭大文字 + 残り小文字
+    return words
+      .map((word, i) => {
+        const lower = word.toLowerCase();
+        if (i === 0) return lower;
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+      })
+      .join('');
+  };
+
 export default function Article() {
     /* 検索欄の state */
     const [query, setQuery] = useState('');
@@ -106,9 +124,18 @@ export default function Article() {
                         <div className={styles.previewTextBox}>
                             <div>
                                 <h2 className={styles.previewTitle}>{title}</h2>
+
+                                {/* ★★ サブカテゴリをリンク化 */}
                                 <ul className={styles.previewSubcats}>
                                     {subcats.map((s) => (
-                                        <li key={s}>{s}</li>
+                                        <li key={s}>
+                                            <Link
+                                                href={`${href}/${toSlug(s)}`}
+                                                className={styles.subcatLink} // 任意で CSS を追加
+                                            >
+                                                {s}
+                                            </Link>
+                                        </li>
                                     ))}
                                 </ul>
                             </div>

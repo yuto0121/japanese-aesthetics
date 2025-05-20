@@ -215,3 +215,112 @@
 .navBtn:hover {
     background: #f7f7f7;
 }
+
+/* 追加：モバイル用ブレークポイント */
+@media (max-width: 768px) {
+
+    /* ヘッダー */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1rem 0;
+    }
+
+    .kanji {
+        width: 120px;
+        height: 120px;
+        margin-top: 1rem;
+    }
+
+    /* カテゴリ３カラム→１カラム */
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .categoryCard {
+        padding: 2.5rem 1rem 3rem;
+    }
+
+    .categoryCard:not(:last-child)::after {
+        /* 縦線→横線に変更 */
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        width: auto;
+        background: #111;
+    }
+
+    /* Featured記事 */
+    .featuredBody {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .featuredImg {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .featuredText {
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+
+    /* 記事グリッド３カラム→１カラム */
+    .articleGrid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .cardImgWrap {
+        border-radius: 4px;
+    }
+
+    /* 余白を狭く */
+    .featured,
+    .articleGridSection,
+    .pagination {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .featured,
+    .articleGridSection {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* フォントサイズ調整（任意） */
+    .featuredHeadline,
+    .articlesHeadline {
+        font-size: 2.2rem;
+        margin: 0 0 1.5rem 1rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+/* さらに小さいスマホ向け */
+@media (max-width: 480px) {
+
+    .featuredHeadline,
+    .articlesHeadline {
+        font-size: 1.8rem;
+        margin-left: 0.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .navBtn {
+        padding: 0.3rem 1rem;
+        font-size: 0.65rem;
+    }
+}
