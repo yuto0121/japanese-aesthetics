@@ -5,9 +5,9 @@ import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSlug.module.css';
 
 const CATEGORY_META = {
-  oneDishMeals: { no: '01', title: 'One-Dish Meals', hero: '/images/article/hero_one-dish-meals.jpg' },
-  seasonalSweats: { no: '02', title: 'Seasonal Sweats', hero: '/images/article/hero_seasonal-sweats.jpg' },
-  teaCeremony:    { no: '03', title: 'Tea Ceremony',    hero: '/images/article/hero_tea-ceremony.jpg' },
+  oneDishMeals: { no: '01', title: 'One-Dish Meals', hero: '/images/article/hero_one-dish-meals.jpg', slug: 'one-dish-meals' },
+  seasonalSweats: { no: '02', title: 'Seasonal Sweats', hero: '/images/article/hero_seasonal-sweats.jpg', slug: 'seasonal-sweats' },
+  teaCeremony:    { no: '03', title: 'Tea Ceremony',    hero: '/images/article/hero_tea-ceremony.jpg', slug: 'tea-ceremony' },
 } as const;
 
 export default function FashionCategoryPage() {
