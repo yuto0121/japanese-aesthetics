@@ -1,3 +1,9 @@
+/* ─── 基本 ────────────────────────────── */
+:root {
+  --orange: #f37021;
+  --border: 2px solid #111;
+}
+
 html,
 body {
   padding: 0;
