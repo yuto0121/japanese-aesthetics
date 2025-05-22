@@ -1,13 +1,13 @@
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSlug.module.css';
 
 const CATEGORY_META = {
   architecture: { no: '01', title: 'Architecture', hero: '/images/article/hero_architecture.jpg' },
   interior: { no: '02', title: 'Interior', hero: '/images/article/hero_interior.jpg' },
-  furniture:    { no: '03', title: 'Furniture',    hero: '/images/article/hero_furniture.jpg' },
+  furniture: { no: '03', title: 'Furniture', hero: '/images/article/hero_furniture.jpg' },
 } as const;
 
 export default function LivingCategoryPage() {
@@ -44,6 +44,7 @@ export default function LivingCategoryPage() {
           explanation.
         </p>
       </main>
+
 
       {/* ── back link ────────────────────────────── */}
       <div className={styles.backWrap}>

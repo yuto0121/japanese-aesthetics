@@ -1,0 +1,369 @@
+/*************************************************
+ *  見出し（Featured / Articles）
+ *************************************************/
+.featuredHeadline,
+.articlesHeadline {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0 0 2rem 2rem;
+    /* ← 左側 2rem */
+}
+
+.mainTitle {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 2rem 2rem 4rem;
+    line-height: 1.1;
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.indent {
+    display: inline-block;
+    width: 0.6em;
+}
+
+.mainTitleLine {
+    border-bottom: 2px solid #111;
+    width: calc(100% - 4rem);
+    margin: 4.5rem 0 2.5rem 2rem;
+}
+
+
+/*************************************************
+    *  HEADER
+    *************************************************/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* ← 左右 2rem */
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
+}
+
+.kanji {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+}
+
+/*************************************************
+    *  CATEGORIES
+    *************************************************/
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+.categories::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
+}
+
+.categoryCard {
+    text-align: center;
+    padding: 4rem 1rem 5rem;
+    position: relative;
+}
+
+.categoryCard:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    background: #111;
+}
+
+.categoryNo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f37021;
+    line-height: 1;
+}
+
+.categoryLabel {
+    display: block;
+    /* span → block に */
+    margin-top: 1rem;
+    /* 数字とのあいだに隙間 */
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/*************************************************
+    *  FEATURED ARTICLE
+    *************************************************/
+.featured {
+    padding: 6rem 0 4rem;
+    position: relative;
+}
+
+.featured::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
+}
+
+.featuredBody {
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+    /* ← 左右 2rem */
+}
+
+.featuredImg {
+    flex-shrink: 0;
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.featuredText {
+    max-width: 48ch;
+    line-height: 1.2;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+
+/*************************************************
+    *  ARTICLE GRID
+    *************************************************/
+.articleGridSection {
+    padding: 4rem 0 6rem;
+    position: relative;
+}
+
+.articleGridSection::after {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background: #111;
+}
+
+.articleGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardImgWrap {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.cardImg {
+    object-fit: cover;
+}
+
+.cardMeta {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+}
+
+.cardTitle {
+    margin-top: 0.25rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/*************************************************
+    *  PAGINATION
+    *************************************************/
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 2rem 0;
+    /* ← 左右 2rem */
+}
+
+.navBtn {
+    background: none;
+    border: 1px solid #bfbfbf;
+    padding: 0.4rem 1.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navBtn:hover {
+    background: #f7f7f7;
+}
+
+/* 追加：モバイル用ブレークポイント */
+@media (max-width: 768px) {
+
+    /* ★ カテゴリを１カラムに */
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* 横の余白を header と合わせたいなら左右 padding を入れてもOK */
+        padding: 0 2rem;
+    }
+
+    /* ★ カード内パディング（左右は .categories で取るなら 0 に） */
+    .categoryCard {
+        padding: 2.5rem 0 3rem;
+    }
+
+    /* ★ カード同士の区切り線（横線） */
+    .categoryCard:not(:last-child)::after {
+        content: '';
+        position: absolute;
+
+        /* デスクトップで入れていた top:0 をリセット */
+        top: auto;
+
+        /* 下端にだけ高さ 2px の線を描画 */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+
+        background: #111;
+    }
+
+    /* ↓他のモバイル調整（fonts, featured, grid など）↓ */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1rem 0;
+    }
+
+    .kanji {
+        width: 120px;
+        height: 120px;
+        margin-top: 1rem;
+    }
+
+    /* カテゴリ３カラム→１カラム */
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .categoryCard {
+        padding: 2.5rem 1rem 3rem;
+    }
+
+    .categoryCard:not(:last-child)::after {
+        /* 縦線→横線に変更 */
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        width: auto;
+        background: #111;
+    }
+
+    /* Featured記事 */
+    .featuredBody {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .featuredImg {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .featuredText {
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+
+    /* 記事グリッド３カラム→１カラム */
+    .articleGrid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .cardImgWrap {
+        border-radius: 4px;
+    }
+
+    /* 余白を狭く */
+    .featured,
+    .articleGridSection,
+    .pagination {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .featured,
+    .articleGridSection {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* フォントサイズ調整（任意） */
+    .featuredHeadline,
+    .articlesHeadline {
+        font-size: 2.2rem;
+        margin: 0 0 1.5rem 1rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+/* さらに小さいスマホ向け */
+@media (max-width: 480px) {
+
+    .featuredHeadline,
+    .articlesHeadline {
+        font-size: 1.8rem;
+        margin-left: 0.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .navBtn {
+        padding: 0.3rem 1rem;
+        font-size: 0.65rem;
+    }
+}

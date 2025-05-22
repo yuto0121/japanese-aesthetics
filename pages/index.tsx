@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Typewriter from 'typewriter-effect';
+import BeautyConcepts from '../components/beautyConcepts';
 import Navigation from '../components/Navigation';
 import styles from '../styles/Home.module.css';
 
@@ -10,9 +12,22 @@ export default function Home() {
 
       <main className="container">
         <h1 className={styles.mainTitle}>
-          Japanese<br />
-          <span className={styles.indent} />
-          Aesthetics.
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString('Japanese')          // １行目
+                .pauseFor(500)                   // 0.5秒止めて
+                .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
+                .start();                        // 実行
+            }}
+            options={{
+              autoStart: true,  // マウント直後に始める
+              loop: false,      // 一度きり
+              delay: 100,       // 打鍵間隔
+              deleteSpeed: 50,
+              cursor: "",  // ※ループしないので無視されます
+            }}
+          />
         </h1>
         <div className={styles.mainTitleLine} />
 
@@ -68,7 +83,7 @@ export default function Home() {
         <Link href="article/cuisine" passHref legacyBehavior>
           <a className={styles.linkReset}>
             <section className={styles.sectionRow}>
-            <div className={styles.kanjiLeft}>
+              <div className={styles.kanjiLeft}>
                 <Image
                   src="/images/kanji_cuisine.png"
                   alt="食"
@@ -116,6 +131,8 @@ export default function Home() {
             </section>
           </a>
         </Link>
+        {/* ── Beauty Concepts セクション ───────────── */}
+        <BeautyConcepts />
       </main>
     </div>
   );
