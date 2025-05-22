@@ -76,6 +76,41 @@
     text-decoration: underline;
 }
 
+/* Conceptセクション */
+.conceptSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 2rem 8rem;
+    color: #fff;
+}
+
+/* 固定サイズの背景画像 */
+.backgroundImage {
+    background-image: url('/images/article/concept_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+/* テキストを画像の外に配置 */
+.conceptInner {
+    display: flex;
+    flex-direction: column;
+}
+
+/* リストの余白は必要に応じて */
+.conceptList {
+    margin: 1rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.conceptLink {
+    text-decoration: none;
+    /* 他のスタイルはお好みで */
+}
+
 /* ======== プレビュー行（Fashion / Cuisine / Living） ======== */
 .previewRow {
     display: flex;

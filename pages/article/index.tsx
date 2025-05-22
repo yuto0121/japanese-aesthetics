@@ -1,3 +1,4 @@
+// pages/article/index.tsx
 import Link from 'next/link';
 import { useState } from 'react';
 import Navigation from '../../components/Navigation';
@@ -17,6 +18,14 @@ const TAGS = [
     'joinery',
     'ikebana',
     'koi',
+];
+
+/* 概念一覧 */
+const CONCEPTS = [
+    { label: 'wabi–sabi', slug: 'wabi-sabi' },
+    { label: 'mono no aware', slug: 'mono-no-aware' },
+    { label: 'iki', slug: 'iki' },
+    { label: 'in–ei', slug: 'in-ei' },
 ];
 
 /* プレビュー用データ */
@@ -45,28 +54,22 @@ const PREVIEWS = [
 ];
 
 const toSlug = (str: string) => {
-    // 1) 先にハイフンをスペースに  2) 英数字と空白以外を除去  3) 空白で分割
     const words = str
-      .trim()
-      .replace(/-/g, ' ')
-      .replace(/[^a-zA-Z0-9\s]/g, '')
-      .split(/\s+/);
-  
-    // 先頭は全て小文字、2単語目以降は先頭大文字 + 残り小文字
+        .trim()
+        .replace(/-/g, ' ')
+        .replace(/[^a-zA-Z0-9\s]/g, '')
+        .split(/\s+/);
     return words
-      .map((word, i) => {
-        const lower = word.toLowerCase();
-        if (i === 0) return lower;
-        return lower.charAt(0).toUpperCase() + lower.slice(1);
-      })
-      .join('');
-  };
+        .map((word, i) => {
+            const lower = word.toLowerCase();
+            if (i === 0) return lower;
+            return lower.charAt(0).toUpperCase() + lower.slice(1);
+        })
+        .join('');
+};
 
 export default function Article() {
-    /* 検索欄の state */
     const [query, setQuery] = useState('');
-
-    /* タグクリックで検索欄に追加 */
     const handleTagClick = (tag: string) => {
         if (query.split(' ').includes(tag)) return;
         setQuery((prev) => (prev ? `${prev} ${tag}` : tag));
@@ -117,6 +120,29 @@ export default function Article() {
                     </div>
                 </section>
 
+                {/* === Concept セクション === */}
+                <section
+                    className={styles.conceptSection}
+                    style={{ backgroundImage: "url('/images/article/concept_bg.jpg')" }}
+                >
+                    <div className={styles.conceptInner}>
+                        <h2 className={styles.previewTitle}>Concept</h2>
+                        <ul className={styles.conceptList}>
+                            {CONCEPTS.map(({ label, slug }) => (
+                                <li key={slug}>
+                                    <Link href={`/article/concept/${slug}`} className={styles.conceptLink}>
+                                        {label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <Link href="/article/concept" className={styles.previewLink}>
+                            More&nbsp;details&nbsp;<span className={styles.arrow}>↘</span>
+                        </Link>
+                    </div>
+                </section>
+
                 {/* === プレビュー行をループで生成 === */}
                 {PREVIEWS.map(({ title, subcats, href, image, alt }) => (
                     <section key={title} className={styles.previewRow}>
@@ -124,15 +150,10 @@ export default function Article() {
                         <div className={styles.previewTextBox}>
                             <div>
                                 <h2 className={styles.previewTitle}>{title}</h2>
-
-                                {/* ★★ サブカテゴリをリンク化 */}
                                 <ul className={styles.previewSubcats}>
                                     {subcats.map((s) => (
                                         <li key={s}>
-                                            <Link
-                                                href={`${href}/${toSlug(s)}`}
-                                                className={styles.subcatLink} // 任意で CSS を追加
-                                            >
+                                            <Link href={`${href}/${toSlug(s)}`} className={styles.subcatLink}>
                                                 {s}
                                             </Link>
                                         </li>
@@ -140,7 +161,6 @@ export default function Article() {
                                 </ul>
                             </div>
 
-                            {/* More details */}
                             <Link href={href} className={styles.previewLink}>
                                 More&nbsp;details&nbsp;<span className={styles.arrow}>↘</span>
                             </Link>

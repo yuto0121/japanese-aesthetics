@@ -1,0 +1,134 @@
+.beautyConceptsSection {
+    width: 100%;
+    padding: 5rem 2rem 8rem 2rem;
+    border-top: 1px solid #000;
+    position: relative;
+}
+
+.beautyConceptsTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+.beautyConceptsGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 110px;
+    gap: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.conceptItem {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conceptItem img {
+    width: 120px;
+    height: 200x;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border-radius: 0.25rem;
+}
+
+/* ── グリッド上の配置 ─────────────────── */
+.wabiSabi {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.yohaku {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+}
+
+.yoin {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+}
+
+.inEi {
+    grid-column: 5 / span 2;
+    grid-row: 1;
+}
+
+.kintsugi {
+    grid-column: 4 / span 2;
+    grid-row: 2;
+}
+
+.iki {
+    grid-column: 2 / span 2;
+    grid-row: 4;
+}
+
+.monoNoAware {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+}
+
+.yugen {
+    grid-column: 4 / span 2;
+    grid-row: 4;
+}
+
+.miyabi {
+    grid-column: 0.5 / span 2;
+    grid-row: 3;
+}
+
+.ma {
+    grid-column: 5 / span 2;
+    grid-row: 3;
+}
+
+/* ── More details ──────────────────────── */
+.moreDetails {
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.moreDetails:hover {
+    text-decoration: underline;
+}
+
+/* ── Responsive ───────────────────────── */
+@media (max-width: 900px) {
+    .beautyConceptsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 100px;
+    }
+
+    .beautyConceptsTitle {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .beautyConceptsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 90px;
+    }
+
+    .conceptItem {
+        font-size: 1.2rem;
+    }
+}
