@@ -27,9 +27,7 @@ export default function ArticleConceptIndex() {
                 <h1 className={styles.mainTitle}>
                     <Typewriter
                         onInit={(tw) =>
-                            tw.typeString('Beauty')
-                                .pauseFor(500)
-                                .typeString('<br/>&nbsp;Concepts')
+                            tw.typeString('The Essence of Japan')
                                 .start()
                         }
                         options={{ autoStart: true, loop: false, delay: 100, deleteSpeed: 50, cursor: '' }}
@@ -45,7 +43,6 @@ export default function ArticleConceptIndex() {
                         href={`/article/concept/${slug}`}
                         className={styles.categoryCard}
                     >
-                        <span className={styles.categoryNo}>{no}</span>
                         <span className={styles.categoryLabel}>{label}</span>
                     </Link>
                 ))}

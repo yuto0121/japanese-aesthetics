@@ -91,15 +91,6 @@
     transform: translateY(-4px);
 }
 
-/* 番号：紺色に変更 */
-.categoryNo {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #002b5e;
-    /* ← 紺色 */
-    line-height: 1;
-}
-
 .categoryLabel {
     margin-top: 1rem;
     font-size: 4rem;
