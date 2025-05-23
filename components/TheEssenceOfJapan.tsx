@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from '../styles/BeautyConcepts.module.css';
 
 
-export default function BeautyConcepts() {
+export default function TheEssenceOfJapan() {
   const concepts = [
     { slug: 'wabi-sabi', label: 'wabi–sabi', style: styles.wabiSabi },
     { slug: 'in-ei', label: 'in–ei', style: styles.inEi },
@@ -19,7 +19,7 @@ export default function BeautyConcepts() {
   return (
     <section className={styles.beautyConceptsSection}>
       <Link href="/article/concept" className={styles.beautyConceptsTitle}>
-        <h2>Beauty Concepts</h2>
+        <h2>The Essence of Japan</h2>
       </Link>
       
 
@@ -27,7 +27,7 @@ export default function BeautyConcepts() {
         {concepts.map(({ slug, label, style }) => (
           <Link
             key={slug}
-            href={`/article/concept/${slug}`}
+            href={`/article/theEssenceOfJapan/${slug}`}
             passHref
             legacyBehavior
           >
@@ -38,7 +38,7 @@ export default function BeautyConcepts() {
         ))}
       </div>
 
-      <Link href="/article/concept" className={styles.moreDetails}>
+      <Link href="/article/theEssenceOfJapan" className={styles.moreDetails}>
         More details <span>↘</span>
       </Link>
     </section>

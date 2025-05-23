@@ -141,18 +141,18 @@ export default function Article() {
                     style={{ backgroundImage: "url('/images/article/concept_bg.jpg')" }}
                 >
                     <div className={styles.conceptInner}>
-                        <h2 className={styles.previewTitle}>Concept</h2>
+                        <h2 className={styles.previewTitle}>The Essence of Japan</h2>
                         <ul className={styles.conceptList}>
                             {CONCEPTS.map(({ label, slug }) => (
                                 <li key={slug}>
-                                    <Link href={`/article/concept/${slug}`} className={styles.conceptLink}>
+                                    <Link href={`/article/theEssenceOfJapan/${slug}`} className={styles.conceptLink}>
                                         {label}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
 
-                        <Link href="/article/concept" className={styles.previewLink}>
+                        <Link href="/article/theEssenceOfJapan" className={styles.previewLink}>
                             More&nbsp;details&nbsp;<span className={styles.arrow}>↘</span>
                         </Link>
                     </div>

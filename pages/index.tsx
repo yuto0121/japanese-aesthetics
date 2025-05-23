@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
-import BeautyConcepts from '../components/beautyConcepts';
+import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import Navigation from '../components/Navigation';
 import styles from '../styles/Home.module.css';
 
@@ -132,7 +132,7 @@ export default function Home() {
           </a>
         </Link>
         {/* ── Beauty Concepts セクション ───────────── */}
-        <BeautyConcepts />
+        <TheEssenceOfJapan />
       </main>
     </div>
   );
