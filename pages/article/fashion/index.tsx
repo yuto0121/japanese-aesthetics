@@ -1,6 +1,7 @@
 // pages/article/fashion.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import Typewriter from 'typewriter-effect';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
 
@@ -12,9 +13,24 @@ export default function ArticleFashion() {
 
       {/* ── page header ────────────────────────────── */}
       <header className={styles.header}>
-        <h1 className={styles.title}>Fashion</h1>
+        <h1 className={styles.title}>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString('Fashion')          // １行目
+                .start();                        // 実行
+            }}
+            options={{
+              autoStart: true,  // マウント直後に始める
+              loop: false,      // 一度きり
+              delay: 100,       // 打鍵間隔
+              deleteSpeed: 50,
+              cursor: "",  // ※ループしないので無視されます
+            }}
+          />
+        </h1>
         <Image
-          src="/images/kanji_fashion.png" 
+          src="/images/kanji_fashion.png"
           alt="Kanji for clothing"
           width={150}
           height={150}
@@ -25,20 +41,20 @@ export default function ArticleFashion() {
 
       {/* ── categories ─────────────────────────────── */}
       <section className={styles.categories}>
-      {[
-        { no: '01', label: 'Textiles', slug: 'textiles' },
-        { no: '02', label: 'Garments', slug: 'garments' },
-        { no: '03', label: 'Brand',    slug: 'brand'    },
-      ].map(({ no, label, slug }) => (
-        <Link
-          key={slug}
-          href={`/article/fashion/${slug}`}
-          className={styles.categoryCard}
-        >
-          <span className={styles.categoryNo}>{no}</span>
-          <span className={styles.categoryLabel}>{label}</span>
-        </Link>
-      ))}
+        {[
+          { no: '01', label: 'Textiles', slug: 'textiles' },
+          { no: '02', label: 'Garments', slug: 'garments' },
+          { no: '03', label: 'Brand', slug: 'brand' },
+        ].map(({ no, label, slug }) => (
+          <Link
+            key={slug}
+            href={`/article/fashion/${slug}`}
+            className={styles.categoryCard}
+          >
+            <span className={styles.categoryNo}>{no}</span>
+            <span className={styles.categoryLabel}>{label}</span>
+          </Link>
+        ))}
       </section>
 
       {/* ── featured article ───────────────────────── */}

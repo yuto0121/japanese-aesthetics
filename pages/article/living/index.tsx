@@ -1,6 +1,7 @@
 // pages/article/living.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import Typewriter from 'typewriter-effect';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
 
@@ -12,7 +13,22 @@ export default function ArticleLiving() {
 
       {/* ── page header ────────────────────────────── */}
       <header className={styles.header}>
-        <h1 className={styles.title}>Living</h1>
+        <h1 className={styles.title}>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString('Living')          // １行目
+                .start();                        // 実行
+            }}
+            options={{
+              autoStart: true,  // マウント直後に始める
+              loop: false,      // 一度きり
+              delay: 100,       // 打鍵間隔
+              deleteSpeed: 50,
+              cursor: "",  // ※ループしないので無視されます
+            }}
+          />
+        </h1>
         <Image
           src="/images/kanji_living.png" // 「衣」の筆文字
           alt="Kanji for licing"
@@ -25,16 +41,16 @@ export default function ArticleLiving() {
 
       {/* ── categories ─────────────────────────────── */}
       <section className={styles.categories}>
-      {[
-        { no: '01', label: 'Architecture', slug: 'architecture' },
-        { no: '02', label: 'Interior', slug: 'interior' },
-        { no: '03', label: 'Furniture', slug: 'furniture' },
-      ].map(({ no, label, slug }) => (
-        <Link
-          key={slug} 
-          href={`/article/living/${slug}`}
-          className={styles.categoryCard}
-        >
+        {[
+          { no: '01', label: 'Architecture', slug: 'architecture' },
+          { no: '02', label: 'Interior', slug: 'interior' },
+          { no: '03', label: 'Furniture', slug: 'furniture' },
+        ].map(({ no, label, slug }) => (
+          <Link
+            key={slug}
+            href={`/article/living/${slug}`}
+            className={styles.categoryCard}
+          >
             <span className={styles.categoryNo}>{no}</span>
             <span className={styles.categoryLabel}>{label}</span>
           </Link>
@@ -55,7 +71,7 @@ export default function ArticleLiving() {
           />
 
           <p className={styles.featuredText}>
-          In Japan, the philosophy behind traditional architecture—layering natural materials like wood, clay, and paper—celebrates resilience and sustainability through the beauty of imperfection. Weathered textures, asymmetry, and subtle transitions reflect a deep respect for time and nature. Approach each design element in small steps—10 to 15 minutes at a time—to cultivate a meditative rhythm and thoughtful space-making.
+            In Japan, the philosophy behind traditional architecture—layering natural materials like wood, clay, and paper—celebrates resilience and sustainability through the beauty of imperfection. Weathered textures, asymmetry, and subtle transitions reflect a deep respect for time and nature. Approach each design element in small steps—10 to 15 minutes at a time—to cultivate a meditative rhythm and thoughtful space-making.
           </p>
         </div>
       </section>

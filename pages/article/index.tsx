@@ -1,6 +1,7 @@
 // pages/article/index.tsx
 import Link from 'next/link';
 import { useState } from 'react';
+import Typewriter from 'typewriter-effect';
 import Navigation from '../../components/Navigation';
 import styles from '../../styles/Article.module.css';
 
@@ -25,7 +26,6 @@ const CONCEPTS = [
     { label: 'wabi–sabi', slug: 'wabi-sabi' },
     { label: 'mono no aware', slug: 'mono-no-aware' },
     { label: 'iki', slug: 'iki' },
-    { label: 'in–ei', slug: 'in-ei' },
 ];
 
 /* プレビュー用データ */
@@ -81,7 +81,22 @@ export default function Article() {
 
             <main className="container">
                 {/* === 見出し === */}
-                <h1 className={styles.mainTitle}>Article</h1>
+                <h1 className={styles.mainTitle}>
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter
+                                .typeString('Article')          // １行目
+                                .start();                        // 実行
+                        }}
+                        options={{
+                            autoStart: true,  // マウント直後に始める
+                            loop: false,      // 一度きり
+                            delay: 100,       // 打鍵間隔
+                            deleteSpeed: 50,
+                            cursor: "",  // ※ループしないので無視されます
+                        }}
+                    />
+                </h1>
                 <div className={styles.mainTitleLine} />
 
                 {/* === 検索＋タグ === */}

@@ -5,6 +5,7 @@ import {
     FaLinkedinIn,
     FaYoutube,
 } from 'react-icons/fa';
+import Typewriter from 'typewriter-effect';
 import Navigation from '../components/Navigation';
 import styles from '../styles/Contact.module.css';
 
@@ -21,7 +22,22 @@ export default function Contact() {
             <Navigation />
 
             <main className="container">
-                <h1 className={styles.mainTitle}>Contact</h1>
+                <h1 className={styles.mainTitle}>
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter
+                                .typeString('Contact')          // １行目
+                                .start();                        // 実行
+                        }}
+                        options={{
+                            autoStart: true,  // マウント直後に始める
+                            loop: false,      // 一度きり
+                            delay: 100,       // 打鍵間隔
+                            deleteSpeed: 50,
+                            cursor: "",  // ※ループしないので無視されます
+                        }}
+                    />
+                </h1>
                 <div className={styles.mainTitleLine} />
 
                 {/* ---------- メイン 2 カラム ---------- */}

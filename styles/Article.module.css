@@ -76,30 +76,31 @@
     text-decoration: underline;
 }
 
-/* Conceptセクション */
 .conceptSection {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin: 0 2rem 8rem;
-    color: #fff;
-}
-
-/* 固定サイズの背景画像 */
-.backgroundImage {
+    width: 100vw;
+    /* min-height: 100vh;  Uncomment for full-screen height */
     background-image: url('/images/article/concept_bg.jpg');
     background-size: cover;
     background-position: center;
-    flex-shrink: 0;
-}
+    background-repeat: no-repeat;
 
-/* テキストを画像の外に配置 */
-.conceptInner {
+    margin: 0;
+    padding: 4rem 2rem;
+
     display: flex;
     flex-direction: column;
+    /* or row, as you prefer */
+    align-items: left;
+    color: #fff;
+    position: relative;
+    margin-bottom: 10rem;
 }
 
-/* リストの余白は必要に応じて */
+.conceptInner {
+    position: relative;
+    z-index: 1;
+}
+
 .conceptList {
     margin: 1rem 0;
     list-style: none;
@@ -108,8 +109,9 @@
 
 .conceptLink {
     text-decoration: none;
-    /* 他のスタイルはお好みで */
+    /* other link styles */
 }
+
 
 /* ======== プレビュー行（Fashion / Cuisine / Living） ======== */
 .previewRow {
