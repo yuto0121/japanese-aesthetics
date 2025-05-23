@@ -68,7 +68,7 @@ export default function Home() {
                             <div className={styles.sectionTextRight}>
                                 <h2>Fashion</h2>
                                 <p>
-                                    Discover the beauty in simplicity, where time-worn textiles tell
+                                    Discover the beauty in simplicity, where time worn textiles tell
                                     their own stories. From hand-woven hemp to indigo-dyed cotton,
                                     each fabric celebrates imperfection. Traditional silhouettes
                                     inspire cutting-edge designers while "slow fashion" meets

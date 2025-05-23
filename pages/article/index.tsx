@@ -141,7 +141,7 @@ export default function Article() {
                     style={{ backgroundImage: "url('/images/article/concept_bg.jpg')" }}
                 >
                     <div className={styles.conceptInner}>
-                        <h2 className={styles.previewTitle}>Concept</h2>
+                        <h2 className={styles.previewTitle}>Beatury Concepts</h2>
                         <ul className={styles.conceptList}>
                             {CONCEPTS.map(({ label, slug }) => (
                                 <li key={slug}>
@@ -189,5 +189,3 @@ export default function Article() {
                 ))}
             </main>
         </div>
-    );
-}
