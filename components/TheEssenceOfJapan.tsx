@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../styles/BeautyConcepts.module.css';
+import styles from '../styles/TheEssenceOfJapan.module.css';
 
 
 export default function TheEssenceOfJapan() {
