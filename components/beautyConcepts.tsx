@@ -18,7 +18,10 @@ export default function BeautyConcepts() {
 
   return (
     <section className={styles.beautyConceptsSection}>
-      <h2 className={styles.beautyConceptsTitle}>Beauty Concepts</h2>
+      <Link href="/article/concept" className={styles.beautyConceptsTitle}>
+        <h2>Beauty Concepts</h2>
+      </Link>
+      
 
       <div className={styles.beautyConceptsGrid}>
         {concepts.map(({ slug, label, style }) => (
@@ -35,7 +38,7 @@ export default function BeautyConcepts() {
         ))}
       </div>
 
-      <Link href="/article/beauty-concepts" className={styles.moreDetails}>
+      <Link href="/article/concept" className={styles.moreDetails}>
         More details <span>↘</span>
       </Link>
     </section>
