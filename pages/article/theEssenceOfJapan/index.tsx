@@ -40,7 +40,7 @@ export default function ArticleConceptIndex() {
                 {concepts.map(({ no, label, slug }) => (
                     <Link
                         key={slug}
-                        href={`/article/concept/${slug}`}
+                        href={`/article/theEssenceOfJapan/${slug}`}
                         className={styles.categoryCard}
                     >
                         <span className={styles.categoryLabel}>{label}</span>
