@@ -18,10 +18,10 @@ export default function TheEssenceOfJapan() {
 
   return (
     <section className={styles.beautyConceptsSection}>
-      <Link href="/article/concept" className={styles.beautyConceptsTitle}>
+      <Link href="/article/theEssenceOfJapan" className={styles.beautyConceptsTitle}>
         <h2>The Essence of Japan</h2>
       </Link>
-      
+
 
       <div className={styles.beautyConceptsGrid}>
         {concepts.map(({ slug, label, style }) => (
