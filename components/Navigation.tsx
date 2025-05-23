@@ -64,7 +64,12 @@ const Navigation = () => {
             {/* ドロワーメニュー */}
             <nav className={`${styles.drawer} ${open ? styles.show : ''}`}>
                 <ul className={styles.menu}>
+                    <li><Link href="/" onClick={() => setOpen(false)}>HOME</Link></li>
                     <li><Link href="/article" onClick={() => setOpen(false)}>ARTICLE</Link></li>
+                    <li><Link href="/article/concept" onClick={() => setOpen(false)}>CONCEPT</Link></li>
+                    <li><Link href="/article/fashion" onClick={() => setOpen(false)}>FASHION</Link></li>
+                    <li><Link href="/article/cuisine" onClick={() => setOpen(false)}>CUISINE</Link></li>
+                    <li><Link href="/article/living" onClick={() => setOpen(false)}>LIVING</Link></li>
                     <li><Link href="/contact" onClick={() => setOpen(false)}>CONTACT</Link></li>
                 </ul>
             </nav>
