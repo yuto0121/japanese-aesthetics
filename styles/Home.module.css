@@ -23,7 +23,6 @@
 }
 
 .mainTitle {
-  position: relative;
   font-size: 80px;
   font-weight: bold;
   margin: 4rem 0 2rem 0;
@@ -37,14 +36,7 @@
   width: 0.6em;
 }
 
-/* .titleWrapper {
-  position: relative;
-  margin: 4rem 0 2rem 2rem;
-  width: fit-content;
-} */
-
 .mainTitleLine {
-  position: absolute;
   border-bottom: 2px solid #111;
   width: calc(100% - 4rem);
   margin: 4.5rem 0 2.5rem 2rem;
@@ -326,30 +318,64 @@
   }
 
   /* ビジョンセクション */
+  /* ルート行 */
   .visionRow {
-    flex-direction: column;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 5%;
+    /* 余白をたっぷり確保 */
   }
 
-  .visionImageWrap,
-  .visionTextWrapCentered {
-    max-width: 100%;
-    flex: none;
-    padding: 0 1rem;
+  /* テキストブロック */
+  .visionTextWrap {
+    max-width: 600px;
+    /* 長すぎ防止 */
   }
 
-  .visionImage {
-    height: 250px;
-    margin: 1rem auto;
+  .visionTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 1rem;
+    line-height: 1.2;
   }
 
-  .visionTitleCentered {
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
+  .visionText {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
   }
 
-  .visionTextCentered {
+  /* CTA リンク */
+  .moreLink {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
     font-size: 1rem;
-    margin: 1rem 0 2rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .moreLink:hover {
+    transform: translate(4px, 4px);
+    opacity: 0.8;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
+  /* モバイル：縦並び */
+  @media (max-width: 768px) {
+    .visionRow {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .moreLink {
+      margin-top: 2rem;
+      align-self: flex-end;
+    }
   }
 }
