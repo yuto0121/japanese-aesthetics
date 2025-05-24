@@ -37,11 +37,11 @@
   width: 0.6em;
 }
 
-.titleWrapper {
+/* .titleWrapper {
   position: relative;
   margin: 4rem 0 2rem 2rem;
   width: fit-content;
-}
+} */
 
 .mainTitleLine {
   position: absolute;
