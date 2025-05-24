@@ -11,24 +11,26 @@ export default function Home() {
       <Navigation />
 
       <main className="container">
-        <h1 className={styles.mainTitle}>
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString('Japanese')          // １行目
-                .pauseFor(500)                   // 0.5秒止めて
-                .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
-                .start();                        // 実行
-            }}
-            options={{
-              autoStart: true,  // マウント直後に始める
-              loop: false,      // 一度きり
-              delay: 100,       // 打鍵間隔
-              deleteSpeed: 50,
-              cursor: "",  // ※ループしないので無視されます
-            }}
-          />
-        </h1>
+        <div className={styles.titleWrapper}>
+          <h1 className={styles.mainTitle}>
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString('Japanese')          // １行目
+                  .pauseFor(500)                   // 0.5秒止めて
+                  .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
+                  .start();                        // 実行
+              }}
+              options={{
+                autoStart: true,  // マウント直後に始める
+                loop: false,      // 一度きり
+                delay: 100,       // 打鍵間隔
+                deleteSpeed: 50,
+                cursor: "",  // ※ループしないので無視されます
+              }}
+            />
+          </h1>
+        </div>
         <div className={styles.mainTitleLine} />
 
         {/* ── About セクション ─────────────────────── */}

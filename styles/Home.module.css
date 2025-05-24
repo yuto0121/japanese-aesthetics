@@ -23,6 +23,7 @@
 }
 
 .mainTitle {
+  position: relative;
   font-size: 80px;
   font-weight: bold;
   margin: 4rem 0 2rem 0;
@@ -36,7 +37,14 @@
   width: 0.6em;
 }
 
+.titleWrapper {
+  position: relative;
+  margin: 4rem 0 2rem 2rem;
+  width: fit-content;
+}
+
 .mainTitleLine {
+  position: absolute;
   border-bottom: 2px solid #111;
   width: calc(100% - 4rem);
   margin: 4.5rem 0 2.5rem 2rem;
