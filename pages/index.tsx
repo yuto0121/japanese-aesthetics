@@ -11,7 +11,6 @@ export default function Home() {
       <Navigation />
 
       <main className="container">
-        <div className={styles.titleWrapper}>
           <h1 className={styles.mainTitle}>
             <Typewriter
               onInit={(typewriter) => {
@@ -30,7 +29,6 @@ export default function Home() {
               }}
             />
           </h1>
-        </div>
         <div className={styles.mainTitleLine} />
 
         {/* ── About セクション ─────────────────────── */}
