@@ -138,7 +138,7 @@ export default function Article() {
                 {/* === Concept セクション === */}
                 <section
                     className={styles.conceptSection}
-                    style={{ backgroundImage: "url('/images/article/concept_bg.jpg')" }}
+                    style={{ backgroundImage: "url('/images/article/essence_bg.jpg')" }}
                 >
                     <div className={styles.conceptInner}>
                         <h2 className={styles.previewTitle}>The Essence of Japan</h2>
