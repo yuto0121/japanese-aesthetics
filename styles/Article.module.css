@@ -91,7 +91,7 @@
     flex-direction: column;
     /* or row, as you prefer */
     align-items: left;
-    color: #fff;
+    color: #000000;
     position: relative;
     margin-bottom: 10rem;
 }
