@@ -65,6 +65,7 @@ const Navigation = () => {
             <nav className={`${styles.drawer} ${open ? styles.show : ''}`}>
                 <ul className={styles.menu}>
                     <li><Link href="/" onClick={() => setOpen(false)}>HOME</Link></li>
+                    <li><Link href="/about" onClick={() => setOpen(false)}>ABOUT US</Link></li>
                     <li><Link href="/article" onClick={() => setOpen(false)}>ARTICLE</Link></li>
                     <li><Link href="/article/theEssenceOfJapan" onClick={() => setOpen(false)}>THE ESSENCE OF JAPAN</Link></li>
                     <li><Link href="/article/fashion" onClick={() => setOpen(false)}>FASHION</Link></li>

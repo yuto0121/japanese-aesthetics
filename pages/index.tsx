@@ -15,9 +15,9 @@ export default function Home() {
           <Typewriter
             onInit={(typewriter) => {
               typewriter
-                .typeString('Japanese')          // １行目
-                .pauseFor(500)                   // 0.5秒止めて
-                .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
+                .typeString('Japanese Aesthetics.')          // １行目
+                // .pauseFor(500)                   // 0.5秒止めて
+                // .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
                 .start();                        // 実行
             }}
             options={{
@@ -32,18 +32,15 @@ export default function Home() {
         <div className={styles.mainTitleLine} />
 
         {/* ── About セクション ─────────────────────── */}
-        <section className={styles.visionRow}>
-          {/* 左側：テキスト */}
-          <div className={styles.visionTextWrap}>
-            <h2 className={styles.visionTitle}>Our Vision</h2>
-            <p className={styles.visionText}>
-              &ldquo;Bringing the Essence of Japanese Beauty to the World&rdquo;
-            </p>
-          </div>
-
-          {/* 右側：CTA */}
-          <Link href="/about" className={styles.moreLink}>
-            More details <span className={styles.arrow}>↘</span>
+        <section className={styles.MenuSection}>
+          <Link href="/about" className={styles.AboutTitle}>
+            <h1>About us</h1>
+          </Link>
+          <Link href="/article" className={styles.ArticleTitle}>
+            <h1>Article</h1>
+          </Link>
+          <Link href="/contact" className={styles.ContactTitle}>
+            <h1>Contact</h1>
           </Link>
         </section>
 

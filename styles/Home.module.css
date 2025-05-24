@@ -379,3 +379,20 @@
     }
   }
 }
+
+.MenuSection {
+
+  margin-left: 2rem;
+  line-height: 0.8;
+  margin-bottom: 8rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.AboutTitle,
+.ArticleTitle,
+.ContactTitle {
+  font-size: 2rem;
+  line-height: 1.8;
+  margin: 0;
+}
