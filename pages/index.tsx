@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
-import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import Navigation from '../components/Navigation';
+import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -11,45 +11,40 @@ export default function Home() {
       <Navigation />
 
       <main className="container">
-          <h1 className={styles.mainTitle}>
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString('Japanese')          // １行目
-                  .pauseFor(500)                   // 0.5秒止めて
-                  .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
-                  .start();                        // 実行
-              }}
-              options={{
-                autoStart: true,  // マウント直後に始める
-                loop: false,      // 一度きり
-                delay: 100,       // 打鍵間隔
-                deleteSpeed: 50,
-                cursor: "",  // ※ループしないので無視されます
-              }}
-            />
-          </h1>
+        <h1 className={styles.mainTitle}>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString('Japanese')          // １行目
+                .pauseFor(500)                   // 0.5秒止めて
+                .typeString('<br/>&nbsp;Aesthetics.')  // ２行目
+                .start();                        // 実行
+            }}
+            options={{
+              autoStart: true,  // マウント直後に始める
+              loop: false,      // 一度きり
+              delay: 100,       // 打鍵間隔
+              deleteSpeed: 50,
+              cursor: "",  // ※ループしないので無視されます
+            }}
+          />
+        </h1>
         <div className={styles.mainTitleLine} />
 
         {/* ── About セクション ─────────────────────── */}
         <section className={styles.visionRow}>
-          <div className={styles.visionImageWrap}>
-            <Image
-              src="/images/about.jpg"
-              alt="About"
-              className={styles.visionImage}
-              width={1600}
-              height={1066}
-              priority
-            />
-          </div>
-
-          <div className={styles.visionTextWrapCentered}>
-            <h2 className={styles.visionTitleCentered}>Our Vision</h2>
-            <p className={styles.visionTextCentered}>
-              "Bringing the Essence of Japanese Beauty to the World"
+          {/* 左側：テキスト */}
+          <div className={styles.visionTextWrap}>
+            <h2 className={styles.visionTitle}>Our Vision</h2>
+            <p className={styles.visionText}>
+              &ldquo;Bringing the Essence of Japanese Beauty to the World&rdquo;
             </p>
           </div>
+
+          {/* 右側：CTA */}
+          <Link href="/about" className={styles.moreLink}>
+            More details <span className={styles.arrow}>↘</span>
+          </Link>
         </section>
 
         {/* ── Fashion セクション ───────────────────── */}
