@@ -74,7 +74,10 @@ export default function ArticleCuisine({ articles }: Props) {
         <section className={styles.featured}>
           <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
-          <div className={styles.featuredBody}>
+          <Link
+            href={`/article/cuisine/${featured.slug}`}
+            className={styles.featuredBody}
+          >
             <Image
               src={featured.hero}
               alt={featured.title}
@@ -82,9 +85,8 @@ export default function ArticleCuisine({ articles }: Props) {
               height={180}
               className={styles.featuredImg}
             />
-
             <p className={styles.featuredText}>{featured.title}</p>
-          </div>
+          </Link>
         </section>
       )}
 
