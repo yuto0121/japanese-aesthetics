@@ -1,36 +1,66 @@
-// pages/article/cuisine.tsx
+import fs from 'fs';
+import matter from 'gray-matter';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import path from 'path';
 import Typewriter from 'typewriter-effect';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
 
-export default function ArticleCuisine() {
+type ArticleMeta = {
+  slug: string;
+  title: string;
+  tags: string[];
+  hero: string;          // 画像パス
+  date: string;          // YYYY-MM-DD
+};
+
+type Props = { articles: ArticleMeta[] };
+
+const CUISINE_DIR = path.join(process.cwd(), 'content', 'cuisine');
+
+export const getStaticProps: GetStaticProps<Props> = () => {
+  const articles: ArticleMeta[] = fs
+    .readdirSync(CUISINE_DIR)
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => {
+      const slug = file.replace(/\.md$/, '');
+      const raw = fs.readFileSync(path.join(CUISINE_DIR, file), 'utf8');
+      const { data } = matter(raw);
+      return {
+        slug,
+        title: data.title as string,
+        tags: data.tags as string[],
+        hero: data.hero as string,
+        date: data.date as string,
+      };
+    })
+    // 新しい順に並べ替え
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  return { props: { articles } };
+};
+
+export default function ArticleCuisine({ articles }: Props) {
+  const featured = articles[0];          // 1 件目を「Featured」に
+  const others = articles.slice(1);    // 残りをグリッドで
+
   return (
     <>
-      {/* ── global nav ─────────────────────────────── */}
+      {/* ─ global nav ─────────────────────────── */}
       <Navigation />
 
-      {/* ── page header ────────────────────────────── */}
+      {/* ─ page header ────────────────────────── */}
       <header className={styles.header}>
         <h1 className={styles.title}>
           <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString('Cuisine')          // １行目
-                .start();                        // 実行
-            }}
-            options={{
-              autoStart: true,  // マウント直後に始める
-              loop: false,      // 一度きり
-              delay: 100,       // 打鍵間隔
-              deleteSpeed: 50,
-              cursor: "",  // ※ループしないので無視されます
-            }}
+            onInit={(tw) => tw.typeString('Cuisine').start()}
+            options={{ autoStart: true, loop: false, delay: 100, deleteSpeed: 50, cursor: '' }}
           />
         </h1>
         <Image
-          src="/images/kanji_cuisine.png" // 「衣」の筆文字
+          src="/images/kanji_cuisine.png"
           alt="Kanji for cuisine"
           width={150}
           height={150}
@@ -39,90 +69,46 @@ export default function ArticleCuisine() {
         />
       </header>
 
-      {/* ── categories ─────────────────────────────── */}
-      <section className={styles.categories}>
-        {[
-          { no: '01', label: 'One-Dish Meals', slug: 'oneDishMeals' },
-          { no: '02', label: 'Seasonal Sweats', slug: 'seasonalSweats' },
-          { no: '03', label: 'Tea Ceremony', slug: 'teaCeremony' },
-        ].map(({ no, label, slug }) => (
-          <Link
-            key={slug}
-            href={`/article/cuisine/${slug}`}
-            className={styles.categoryCard}
-          >
-            <span className={styles.categoryNo}>{no}</span>
-            <span className={styles.categoryLabel}>{label}</span>
-          </Link>
-        ))}
-      </section>
+      {/* ─ featured article ────────────────────── */}
+      {featured && (
+        <section className={styles.featured}>
+          <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
-      {/* ── featured article ───────────────────────── */}
-      <section className={styles.featured}>
-        <h2 className={styles.featuredHeadline}>Featured Article</h2>
+          <div className={styles.featuredBody}>
+            <Image
+              src={featured.hero}
+              alt={featured.title}
+              width={180}
+              height={180}
+              className={styles.featuredImg}
+            />
 
-        <div className={styles.featuredBody}>
-          <Image
-            src="/images/article/cuisine_featured_article.jpg"
-            alt="Japanese Cuisine"
-            width={180}
-            height={180}
-            className={styles.featuredImg}
-          />
+            <p className={styles.featuredText}>{featured.title}</p>
+          </div>
+        </section>
+      )}
 
-          <p className={styles.featuredText}>
-            In Japan, the philosophy behind traditional architecture—layering natural materials like wood, clay, and paper—celebrates resilience and sustainability through the beauty of imperfection. Weathered textures, asymmetry, and subtle transitions reflect a deep respect for time and nature. Approach each design element in small steps—10 to 15 minutes at a time—to cultivate a meditative rhythm and thoughtful space-making.
-          </p>
-        </div>
-      </section>
-
-      {/* ── article list ───────────────────────────── */}
+      {/* ─ article list ───────────────────────── */}
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>
 
-        {/* カード 6 枚 */}
-        <div className={styles.articleGrid}>
-          {[
-            {
-              src: '/images/article/cuisine_article1.jpg',
-              title: 'Branding: What Real Customers Have to Say',
-            },
-            {
-              src: '/images/article/cuisine_article2.jpg',
-              title: 'Branding: Pros and Cons They Don’t Tell You',
-            },
-            {
-              src: '/images/article/cuisine_article3.jpg',
-              title: 'How to Spot the Best Branding for You: Signs and Features',
-            },
-            {
-              src: '/images/article/cuisine_article4.jpg',
-              title: 'How Much Should I Spend on Branding?',
-            },
-            {
-              src: '/images/article/cuisine_article5.jpg',
-              title: 'Rookie Mistakes You’re Making With Your Branding',
-            },
-            {
-              src: '/images/article/cuisine_article6.jpg',
-              title: 'Real Branding Customer Reviews You Need to See',
-            },
-          ].map(({ src, title }) => (
-            <article key={title} className={styles.card}>
-              <div className={styles.cardImgWrap}>
-                <Image src={src} alt={title} fill className={styles.cardImg} />
-              </div>
-
-              <span className={styles.cardMeta}>BRANDING、DESIGN</span>
-              <h3 className={styles.cardTitle}>{title}</h3>
-            </article>
-          ))}
-        </div>
-
-        {/* ── pagination buttons ── */}
-        <div className={styles.pagination}>
-          <button className={styles.navBtn}>PREVIOUS</button>
-          <button className={styles.navBtn}>NEXT</button>
+        <div className={styles.articleGridWrapper}>
+          {/* ← ナビ矢印はそのまま／スライダー実装時に再利用 */}
+          <div className={styles.articleGrid}>
+            {others.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/article/cuisine/${a.slug}`}
+                className={styles.card}
+              >
+                <div className={styles.cardImgWrap}>
+                  <Image src={a.hero} alt={a.title} fill className={styles.cardImg} />
+                </div>
+                <span className={styles.cardMeta}>{a.tags.join('、').toUpperCase()}</span>
+                <h3 className={styles.cardTitle}>{a.title}</h3>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -35,27 +35,21 @@ export default function About() {
                 <div className={styles.mainTitleLine} />
 
                 <section className={styles.aboutSection}>
-                    <h2>Our Vision</h2>
-                    <h3>“Bringing the Essence of Japanese Beauty to the World”</h3>
-                    <p>I was born and raised in Japan and later went to Europe to study. There, I encountered countless new cultures and ways of seeing the world—and it was from that vantage point that I truly rediscovered how special and extraordinary Japan is. I also realized that many facets of Japanese aesthetic sensibility simply have no direct equivalent in English.
+                    <h2 className={styles.aboutTitle}>Our Vision</h2>
+                    <h3 className={styles.aboutSubtitle}>“Bringing the Essence of Japanese Beauty to the World”</h3>
+                    <p className={styles.aboutText}>Born and raised in Japan and later having studied in Europe, I was fortunate to immerse myself in a rich tapestry of cultures and perspectives. From that vantage point, I gained a profound appreciation for how uniquely beautiful and distinctive Japan truly is—and I discovered that many core aspects of its aesthetic philosophy defy a direct English equivalent.
 
-                        That’s why I’ve launched this blog: to introduce and explain the unique concepts of Japanese beauty. Here, you’ll find articles exploring “衣・食・住 × Japan”—from fashion and cuisine to architecture and lifestyle—each viewed through the lens of Japanese aesthetics.
+                        With this in mind, I created this online publication to shed light on the subtle, yet powerful concepts that define Japanese beauty. Here, you will find carefully curated articles on “Fashion · Food · Home × Japan,” each offering in-depth insights into Japanese style, culinary traditions, architectural sensibilities, and everyday living—always presented through the lens of Japan’s refined aesthetic.
 
-                        If you’d like to receive our latest posts straight to your inbox, please enter your email below to subscribe to our newsletter. Thank you for joining us on this journey!</p>
+                        If you would like to receive our newest articles delivered straight to your inbox, please enter your email address below to subscribe to our newsletter. We look forward to exploring Japan’s timeless elegance together.</p>
                 </section>
 
                 <section className={styles.contactRow}>
-                    {/* === 左側：イメージ + 連絡先/SNS === */}
                     <div className={styles.leftPane}>
-                        <img
-                            src="/images/contact.jpg" /* ← 好きな画像に差し替え */
-                            alt="Abstract curved surface"
-                            className={styles.leftImage}
-                        />
 
                         <div className={styles.contactInfo}>
                             <p className={styles.email}>
-                                Email:&nbsp;japanese‑aesthetics‑style.com
+                                Email:&nbsp;japanese‑aesthetics‑style@gmail.com
                             </p>
 
                             <div className={styles.social}>

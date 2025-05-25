@@ -131,3 +131,22 @@
         height: 300px;
     }
 }
+
+
+.aboutTitle {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 2rem 2rem;
+}
+
+.aboutSubtitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 2rem 2rem;
+}
+
+.aboutText {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 2rem 2rem;
+}

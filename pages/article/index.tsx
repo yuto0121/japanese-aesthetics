@@ -23,8 +23,8 @@ const TAGS = [
 
 /* 概念一覧 */
 const CONCEPTS = [
-    { label: 'wabi–sabi', slug: 'wabi-sabi' },
-    { label: 'mono no aware', slug: 'mono-no-aware' },
+    { label: 'wabi–sabi', slug: 'wabiSabi' },
+    { label: 'mono no aware', slug: 'monoNoAware' },
     { label: 'iki', slug: 'iki' },
 ];
 
@@ -141,7 +141,10 @@ export default function Article() {
                     style={{ backgroundImage: "url('/images/article/essence_bg.jpg')" }}
                 >
                     <div className={styles.conceptInner}>
-                        <h2 className={styles.previewTitle}>The Essence of Japan</h2>
+                        <Link href="/article/theEssenceOfJapan" className={styles.previewLink}>
+                            <h2 className={styles.previewTitle}>The Essence of Japan</h2>
+                        </Link>
+
                         <ul className={styles.conceptList}>
                             {CONCEPTS.map(({ label, slug }) => (
                                 <li key={slug}>
@@ -164,7 +167,9 @@ export default function Article() {
                         {/* 左カラム：テキスト */}
                         <div className={styles.previewTextBox}>
                             <div>
-                                <h2 className={styles.previewTitle}>{title}</h2>
+                                <Link href={href} className={styles.previewLink}>
+                                    <h2 className={styles.previewTitle}>{title}</h2>
+                                </Link>
                                 <ul className={styles.previewSubcats}>
                                     {subcats.map((s) => (
                                         <li key={s}>

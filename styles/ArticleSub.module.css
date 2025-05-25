@@ -42,6 +42,7 @@
     flex-shrink: 0;
     width: 200px;
     height: 200px;
+    padding-bottom: 1rem;
 }
 
 /*************************************************
@@ -131,7 +132,7 @@
     max-width: 48ch;
     line-height: 1.2;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-left: 2rem;
 }
 
@@ -251,16 +252,25 @@
 
     /* ↓他のモバイル調整（fonts, featured, grid など）↓ */
     .header {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        /* Flex コンテナに */
+        flex-direction: row;
+        /* 横並びに */
+        justify-content: space-between;
+        /* 左右に要素を配置 */
+        align-items: center;
+        /* 縦方向センター寄せ */
         padding: 2rem 1rem 0;
     }
 
     .kanji {
-        width: 120px;
-        height: 120px;
-        margin-top: 1rem;
+        /* 必要であればサイズを調整 */
+        width: auto;
+        height: auto;
+        /* 左余白を入れてもOK */
+        margin-left: 1rem;
     }
+
 
     /* カテゴリ３カラム→１カラム */
     .categories {
@@ -298,6 +308,8 @@
     .featuredText {
         margin-left: 0;
         margin-top: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 
     /* 記事グリッド３カラム→１カラム */
@@ -345,5 +357,64 @@
     .navBtn {
         padding: 0.3rem 1rem;
         font-size: 0.65rem;
+    }
+}
+
+
+/* ── Arrow Navigation for Article Grid ── */
+.articleGridWrapper {
+    position: relative;
+}
+
+/* 共通の矢印ボタン */
+.arrowLeft,
+.arrowRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    /* 初期は非表示にしておく */
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* 左右それぞれの位置 */
+.arrowLeft {
+    left: 0;
+}
+
+.arrowRight {
+    right: 0;
+}
+
+/* wrapper にホバーが乗ったら矢印をフェードイン */
+.articleGridWrapper:hover .arrowLeft,
+.articleGridWrapper:hover .arrowRight {
+    opacity: 1;
+}
+
+/* SVG アイコンを適切なサイズに */
+.arrowLeft svg,
+.arrowRight svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: #111;
+}
+
+/* スマホでは非表示にしたい場合 */
+@media (max-width: 480px) {
+
+    .arrowLeft,
+    .arrowRight {
+        display: none;
     }
 }

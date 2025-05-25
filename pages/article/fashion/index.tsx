@@ -1,6 +1,5 @@
 // pages/article/fashion.tsx
 import Image from 'next/image';
-import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
@@ -40,7 +39,7 @@ export default function ArticleFashion() {
       </header>
 
       {/* ── categories ─────────────────────────────── */}
-      <section className={styles.categories}>
+      {/* <section className={styles.categories}>
         {[
           { no: '01', label: 'Textiles', slug: 'textiles' },
           { no: '02', label: 'Garments', slug: 'garments' },
@@ -55,7 +54,7 @@ export default function ArticleFashion() {
             <span className={styles.categoryLabel}>{label}</span>
           </Link>
         ))}
-      </section>
+      </section> */}
 
       {/* ── featured article ───────────────────────── */}
       <section className={styles.featured}>
@@ -83,50 +82,64 @@ export default function ArticleFashion() {
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>
 
-        {/* カード 6 枚 */}
-        <div className={styles.articleGrid}>
-          {[
-            {
-              src: '/images/article/fashion_article1.jpg',
-              title: 'Branding: What Real Customers Have to Say',
-            },
-            {
-              src: '/images/article/fashion_article2.jpg',
-              title: 'Branding: Pros and Cons They Don’t Tell You',
-            },
-            {
-              src: '/images/article/fashion_article3.jpg',
-              title: 'How to Spot the Best Branding for You: Signs and Features',
-            },
-            {
-              src: '/images/article/fashion_article4.jpg',
-              title: 'How Much Should I Spend on Branding?',
-            },
-            {
-              src: '/images/article/fashion_article5.jpg',
-              title: 'Rookie Mistakes You’re Making With Your Branding',
-            },
-            {
-              src: '/images/article/fashion_article6.jpg',
-              title: 'Real Branding Customer Reviews You Need to See',
-            },
-          ].map(({ src, title }) => (
-            <article key={title} className={styles.card}>
-              <div className={styles.cardImgWrap}>
-                <Image src={src} alt={title} fill className={styles.cardImg} />
-              </div>
+        {/* ← ここから wrapper */}
+        <div className={styles.articleGridWrapper}>
+          {/* 左矢印 */}
+          <button className={styles.arrowLeft} aria-label="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
 
-              <span className={styles.cardMeta}>BRANDING、DESIGN</span>
-              <h3 className={styles.cardTitle}>{title}</h3>
-            </article>
-          ))}
+          {/* カード 6 枚 */}
+          <div className={styles.articleGrid}>
+            {[
+              {
+                src: '/images/article/fashion_article1.jpg',
+                title: 'Branding: What Real Customers Have to Say',
+              },
+              {
+                src: '/images/article/fashion_article2.jpg',
+                title: 'Branding: Pros and Cons They Don’t Tell You',
+              },
+              {
+                src: '/images/article/fashion_article3.jpg',
+                title: 'How to Spot the Best Branding for You: Signs and Features',
+              },
+              {
+                src: '/images/article/fashion_article4.jpg',
+                title: 'How Much Should I Spend on Branding?',
+              },
+              {
+                src: '/images/article/fashion_article5.jpg',
+                title: 'Rookie Mistakes You’re Making With Your Branding',
+              },
+              {
+                src: '/images/article/fashion_article6.jpg',
+                title: 'Real Branding Customer Reviews You Need to See',
+              },
+            ].map(({ src, title }) => (
+              <article key={title} className={styles.card}>
+                <div className={styles.cardImgWrap}>
+                  <Image src={src} alt={title} fill className={styles.cardImg} />
+                </div>
+
+                <span className={styles.cardMeta}>BRANDING、DESIGN</span>
+                <h3 className={styles.cardTitle}>{title}</h3>
+              </article>
+            ))}
+          </div>
+
+          {/* 右矢印 */}
+          <button className={styles.arrowRight} aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
 
-        {/* ── pagination buttons ── */}
-        <div className={styles.pagination}>
-          <button className={styles.navBtn}>PREVIOUS</button>
-          <button className={styles.navBtn}>NEXT</button>
-        </div>
       </section>
     </>
   );
