@@ -331,9 +331,6 @@
         margin: 0 0 1.5rem 1rem;
     }
 
-    .title {
-        font-size: 3rem;
-    }
 }
 
 /* さらに小さいスマホ向け */
@@ -343,10 +340,6 @@
     .articlesHeadline {
         font-size: 1.8rem;
         margin-left: 0.5rem;
-    }
-
-    .title {
-        font-size: 2.5rem;
     }
 
     .navBtn {
