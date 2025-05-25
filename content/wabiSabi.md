@@ -1,4 +1,3 @@
-```markdown
 # Wabi-Sabi: The Beauty of Imperfection
 
 **Wabi-sabi** is a Japanese aesthetic and worldview that finds beauty in imperfection, impermanence, and simplicity. It celebrates the natural cycle of growth and decay, embracing the marks of time and the humble, unpretentious qualities of everyday objects.
@@ -80,4 +79,3 @@ Wabi-sabi offers a counterpoint to modern excess and perfectionism by honoring t
 **References:**  
 - Murakami, Takashi. *The Aesthetics of Wabi-Sabi*. Kyoto Press, 2010.  
 - Sen no Rikyū. *The Spirit of Tea*. 1591.  
-```
