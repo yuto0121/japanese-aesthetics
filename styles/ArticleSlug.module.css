@@ -215,23 +215,3 @@
 .navBtn:hover {
     background: #f7f7f7;
 }
-
-
-.articleBody {
-    padding: 0 2rem 4rem;
-    /* ← 左右 2rem 追加 */
-    line-height: 1.6;
-}
-
-/* 見出し・太字など Markdown タグの最小スタイルもここで整えると楽 */
-.articleBody h1,
-.articleBody h2,
-.articleBody h3,
-.articleBody h4 {
-    margin: 2rem 0 1rem;
-    font-weight: 700;
-}
-
-.articleBody strong {
-    font-weight: 700;
-}
