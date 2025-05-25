@@ -1,11 +1,10 @@
 import fs from 'fs';
-import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleConceptSlug.module.css';
 
@@ -28,12 +27,13 @@ const CONCEPT_META = {
 
 type Slug = keyof typeof CONCEPT_META;
 
+// ▼ 型をシンプルに
 type Props = {
     slug: Slug;
-    mdxSource: MDXRemoteSerializeResult;
+    markdown: string;   // ← serialize ではなく生の文字列を渡す
 };
 
-export default function ConceptPage({ slug, mdxSource }: Props) {
+export default function ConceptPage({ slug, markdown }: Props) {
     const { title, hero } = CONCEPT_META[slug];
 
     return (
@@ -53,7 +53,8 @@ export default function ConceptPage({ slug, mdxSource }: Props) {
             </header>
 
             <main className={styles.articleBody}>
-                <MDXRemote {...mdxSource} />
+                {/* Markdown を HTML へ変換して出力 */}
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
             </main>
 
             <div className={styles.backWrap}>
@@ -72,14 +73,14 @@ export const getStaticPaths: GetStaticPaths = () => ({
     fallback: false,
 });
 
+
+/* ---------- Static Generation ---------- */
+
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     const slug = params!.slug as Slug;
-
-    // Markdown ファイル: /content/<slug>.md
     const mdPath = path.join(process.cwd(), 'content', `${slug}.md`);
-    const raw = fs.readFileSync(mdPath, 'utf8');
-    const { content } = matter(raw);
-    const mdxSource = await serialize(content);
+    // そのまま文字列で読むだけ
+    const markdown = fs.readFileSync(mdPath, 'utf8');
 
-    return { props: { slug, mdxSource } };
+    return { props: { slug, markdown } };
 };
