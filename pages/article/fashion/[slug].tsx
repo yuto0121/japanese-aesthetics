@@ -1,51 +1,71 @@
+
+// ─────────────────────────────────────────────────────────────
+// pages/article/fashion/[slug].tsx
+// ─────────────────────────────────────────────────────────────
+import fs from 'fs';
+import matter from 'gray-matter';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import path from 'path';
+import { remark } from 'remark';
+import html from 'remark-html';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSlug.module.css';
 
-const CATEGORY_META = {
-  textiles: { no: '01', title: 'Textiles', hero: '/images/article/hero_textiles.jpg' },
-  garments: { no: '02', title: 'Garments', hero: '/images/article/hero_garments.jpg' },
-  brand: { no: '03', title: 'Brand', hero: '/images/article/hero_brand.jpg' },
-} as const;
+type PropsFashionSlug = {
+  title: string;
+  date: string;
+  hero: string;
+  tags: string[];
+  html: string;
+};
 
-export default function FashionCategoryPage() {
-  const { query, isFallback } = useRouter();
-  const slug = query.slug as keyof typeof CATEGORY_META | undefined;
+const FASHION_DIR = path.join(process.cwd(), 'content', 'fashion');
 
-  if (isFallback || !slug || !(slug in CATEGORY_META)) return null;
+export const getStaticPaths: GetStaticPaths = () => {
+  const paths = fs
+    .readdirSync(FASHION_DIR)
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => ({ params: { slug: file.replace(/\.md$/, '') } }));
 
-  const { no, title, hero } = CATEGORY_META[slug];
+  return { paths, fallback: false };
+};
 
+export const getStaticProps: GetStaticProps<PropsFashionSlug> = async ({ params }) => {
+  const slug = params!.slug as string;
+  const raw = fs.readFileSync(path.join(FASHION_DIR, `${slug}.md`), 'utf8');
+  const { data, content } = matter(raw);
+
+  const processed = await remark().use(html).process(content);
+  const htmlString = processed.toString();
+
+  return {
+    props: {
+      title: data.title as string,
+      date: data.date as string,
+      hero: data.hero as string,
+      tags: data.tags as string[],
+      html: htmlString,
+    },
+  };
+};
+
+export default function FashionArticle({ title, date, hero, tags, html: bodyHtml }: PropsFashionSlug) {
   return (
     <>
-      {/* ── global nav ───────────────────────────── */}
       <Navigation />
 
-      {/* ── page header ──────────────────────────── */}
       <header className={styles.header}>
-        <h1 className={styles.title}>
-          {title}
-        </h1>
-        <Image
-          src={hero}
-          alt={`${title} hero`}
-          width={200}
-          height={200}
-          className={styles.kanji}
-          priority
-        />
+        <h1 className={styles.title}>{title}</h1>
+        <Image src={hero} alt={`${title} hero`} width={200} height={200} className={styles.kanji} priority />
+        <p className={styles.meta}>
+          {date} ・ {tags.join(' / ')}
+        </p>
       </header>
 
-      {/* ── main content ─────────────────────────── */}
-      <main className={styles.articleBody}>
-        <p style={{ fontStyle: 'italic' }}>
-          Here is the explanation.
-        </p>
-      </main>
+      <main className={styles.articleBody} dangerouslySetInnerHTML={{ __html: bodyHtml }} />
 
-      {/* ── back link ────────────────────────────── */}
       <div className={styles.backWrap}>
         <Link href="/article/fashion" className={styles.navBtn}>
           ← Back to Fashion

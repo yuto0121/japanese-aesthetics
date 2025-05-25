@@ -1,36 +1,68 @@
-// pages/article/fashion.tsx
+// ─────────────────────────────────────────────────────────────
+// pages/article/fashion/index.tsx
+// ─────────────────────────────────────────────────────────────
+import fs from 'fs';
+import matter from 'gray-matter';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
+import path from 'path';
 import Typewriter from 'typewriter-effect';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
 
-export default function ArticleFashion() {
+
+type ArticleMeta = {
+  slug: string;
+  title: string;
+  tags: string[];
+  hero: string;          // 画像パス
+  date: string;          // YYYY-MM-DD
+};
+
+type PropsFashion = { articles: ArticleMeta[] };
+
+const FASHION_DIR = path.join(process.cwd(), 'content', 'fashion');
+
+export const getStaticProps: GetStaticProps<PropsFashion> = () => {
+  const articles: ArticleMeta[] = fs
+    .readdirSync(FASHION_DIR)
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => {
+      const slug = file.replace(/\.md$/, '');
+      const raw = fs.readFileSync(path.join(FASHION_DIR, file), 'utf8');
+      const { data } = matter(raw);
+      return {
+        slug,
+        title: data.title as string,
+        tags: data.tags as string[],
+        hero: data.hero as string,
+        date: data.date as string,
+      };
+    })
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  return { props: { articles } };
+};
+
+export default function ArticleFashion({ articles }: PropsFashion) {
+  const featured = articles[0];
+  const others = articles.slice(1);
+
   return (
     <>
-      {/* ── global nav ─────────────────────────────── */}
       <Navigation />
 
-      {/* ── page header ────────────────────────────── */}
       <header className={styles.header}>
         <h1 className={styles.title}>
           <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString('Fashion')          // １行目
-                .start();                        // 実行
-            }}
-            options={{
-              autoStart: true,  // マウント直後に始める
-              loop: false,      // 一度きり
-              delay: 100,       // 打鍵間隔
-              deleteSpeed: 50,
-              cursor: "",  // ※ループしないので無視されます
-            }}
+            onInit={(tw) => tw.typeString('Fashion').start()}
+            options={{ autoStart: true, loop: false, delay: 100, deleteSpeed: 50, cursor: '' }}
           />
         </h1>
         <Image
           src="/images/kanji_fashion.png"
-          alt="Kanji for clothing"
+          alt="Kanji for fashion"
           width={150}
           height={150}
           className={styles.kanji}
@@ -38,108 +70,39 @@ export default function ArticleFashion() {
         />
       </header>
 
-      {/* ── categories ─────────────────────────────── */}
-      {/* <section className={styles.categories}>
-        {[
-          { no: '01', label: 'Textiles', slug: 'textiles' },
-          { no: '02', label: 'Garments', slug: 'garments' },
-          { no: '03', label: 'Brand', slug: 'brand' },
-        ].map(({ no, label, slug }) => (
-          <Link
-            key={slug}
-            href={`/article/fashion/${slug}`}
-            className={styles.categoryCard}
-          >
-            <span className={styles.categoryNo}>{no}</span>
-            <span className={styles.categoryLabel}>{label}</span>
+      {featured && (
+        <section className={styles.featured}>
+          <h2 className={styles.featuredHeadline}>Featured Article</h2>
+
+          <Link href={`/article/fashion/${featured.slug}`} className={styles.featuredBody}>
+            <Image
+              src={featured.hero}
+              alt={featured.title}
+              width={180}
+              height={180}
+              className={styles.featuredImg}
+            />
+            <p className={styles.featuredText}>{featured.title}</p>
           </Link>
-        ))}
-      </section> */}
+        </section>
+      )}
 
-      {/* ── featured article ───────────────────────── */}
-      <section className={styles.featured}>
-        <h2 className={styles.featuredHeadline}>Featured Article</h2>
-
-        <div className={styles.featuredBody}>
-          <Image
-            src="/images/article/fashion_featured_article.jpg"
-            alt="Indigo–dyed boro fabric"
-            width={180}
-            height={180}
-            className={styles.featuredImg}
-          />
-
-          <p className={styles.featuredText}>
-            In Japan, the art of <em>boro</em> (襤褸) patchwork—mending
-            indigo-dyed scraps into layered textiles—celebrates resilience and
-            sustainability through the beauty of imperfection. Work in small
-            sections—10 to 15 minutes at a time—to build a meditative rhythm.
-          </p>
-        </div>
-      </section>
-
-      {/* ── article list ───────────────────────────── */}
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>
 
-        {/* ← ここから wrapper */}
         <div className={styles.articleGridWrapper}>
-          {/* 左矢印 */}
-          <button className={styles.arrowLeft} aria-label="Previous">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-
-          {/* カード 6 枚 */}
           <div className={styles.articleGrid}>
-            {[
-              {
-                src: '/images/article/fashion_article1.jpg',
-                title: 'Branding: What Real Customers Have to Say',
-              },
-              {
-                src: '/images/article/fashion_article2.jpg',
-                title: 'Branding: Pros and Cons They Don’t Tell You',
-              },
-              {
-                src: '/images/article/fashion_article3.jpg',
-                title: 'How to Spot the Best Branding for You: Signs and Features',
-              },
-              {
-                src: '/images/article/fashion_article4.jpg',
-                title: 'How Much Should I Spend on Branding?',
-              },
-              {
-                src: '/images/article/fashion_article5.jpg',
-                title: 'Rookie Mistakes You’re Making With Your Branding',
-              },
-              {
-                src: '/images/article/fashion_article6.jpg',
-                title: 'Real Branding Customer Reviews You Need to See',
-              },
-            ].map(({ src, title }) => (
-              <article key={title} className={styles.card}>
+            {others.map((a) => (
+              <Link key={a.slug} href={`/article/fashion/${a.slug}`} className={styles.card}>
                 <div className={styles.cardImgWrap}>
-                  <Image src={src} alt={title} fill className={styles.cardImg} />
+                  <Image src={a.hero} alt={a.title} fill className={styles.cardImg} />
                 </div>
-
-                <span className={styles.cardMeta}>BRANDING、DESIGN</span>
-                <h3 className={styles.cardTitle}>{title}</h3>
-              </article>
+                <span className={styles.cardMeta}>{a.tags.join('、').toUpperCase()}</span>
+                <h3 className={styles.cardTitle}>{a.title}</h3>
+              </Link>
             ))}
           </div>
-
-          {/* 右矢印 */}
-          <button className={styles.arrowRight} aria-label="Next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
         </div>
-
       </section>
     </>
   );
