@@ -34,6 +34,16 @@ export default function About() {
                 </h1>
                 <div className={styles.mainTitleLine} />
 
+                <section className={styles.aboutSection}>
+                    <h2>Our Vision</h2>
+                    <h3>“Bringing the Essence of Japanese Beauty to the World”</h3>
+                    <p>I was born and raised in Japan and later went to Europe to study. There, I encountered countless new cultures and ways of seeing the world—and it was from that vantage point that I truly rediscovered how special and extraordinary Japan is. I also realized that many facets of Japanese aesthetic sensibility simply have no direct equivalent in English.
+
+                        That’s why I’ve launched this blog: to introduce and explain the unique concepts of Japanese beauty. Here, you’ll find articles exploring “衣・食・住 × Japan”—from fashion and cuisine to architecture and lifestyle—each viewed through the lens of Japanese aesthetics.
+
+                        If you’d like to receive our latest posts straight to your inbox, please enter your email below to subscribe to our newsletter. Thank you for joining us on this journey!</p>
+                </section>
+
                 <section className={styles.contactRow}>
                     {/* === 左側：イメージ + 連絡先/SNS === */}
                     <div className={styles.leftPane}>

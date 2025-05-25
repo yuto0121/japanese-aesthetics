@@ -31,7 +31,7 @@ export default function Home() {
         </h1>
         <div className={styles.mainTitleLine} />
 
-        {/* ── About セクション ─────────────────────── */}
+        {/* ── Sub category セクション ─────────────────────── */}
         <section className={styles.MenuSection}>
           <Link href="/about" className={styles.AboutTitle}>
             <h1>About us</h1>
@@ -43,6 +43,9 @@ export default function Home() {
             <h1>Contact</h1>
           </Link>
         </section>
+
+        {/* ── theEssenceOfJapan セクション ───────────── */}
+        <TheEssenceOfJapan />
 
         {/* ── Fashion セクション ───────────────────── */}
         <Link href="article/fashion" passHref legacyBehavior>
@@ -123,8 +126,6 @@ export default function Home() {
             </section>
           </a>
         </Link>
-        {/* ── Beauty Concepts セクション ───────────── */}
-        <TheEssenceOfJapan />
       </main>
     </div>
   );
