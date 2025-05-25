@@ -37,10 +37,6 @@ export default function TheEssenceOfJapan() {
           </Link>
         ))}
       </div>
-
-      <Link href="/article/theEssenceOfJapan" className={styles.moreDetails}>
-        More details <span>↘</span>
-      </Link>
     </section>
   );
 }

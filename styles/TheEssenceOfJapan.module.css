@@ -1,7 +1,6 @@
 .beautyConceptsSection {
     width: 100%;
-    padding: 5rem 2rem 8rem 2rem;
-    border-top: 1px solid #000;
+    padding: 0 2rem 8rem 0;
     position: relative;
 }
 
@@ -84,7 +83,7 @@
 }
 
 .miyabi {
-    grid-column: 0.5 / span 2;
+    grid-column: 1 / span 2;
     grid-row: 3;
 }
 
