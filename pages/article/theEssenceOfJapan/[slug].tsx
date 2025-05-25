@@ -13,15 +13,15 @@ import styles from '../../../styles/ArticleConceptSlug.module.css';
  */
 const CONCEPT_META = {
     wabiSabi: { no: '01', title: 'wabi–sabi', hero: '/images/article/theEssenceOfJapan/hero_wabi-sabi.png' },
-    inEi: { no: '02', title: 'in–ei', hero: '/images/article/theEssenceOfJapan/hero_in-ei.jpg' },
-    iki: { no: '03', title: 'iki', hero: '/images/article/theEssenceOfJapan/hero_iki.jpg' },
-    monoNoAware: { no: '04', title: 'mono no aware', hero: '/images/article/theEssenceOfJapan/hero_mono-no-aware.jpg' },
-    miyabi: { no: '05', title: 'miyabi', hero: '/images/article/theEssenceOfJapan/hero_miyabi.jpg' },
-    ma: { no: '06', title: 'ma', hero: '/images/article/theEssenceOfJapan/hero_ma.jpg' },
-    yohaku: { no: '07', title: 'yohaku', hero: '/images/article/theEssenceOfJapan/hero_yohaku.jpg' },
-    yoin: { no: '08', title: 'yoin', hero: '/images/article/theEssenceOfJapan/hero_yoin.jpg' },
-    kintsugi: { no: '09', title: 'kintsugi', hero: '/images/article/theEssenceOfJapan/hero_kintsugi.jpg' },
-    yugen: { no: '10', title: 'yūgen', hero: '/images/article/theEssenceOfJapan/hero_yugen.jpg' },
+    inEi: { no: '02', title: 'in–ei', hero: '/images/article/theEssenceOfJapan/hero_in-ei.png' },
+    iki: { no: '03', title: 'iki', hero: '/images/article/theEssenceOfJapan/hero_iki.png' },
+    monoNoAware: { no: '04', title: 'mono no aware', hero: '/images/article/theEssenceOfJapan/hero_mono-no-aware.png' },
+    miyabi: { no: '05', title: 'miyabi', hero: '/images/article/theEssenceOfJapan/hero_miyabi.png' },
+    ma: { no: '06', title: 'ma', hero: '/images/article/theEssenceOfJapan/hero_ma.png' },
+    yohaku: { no: '07', title: 'yohaku', hero: '/images/article/theEssenceOfJapan/hero_yohaku.png' },
+    yoin: { no: '08', title: 'yoin', hero: '/images/article/theEssenceOfJapan/hero_yoin.png' },
+    kintsugi: { no: '09', title: 'kintsugi', hero: '/images/article/theEssenceOfJapan/hero_kintsugi.png' },
+    yugen: { no: '10', title: 'yūgen', hero: '/images/article/theEssenceOfJapan/hero_yugen.png' },
 } as const;
 
 type Slug = keyof typeof CONCEPT_META;
