@@ -1,6 +1,5 @@
 // pages/article/living.tsx
 import Image from 'next/image';
-import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
@@ -40,7 +39,7 @@ export default function ArticleLiving() {
       </header>
 
       {/* ── categories ─────────────────────────────── */}
-      <section className={styles.categories}>
+      {/* <section className={styles.categories}>
         {[
           { no: '01', label: 'Architecture', slug: 'architecture' },
           { no: '02', label: 'Interior', slug: 'interior' },
@@ -55,7 +54,7 @@ export default function ArticleLiving() {
             <span className={styles.categoryLabel}>{label}</span>
           </Link>
         ))}
-      </section>
+      </section> */}
 
       {/* ── featured article ───────────────────────── */}
       <section className={styles.featured}>

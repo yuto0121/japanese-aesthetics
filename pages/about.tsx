@@ -45,13 +45,7 @@ export default function About() {
                 </section>
 
                 <section className={styles.contactRow}>
-                    {/* === 左側：イメージ + 連絡先/SNS === */}
                     <div className={styles.leftPane}>
-                        <img
-                            src="/images/contact.jpg" /* ← 好きな画像に差し替え */
-                            alt="Abstract curved surface"
-                            className={styles.leftImage}
-                        />
 
                         <div className={styles.contactInfo}>
                             <p className={styles.email}>

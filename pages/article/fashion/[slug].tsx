@@ -1,13 +1,13 @@
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSlug.module.css';
 
 const CATEGORY_META = {
   textiles: { no: '01', title: 'Textiles', hero: '/images/article/hero_textiles.jpg' },
   garments: { no: '02', title: 'Garments', hero: '/images/article/hero_garments.jpg' },
-  brand:    { no: '03', title: 'Brand',    hero: '/images/article/hero_brand.jpg' },
+  brand: { no: '03', title: 'Brand', hero: '/images/article/hero_brand.jpg' },
 } as const;
 
 export default function FashionCategoryPage() {
