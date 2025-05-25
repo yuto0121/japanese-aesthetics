@@ -215,12 +215,3 @@
 .navBtn:hover {
     background: #f7f7f7;
 }
-
-.articleBody {
-    padding: 0 2rem 4rem;
-    /* ← 左右 2rem 追加 */
-    line-height: 1.6;
-    width: 100%;
-    overflow-x: anywhere;
-    white-space: pre-wrap;
-}
