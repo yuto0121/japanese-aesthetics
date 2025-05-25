@@ -77,7 +77,7 @@ export const getStaticPaths: GetStaticPaths = () => ({
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     const slug = params!.slug as Slug;
-    const mdPath = path.join(process.cwd(), 'content', `${slug}.md`);
+    const mdPath = path.join(process.cwd(), 'content/theEssenceOfJapan', `${slug}.md`);
     // そのまま文字列で読むだけ
     const markdown = fs.readFileSync(mdPath, 'utf8');
 
