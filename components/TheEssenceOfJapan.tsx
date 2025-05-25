@@ -4,10 +4,10 @@ import styles from '../styles/TheEssenceOfJapan.module.css';
 
 export default function TheEssenceOfJapan() {
   const concepts = [
-    { slug: 'wabi-sabi', label: 'wabi–sabi', style: styles.wabiSabi },
-    { slug: 'in-ei', label: 'in–ei', style: styles.inEi },
+    { slug: 'wabiSabi', label: 'wabi–sabi', style: styles.wabiSabi },
+    { slug: 'inEi', label: 'in–ei', style: styles.inEi },
     { slug: 'iki', label: 'iki', style: styles.iki },
-    { slug: 'mono-no-aware', label: 'mono no aware', style: styles.monoNoAware },
+    { slug: 'monoNoAware', label: 'mono no aware', style: styles.monoNoAware },
     { slug: 'miyabi', label: 'miyabi', style: styles.miyabi },
     { slug: 'ma', label: 'ma', style: styles.ma },
     { slug: 'yohaku', label: 'yohaku', style: styles.yohaku },
