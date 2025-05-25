@@ -50,8 +50,8 @@ export default function ConceptSlugPage() {
             </main>
 
             <div className={styles.backWrap}>
-                <Link href="/article/concept" className={styles.navBtn}>
-                    ← Back to Beauty Concepts
+                <Link href="/article/theEssenceOfJapan" className={styles.navBtn}>
+                    ← Back to The Essence of Japan
                 </Link>
             </div>
         </>
