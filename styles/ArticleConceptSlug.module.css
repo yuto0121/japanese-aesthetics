@@ -220,6 +220,9 @@
     padding: 0 2rem 4rem;
     /* ← 左右 2rem 追加 */
     line-height: 1.6;
+    width: 100%;
+    overflow-x: anywhere;
+    white-space: pre-wrap;
 }
 
 /* 見出し・太字など Markdown タグの最小スタイルもここで整えると楽 */
@@ -230,6 +233,13 @@
     margin: 2rem 0 1rem;
     font-weight: 700;
 }
+
+.articleBody pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+
 
 .articleBody strong {
     font-weight: 700;
