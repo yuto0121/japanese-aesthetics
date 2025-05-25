@@ -83,3 +83,4 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
     return { props: { slug, markdown } };
 };
+  
