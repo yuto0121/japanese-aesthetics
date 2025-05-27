@@ -17,8 +17,7 @@
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    padding-top: 4.5rem;
-    gap: 2rem;
+    padding: 4.5rem 2rem 0;
 }
 
 .header::after {
@@ -58,7 +57,7 @@
      ARTICLE BODY
      ========================================== */
 .articleBody {
-    max-width: 65ch;
+    margin: 0 2rem 0;
     margin-inline: auto;
     margin-block: clamp(2rem, 6vw, 4rem) 0;
     padding-bottom: 2rem;
