@@ -48,7 +48,7 @@ export default function Contact() {
 
                         <div className={styles.contactInfo}>
                             <p className={styles.email}>
-                                Email:&nbsp;japanese-aesthetics-style@gmail.com
+                                Email:&nbsp;japanese.aesthetics.style@gmail.com
                             </p>
 
                             {/* SNS リンク */}
