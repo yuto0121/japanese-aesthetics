@@ -6,7 +6,7 @@
     padding-inline: 2rem;
     padding-bottom: 6rem;
     margin-inline: auto;
-    max-width: 100rem;
+    max-width: 80rem;
     font-family: "Noto Sans JP", sans-serif;
 }
 
@@ -63,7 +63,7 @@
 .articleBody {
     /* wrapper の 2rem と同一ラインに合わせつつ
        65ch で中央寄せ */
-    max-width: 65ch;
+    max-width: 100ch;
     margin-inline: auto;
     margin-block: 3rem 0;
     padding-bottom: 2rem;
