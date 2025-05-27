@@ -1,11 +1,13 @@
 /* ===========================================
-   レイアウト共通
+   共通レイアウト
    ========================================== */
 .wrapper {
-    --article-padding-inline: clamp(1rem, 2rem, 2.5rem);
-    padding-inline: var(--article-padding-inline);
+    /* すべてのセクションで左右 2rem を保証 */
+    padding-inline: 2rem;
     padding-bottom: 6rem;
     margin-inline: auto;
+    max-width: 80rem;
+    /* 1280px */
     font-family: "Noto Sans JP", sans-serif;
 }
 
@@ -17,14 +19,17 @@
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    padding: 4.5rem 2rem 0;
+    padding-top: 4.5rem;
+    /* ← 上だけ余白を取る */
+    gap: 2rem;
 }
 
+/* ヘッダー下のボーダー。wrapper と同じ 2rem 内側で揃う */
 .header::after {
     content: '';
     position: absolute;
-    left: var(--article-padding-inline);
-    right: var(--article-padding-inline);
+    inset-inline: 0;
+    /* left:0; right:0; と同義 */
     bottom: 0;
     height: 2px;
     background: #111;
@@ -57,9 +62,11 @@
      ARTICLE BODY
      ========================================== */
 .articleBody {
-    margin: 0 2rem 0;
+    /* wrapper の 2rem と同一ラインに合わせつつ
+       65ch で中央寄せ */
+    max-width: 65ch;
     margin-inline: auto;
-    margin-block: clamp(2rem, 2rem, 4rem) 0;
+    margin-block: 3rem 0;
     padding-bottom: 2rem;
     line-height: 1.75;
     font-size: 1rem;
@@ -67,25 +74,26 @@
     overflow-wrap: anywhere;
 }
 
+/* 見出し */
 .articleBody h1,
 .articleBody h2,
 .articleBody h3,
 .articleBody h4 {
     font-family: "EB Garamond", serif;
     font-weight: 700;
-    margin-block: clamp(2rem, 2rem, 3.5rem) 1.25rem;
+    margin-block: 3rem 1.25rem;
 }
 
 .articleBody h1 {
-    font-size: clamp(2rem, 2rem, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .articleBody h2 {
-    font-size: clamp(1.5rem, 2rem, 2.25rem);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 .articleBody h3 {
-    font-size: clamp(1.25rem, 2rem, 1.75rem);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .articleBody h4 {
@@ -93,10 +101,10 @@
 }
 
 .articleBody p {
-    margin-block: 1.25rem 2rem 0;
+    margin-block: 1.25rem;
 }
 
-/* 画像（Markdown 内） */
+/* 画像（Markdown） */
 .markdownImg {
     max-width: 100%;
     height: auto;
