@@ -7,9 +7,9 @@ import { EmailData } from '../types/email';
 
 // Yup バリデーションスキーマ
 const schema = yup.object<EmailData>({
-    from: yup.string().email('正しいメールアドレスを入力してください').required(),
-    subject: yup.string().required('題名を入力してください'),
-    message: yup.string().required('メッセージを入力してください')
+    from: yup.string().email('Please enter a valid email address').required(),
+    subject: yup.string().required('Please enter a subject'),
+    message: yup.string().required('Please enter a message')
 });
 
 const DEFAULT_DATA: EmailData = { from: '', subject: '', message: '' };
@@ -40,12 +40,12 @@ export default function ContactForm() {
 
         sendContactEmail(form)
             .then(() => {
-                setBanner({ message: 'メール送信に成功しました。ありがとうございました！', status: 'success' });
+                setBanner({ message: 'Email sent successfully. Thank you!', status: 'success' });
                 setForm(DEFAULT_DATA);
             })
             .catch((error) => {
                 console.error(error);
-                setBanner({ message: '送信に失敗しました。時間をおいて再度お試しください。', status: 'error' });
+                setBanner({ message: 'Sending email failed. Please try again later.', status: 'error' });
             })
             .finally(() => {
                 setTimeout(() => setBanner(null), 4000);

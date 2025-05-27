@@ -1,4 +1,4 @@
-/* ====== 見出しまわり ===================================== */
+/* ===== 見出しまわり ====================================== */
 .mainTitle {
     font-size: 80px;
     font-weight: bold;
@@ -14,7 +14,7 @@
     margin: 4.5rem 0 2.5rem 2rem;
 }
 
-/* ====== 2 カラムレイアウト =============================== */
+/* ===== 2 カラムレイアウト =============================== */
 .contactRow {
     display: flex;
     gap: 4rem;
@@ -75,15 +75,18 @@
     margin: 0 0 2.5rem 0;
 }
 
-.form label {
+/* ---- ここからフォーム要素のスタイル ----
+     ContactForm.tsx 側の <form> にはクラスが無いので、
+     .formWrapper を親にしてスコープさせる           */
+.formWrapper form>label {
     display: block;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
 
-.form input,
-.form textarea {
+.formWrapper form input,
+.formWrapper form textarea {
     width: 100%;
     font-size: 16px;
     margin-top: 0.5rem;
@@ -93,11 +96,11 @@
     outline: none;
 }
 
-.form textarea {
+.formWrapper form textarea {
     resize: vertical;
 }
 
-.form button {
+.formWrapper form button[type='submit'] {
     width: 100%;
     font-size: 20px;
     font-weight: 700;
@@ -111,11 +114,11 @@
     transition: opacity 0.2s;
 }
 
-.form button:hover {
+.formWrapper form button[type='submit']:hover {
     opacity: 0.8;
 }
 
-/* ====== レスポンシブ対応 ================================= */
+/* ===== レスポンシブ対応 ================================ */
 @media (max-width: 768px) {
     .contactRow {
         flex-direction: column;
