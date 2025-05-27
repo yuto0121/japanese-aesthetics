@@ -1,10 +1,8 @@
-// components/ContactForm.tsx
-
 'use client';
 
 import { FormEvent, useState } from 'react';
 import * as yup from 'yup';
-import { sendContactEmail } from '../pages/api/server/.contact';
+import { sendContactEmail } from '../lib/sendContactEmail';
 import { EmailData } from '../types/email';
 
 // Yup バリデーションスキーマ
@@ -21,8 +19,10 @@ export default function ContactForm() {
     const [banner, setBanner] = useState<{ message: string; status: 'success' | 'error' } | null>(null);
 
     // 入力ハンドラ
-    const handleChange = (key: keyof EmailData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-        setForm(prev => ({ ...prev, [key]: e.target.value }));
+    const handleChange =
+        (key: keyof EmailData) =>
+            (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+                setForm(prev => ({ ...prev, [key]: e.target.value }));
 
     // 送信時
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -43,7 +43,8 @@ export default function ContactForm() {
                 setBanner({ message: 'メール送信に成功しました。ありがとうございました！', status: 'success' });
                 setForm(DEFAULT_DATA);
             })
-            .catch(() => {
+            .catch((error) => {
+                console.error(error);
                 setBanner({ message: '送信に失敗しました。時間をおいて再度お試しください。', status: 'error' });
             })
             .finally(() => {

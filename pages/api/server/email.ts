@@ -14,16 +14,16 @@ const transporter = nodemailer.createTransport({
 
 /**
  * 実際にメールを送信するサーバー関数
- * App Router では server-only の場所で呼び出してください。
+ * API ルート（サーバー）から呼び出してください。
  */
 export async function sendEmail({ from, subject, message }: EmailData) {
     await transporter.sendMail({
-        to: process.env.AUTH_USER,         // 送信先（自分）
-        from,                              // フォーム入力者アドレス
+        to: process.env.AUTH_USER, // 自分宛
+        from,                      // フォーム入力者のアドレス
         subject: `[BLOG] ${subject}`,
         html: `
       <h2>${subject}</h2>
-      <p>${message.replace(/\n/g, '<br />')}</p>
+      <p>${message.replace(/\\n/g, '<br />')}</p>
       <hr />
       <p>from: ${from}</p>
     `
