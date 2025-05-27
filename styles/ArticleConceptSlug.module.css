@@ -1,41 +1,53 @@
-/*************************************************
- *  見出し（Featured / Articles）
- *************************************************/
-.featuredHeadline,
-.articlesHeadline {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0 0 2rem 2rem;
-    /* ← 左側 2rem */
+/* ===========================================
+   レイアウト共通
+   ========================================== */
+.wrapper {
+    --article-padding-inline: clamp(1rem, 4vw, 2.5rem);
+    padding-inline: var(--article-padding-inline);
+    padding-bottom: 6rem;
+    max-width: 80rem;
+    /* 1280px */
+    margin-inline: auto;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
-/*************************************************
-     *  HEADER
-     *************************************************/
+/* ===========================================
+     HEADER
+     ========================================== */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 4.5rem 2rem 0;
-    /* ← 左右 2rem */
     position: relative;
+    padding-top: 4.5rem;
+    gap: 2rem;
 }
 
 .header::after {
     content: '';
     position: absolute;
-    left: 2rem;
-    right: 2rem;
+    left: var(--article-padding-inline);
+    right: var(--article-padding-inline);
     bottom: 0;
     height: 2px;
     background: #111;
 }
 
+/* モバイルでは縦積み */
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 .title {
-    font-size: 5rem;
+    font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 800;
     line-height: 1.1;
     margin: 0;
+    font-family: "EB Garamond", serif;
 }
 
 .kanji {
@@ -44,203 +56,90 @@
     height: 200px;
 }
 
-/*************************************************
-     *  CATEGORIES
-     *************************************************/
-.categories {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    position: relative;
-}
-
-.categories::after {
-    content: '';
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    bottom: 0;
-    height: 2px;
-    background: #111;
-}
-
-.categoryCard {
-    text-align: center;
-    padding: 4rem 1rem 5rem;
-    position: relative;
-}
-
-.categoryCard:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 2px;
-    background: #111;
-}
-
-.categoryNo {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f37021;
-    line-height: 1;
-}
-
-.categoryLabel {
-    display: block;
-    /* span → block に */
-    margin-top: 1rem;
-    /* 数字とのあいだに隙間 */
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-/*************************************************
-     *  FEATURED ARTICLE
-     *************************************************/
-.featured {
-    padding: 6rem 0 4rem;
-    position: relative;
-}
-
-.featured::after {
-    content: '';
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    bottom: 0;
-    height: 2px;
-    background: #111;
-}
-
-.featuredBody {
-    display: flex;
-    gap: 2rem;
-    padding: 0 2rem;
-    /* ← 左右 2rem */
-}
-
-.featuredImg {
-    flex-shrink: 0;
-    width: 600px;
-    height: 400px;
-    object-fit: cover;
-}
-
-.featuredText {
-    max-width: 48ch;
-    line-height: 1.2;
-    font-size: 2rem;
-    font-weight: 800;
-    margin-left: 2rem;
-}
-
-/*************************************************
-     *  ARTICLE GRID
-     *************************************************/
-.articleGridSection {
-    padding: 4rem 0 6rem;
-    position: relative;
-}
-
-.articleGridSection::after {
-    content: '';
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    bottom: 0;
-    height: 2px;
-    background: #111;
-}
-
-.articleGrid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-}
-
-.cardImgWrap {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.cardImg {
-    object-fit: cover;
-}
-
-.cardMeta {
-    margin-top: 1rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #6b6b6b;
-}
-
-.cardTitle {
-    margin-top: 0.25rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-/*************************************************
-     *  PAGINATION
-     *************************************************/
-.pagination {
-    display: flex;
-    justify-content: space-between;
-    margin: 2.5rem 2rem 0;
-    /* ← 左右 2rem */
-}
-
-.navBtn {
-    background: none;
-    border: 1px solid #bfbfbf;
-    padding: 0.4rem 1.4rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.navBtn:hover {
-    background: #f7f7f7;
-}
-
+/* ===========================================
+     ARTICLE BODY
+     ========================================== */
 .articleBody {
-    padding: 0 2rem 4rem;
-    /* ← 左右 2rem 追加 */
-    line-height: 1.6;
-    width: 100%;
-    overflow-x: anywhere;
+    max-width: 65ch;
+    margin-inline: auto;
+    margin-block: clamp(2rem, 6vw, 4rem) 0;
+    padding-bottom: 2rem;
+    line-height: 1.75;
+    font-size: 1rem;
     white-space: pre-wrap;
+    overflow-wrap: anywhere;
 }
 
-/* 見出し・太字など Markdown タグの最小スタイルもここで整えると楽 */
 .articleBody h1,
 .articleBody h2,
 .articleBody h3,
 .articleBody h4 {
-    margin: 2rem 0 1rem;
+    font-family: "EB Garamond", serif;
     font-weight: 700;
+    margin-block: clamp(2rem, 5vw, 3.5rem) 1.25rem;
 }
 
+.articleBody h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.articleBody h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.articleBody h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.articleBody h4 {
+    font-size: 1rem;
+}
+
+.articleBody p {
+    margin-block: 1.25rem;
+}
+
+/* 画像（Markdown 内） */
+.markdownImg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-block: 2rem;
+}
+
+/* コードブロック */
 .articleBody pre {
     max-width: 100%;
     overflow-x: auto;
+    background: #0d0d0d;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
 }
 
+/* 引用 */
+.articleBody blockquote {
+    border-left: 4px solid #f37021;
+    padding-left: 1rem;
+    color: #555;
+    font-style: italic;
+    margin-inline: 0;
+}
 
-
+/* 強調 */
 .articleBody strong {
     font-weight: 700;
+    color: #f37021;
 }
+
+/* ===========================================
+     （以下は他ページでも再利用できるユーティリティ）
+     カテゴリカードやグリッド等、元の CSS を残したい場合は
+     ここから下に既存ルールをそのまま置いて OK
+     ========================================== */
+
+/* 例：カテゴリーグリッド（必要なら残す） */
+/*
+  .categories { … }
+  */
