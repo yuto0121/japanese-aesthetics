@@ -44,9 +44,8 @@
 }
 
 .title {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: 80px;
     font-weight: 800;
-    line-height: 1.1;
     margin: 0;
     font-family: "EB Garamond", serif;
 }
