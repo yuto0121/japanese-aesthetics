@@ -62,7 +62,7 @@
 .articleBody {
     /* wrapper の 2rem と同一ラインに合わせつつ
        65ch で中央寄せ */
-    max-width: 100ch;
+    max-width: 120ch;
     margin-inline: auto;
     margin-block: 3rem 0;
     padding-bottom: 2rem;
