@@ -16,11 +16,11 @@
 
 ## 2. Three Hallmarks of Iki
 
-1.**Simplicity with a Twist**  
+1. **Simplicity with a Twist**  
    - Clean lines or forms with a single, unexpected flourish.  
    - *Example:* A kimono in muted indigo with a bold splash of red at the hem.
 
-2.**Spontaneity and Originality**  
+2. **Spontaneity and Originality**  
    - Natural behavior that hints at an intelligent wit or playful irony.  
    - *Example:* A casually tilted hat or a glance that conveys more than words.
 
@@ -56,11 +56,11 @@
 
 ## 5. Iki in Arts & Entertainment
 
-- **Kabuki and Ukiyo-e**  
+**Kabuki and Ukiyo-e**  
   - Actors’ minimal make-up lines that accentuate a single expressive feature.  
   - Woodblock prints with spare compositions—just enough color and detail to intrigue.
 
-- **Tea Ceremony & Haiku**  
+**Tea Ceremony & Haiku**  
   - A tea master’s swift, assured gestures—every motion purposeful yet seemingly casual.  
   - Haiku that capture a fleeting moment with precise language and an unforced wit.
 
@@ -69,16 +69,16 @@
 ## 6. Cultivating Iki in Daily Life
 
 1. **Mindful Curation**  
-   - Keep possessions few but meaningful; choose items that surprise without shouting.
+   Keep possessions few but meaningful; choose items that surprise without shouting.
 
 2. **Polished Imperfection**  
-   - Embrace a lived-in patina—crisp white shirts with slightly frayed cuffs, for example.
+   Embrace a lived-in patina—crisp white shirts with slightly frayed cuffs, for example.
 
 3. **Graceful Interaction**  
-   - Speak softly, with timing and humor; let pauses carry as much weight as words.
+   Speak softly, with timing and humor; let pauses carry as much weight as words.
 
 4. **Unexpected Touches**  
-   - Add a single fresh flower to an otherwise austere table setting.
+   Add a single fresh flower to an otherwise austere table setting.
 
 ---
 
@@ -89,5 +89,5 @@ Iki offers a model for living with elegant economy—where less truly is more an
 ---
 
 **References:**  
-- Condé, Mary. *Iki: The Elegance of Edo*. Tokyo University Press, 2005.  
-- Hosokawa, Morihiro. *The Japanese Sense of Aesthetics*. Kodansha International, 2010.  
+-Condé, Mary. *Iki: The Elegance of Edo*. Tokyo University Press, 2005.  
+-Hosokawa, Morihiro. *The Japanese Sense of Aesthetics*. Kodansha International, 2010.  
