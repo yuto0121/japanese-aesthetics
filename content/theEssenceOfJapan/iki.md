@@ -6,7 +6,7 @@
 
 ## 1. Definition and Origins
 
-#### **Meaning of Iki**  
+### **Meaning of Iki**  
   Iki literally means “stylish” or “chic,” but its nuance lies in a quietly seductive allure—unaffected, unpretentious, yet unmistakably refined.
 
 ### **Historical Roots**  
