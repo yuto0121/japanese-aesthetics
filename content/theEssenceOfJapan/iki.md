@@ -16,15 +16,15 @@
 
 ## 2. Three Hallmarks of Iki
 
-1. **Simplicity with a Twist**  
+#### 1. Simplicity with a Twist
    - Clean lines or forms with a single, unexpected flourish.  
    - *Example:* A kimono in muted indigo with a bold splash of red at the hem.
 
-2. **Spontaneity and Originality**  
+#### 2. Spontaneity and Originality  
    - Natural behavior that hints at an intelligent wit or playful irony.  
    - *Example:* A casually tilted hat or a glance that conveys more than words.
 
-3. **Underplayed Confidence**  
+#### 3. Underplayed Confidence**  
    - The absence of boasting; refinement shown through small details.  
    - *Example:* Well-worn leather shoes polished to a soft sheen rather than a blinding gloss.
 
@@ -32,11 +32,11 @@
 
 ## 3. Iki in Fashion & Personal Style
 
-**Kimono and Streetwear**  
+#### **Kimono and Streetwear**  
   - Folding a haori jacket to reveal an inner pattern, or wearing Western jackets with traditional geta sandals.  
   - Mixing luxurious fabric with humble cotton—e.g., pairing a silk scarf with a simple linen shirt.
 
-**Accessories**  
+#### Accessories  
   - A single designer talisman or a hand-carved netsuke hanging from an obi, balanced by plain clothing.  
   - Subtle jewelry: a slender chain or tiny ear stud that catches the light discreetly.
 
