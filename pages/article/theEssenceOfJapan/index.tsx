@@ -73,9 +73,6 @@ export default function ArticleEssence({ articles }: Props) {
           <div className={styles.articleGrid}>
             {others.map((a) => (
               <Link key={a.slug} href={`/article/theEssenceOfJapan/${a.slug}`} className={styles.card}>
-                <div className={styles.cardImgWrap}>
-                  <Image src={a.hero} alt={a.title} fill className={styles.cardImg} />
-                </div>
                 <span className={styles.cardMeta}>{a.tags.join('、').toUpperCase()}</span>
                 <h3 className={styles.cardTitle}>{a.title}</h3>
               </Link>
