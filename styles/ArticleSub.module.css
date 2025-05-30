@@ -123,8 +123,8 @@
 
 .featuredImg {
     flex-shrink: 0;
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     object-fit: cover;
 }
 
