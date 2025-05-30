@@ -107,7 +107,7 @@
    import { remark } from 'remark';
    import html from 'remark-html';
    import Navigation from '../../../components/Navigation';
-   import styles from '../../../styles/CuisineArticle.module.css';
+   import styles from '../../../styles/ArticleSlug.module.css';
    
    type Props = {
      title: string;
