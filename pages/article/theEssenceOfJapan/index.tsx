@@ -82,7 +82,6 @@ export default function ArticleEssence({ articles }: Props) {
           </Link>
         </section>
       )}
-      </header>
 
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>
