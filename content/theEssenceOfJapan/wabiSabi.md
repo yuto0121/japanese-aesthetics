@@ -2,7 +2,7 @@
 title: "wabi-sabi"
 date: "2025-01-10"
 tags: [wabi-sabi]
-hero: "/images/article/theEssenceOfJapan/hero_wabi_sabi"
+hero: "/images/article/theEssenceOfJapan/hero_wabi-sabi.png"
 ---
 
 # Wabi-Sabi: The Beauty of Imperfection

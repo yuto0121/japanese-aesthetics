@@ -2,7 +2,7 @@
 title: "ma"
 date: "2025-01-10"
 tags: [ma]
-hero: "/images/article/theEssenceOfJapan/hero_ma"
+hero: "/images/article/theEssenceOfJapan/hero_ma.png"
 ---
 
 # Ma: The Space Between

@@ -2,7 +2,7 @@
 title: "yohaku"
 date: "2025-01-10"
 tags: [yohaku]
-hero: "/images/article/theEssenceOfJapan/hero_yohaku"
+hero: "/images/article/theEssenceOfJapan/hero_yohaku.png"
 ---
 
 # Yohaku: The Beauty of Empty Space

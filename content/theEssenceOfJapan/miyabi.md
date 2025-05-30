@@ -2,7 +2,7 @@
 title: "miyabi"
 date: "2025-01-10"
 tags: [miyabi]
-hero: "/images/article/theEssenceOfJapan/hero_miyabi"
+hero: "/images/article/theEssenceOfJapan/hero_miyabi.png"
 ---
 
 # Miyabi: The Elegance of Courtly Refinement

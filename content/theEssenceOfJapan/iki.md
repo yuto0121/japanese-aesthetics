@@ -2,7 +2,7 @@
 title: "iki"
 date: "2025-01-10"
 tags: [iki]
-hero: "/images/article/theEssenceOfJapan/hero_iki"
+hero: "/images/article/theEssenceOfJapan/hero_iki.png"
 ---
 
 

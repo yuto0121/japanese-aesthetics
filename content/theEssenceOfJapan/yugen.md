@@ -2,7 +2,7 @@
 title: "yugen"
 date: "2025-01-10"
 tags: [yugen]
-hero: "/images/article/theEssenceOfJapan/hero_yugen"
+hero: "/images/article/theEssenceOfJapan/hero_yugen.png"
 ---
 
 # Yūgen: The Mysterious Deep

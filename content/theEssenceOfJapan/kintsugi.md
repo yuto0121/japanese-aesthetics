@@ -2,7 +2,7 @@
 title: "kintsugi"
 date: "2025-01-10"
 tags: [kintsugi]
-hero: "/images/article/theEssenceOfJapan/hero_kintsugi"
+hero: "/images/article/theEssenceOfJapan/hero_kintsugi.png"
 ---
 
 # Kintsugi: The Art of Golden Repair

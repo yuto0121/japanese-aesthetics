@@ -2,7 +2,7 @@
 title: "in'ei"
 date: "2025-01-10"
 tags: [in'ei]
-hero: "/images/article/theEssenceOfJapan/hero_in'ei"
+hero: "/images/article/theEssenceOfJapan/hero_in-ei.png"
 ---
 
 # In Praise of Shadows

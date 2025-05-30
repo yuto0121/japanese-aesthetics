@@ -2,7 +2,7 @@
 title: "yoin"
 date: "2025-01-10"
 tags: [yoin]
-hero: "/images/article/theEssenceOfJapan/hero_yoin"
+hero: "/images/article/theEssenceOfJapan/hero_yoin.png"
 ---
 
 # Yoin: The Resonance of Afterglow

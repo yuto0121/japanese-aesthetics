@@ -2,7 +2,7 @@
 title: "mono no aware"
 date: "2025-01-10"
 tags: [mono no aware]
-hero: "/images/article/theEssenceOfJapan/hero_mono_no_aware"
+hero: "/images/article/theEssenceOfJapan/hero_mono-no-aware.png"
 ---
 
 # Mono no Aware: The Pathos of Things
