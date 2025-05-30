@@ -28,12 +28,9 @@ export default function TheEssenceOfJapan() {
           <Link
             key={slug}
             href={`/article/theEssenceOfJapan/${slug}`}
-            passHref
-            legacyBehavior
+            className={`${styles.conceptItem} ${style}`}
           >
-            <a className={`${styles.conceptItem} ${style}`}>
-              <span>{label}</span>
-            </a>
+            <span>{label}</span>
           </Link>
         ))}
       </div>
