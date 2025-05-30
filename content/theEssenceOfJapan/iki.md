@@ -1,3 +1,11 @@
+---
+title: "iki"
+date: "2025-01-10"
+tags: [iki]
+hero: "/images/article/theEssenceOfJapan/hero_iki"
+---
+
+
 # Iki: The Essence of Chic Restraint
 
 **Iki** (粋) is a uniquely Japanese aesthetic and cultural ideal that celebrates refined simplicity, spontaneous elegance, and an unstudied sophistication. Unlike ostentation, iki conveys a sense of cool confidence born of restraint and subtlety.

@@ -1,3 +1,10 @@
+---
+title: "kintsugi"
+date: "2025-01-10"
+tags: [kintsugi]
+hero: "/images/article/theEssenceOfJapan/hero_kintsugi"
+---
+
 # Kintsugi: The Art of Golden Repair
 
 **Kintsugi** (金継ぎ), literally "golden joinery," is the Japanese art of repairing broken pottery with lacquer dusted or mixed with powdered gold (or silver or platinum). Rather than hiding damage, kintsugi highlights breaks and repairs as part of an object's history, transforming flaws into features and celebrating imperfection and resilience.

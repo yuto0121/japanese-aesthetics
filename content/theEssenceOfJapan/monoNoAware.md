@@ -1,3 +1,10 @@
+---
+title: "mono no aware"
+date: "2025-01-10"
+tags: [mono no aware]
+hero: "/images/article/theEssenceOfJapan/hero_mono_no_aware"
+---
+
 # Mono no Aware: The Pathos of Things
 
 **Mono no aware** (物の哀れ) is a classical Japanese aesthetic concept that acknowledges the gentle sadness or poignancy evoked by the transience of all things. Literally "the pathos of things," it fosters an empathetic awareness of impermanence and a deep appreciation for fleeting beauty.

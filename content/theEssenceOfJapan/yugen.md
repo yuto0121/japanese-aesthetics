@@ -1,3 +1,10 @@
+---
+title: "yugen"
+date: "2025-01-10"
+tags: [yugen]
+hero: "/images/article/theEssenceOfJapan/hero_yugen"
+---
+
 # Yūgen: The Mysterious Deep
 
 **Yūgen** (幽玄) is one of the highest ideals in traditional Japanese aesthetics, often rendered as "mysterious profundity" or "subtle grace." It evokes an awareness of the universe that is beyond words—an elegant feeling of beauty that lies just beneath the surface, hinted at rather than shown outright.

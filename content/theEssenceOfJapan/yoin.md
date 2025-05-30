@@ -1,3 +1,10 @@
+---
+title: "yoin"
+date: "2025-01-10"
+tags: [yoin]
+hero: "/images/article/theEssenceOfJapan/hero_yoin"
+---
+
 # Yoin: The Resonance of Afterglow
 
 **Yoin** (余韻), often translated as "afterglow," "resonance," or "echo," is a Japanese aesthetic concept that values the lingering impression left by an experience, sound, sight, or emotion. It celebrates the subtle persistence of feeling or atmosphere after the initial stimulus has passed.
