@@ -97,13 +97,11 @@
         font-size: 48px;
     }
 
-    :global {
 
-        .swiper-button-prev,
-        .swiper-button-next {
-            width: 36px;
-            height: 36px;
-        }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 36px;
+        height: 36px;
     }
 }
 
