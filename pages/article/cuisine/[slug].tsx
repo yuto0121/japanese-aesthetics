@@ -189,13 +189,7 @@
              className={styles.articleBody}
              dangerouslySetInnerHTML={{ __html: bodyHtml }}
            />
-   
-           {/* ─ back link ──────────────────────────
-           <div className={styles.backWrap}>
-             <Link href="/article/cuisine" className={styles.navBtn}>
-               ← Back to Cuisine
-             </Link>
-           </div> */}
+           
          </article>
        </>
      );
