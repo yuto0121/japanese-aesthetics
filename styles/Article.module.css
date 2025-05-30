@@ -1,19 +1,20 @@
-/* ======== 見出しまわり ======================================= */
+/* ======== ページ・ヘッダー（Home と揃える） ======== */
 .mainTitle {
     font-size: 80px;
-    font-weight: bold;
-    margin: 7rem 0 2rem 0;
+    font-weight: 700;
+    margin: 2rem 2rem 4rem;
+    /* ← Home と同値 */
     line-height: 1.1;
-    margin-left: 2rem;
     text-align: left;
 }
 
 .mainTitleLine {
     border-bottom: 2px solid #111;
     width: calc(100% - 4rem);
-    margin: 7rem 0 2.5rem 2rem;
+    /* 左右 2rem の余白を差し引き */
+    margin: 0 2rem 6rem;
+    /* 上余白なし・下だけゆったり */
 }
-
 
 /* =========  セクション全体  ========= */
 .categorySection {
