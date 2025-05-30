@@ -123,8 +123,8 @@
 
 .featuredImg {
     flex-shrink: 0;
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -170,19 +170,14 @@
     position: relative;
     aspect-ratio: 1/1;
     overflow: hidden;
-    /* ← 余分にはみ出した部分を隠す */
     border-radius: 8px;
 }
 
 .cardImg {
     display: block;
-    /* ← img の下の不要な隙間を消す */
     width: 100%;
-    /* ← コンテナ幅にフィット */
     height: 100%;
-    /* ← コンテナ高さにフィット */
     object-fit: cover;
-    /* ← アスペクト比を保ったまま、はみ出し部分をトリミングして埋める */
 }
 
 .cardMeta {
