@@ -93,7 +93,7 @@ export default function ArticleIndex({ categories }: Props) {
           />
         </h1>
         <div className={styles.mainTitleLine} />
-        
+
         {categories.map((cat) => (
           <section key={cat.dir} className={styles.categorySection}>
             {/* 見出し */}
@@ -112,9 +112,21 @@ export default function ArticleIndex({ categories }: Props) {
             >
               {cat.articles.map((a) => (
                 <SwiperSlide key={a.slug}>
-                  <div className={styles.slide}>
+                  <div
+                    className={
+                      cat.dir === 'theEssenceOfJapan'
+                        ? `${styles.slide} ${styles.essenceSlide}`
+                        : styles.slide
+                    }
+                  >
                     {/* 画像 */}
-                    <div className={styles.slideImageWrap}>
+                    <div
+                      className={
+                        cat.dir === 'theEssenceOfJapan'
+                          ? `${styles.slideImageWrap} ${styles.essenceImageWrap}`
+                          : styles.slideImageWrap
+                      }
+                    >
                       <Image
                         src={a.hero}
                         alt={a.title}

@@ -59,7 +59,12 @@
 }
 
 .slideImage {
-    object-fit: fill;
+    object-fit: cover;
+}
+
+.essenceImageWrap :global(img) {
+    /* contain で全体を収める */
+    object-fit: contain !important;
 }
 
 /* テキストカラム */
