@@ -133,6 +133,10 @@ export default function ArticleIndex({ categories }: Props) {
                         fill
                         className={styles.slideImage}
                         priority
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/images/article/default.jpg';
+                        }}
                       />
                     </div>
 
