@@ -87,6 +87,23 @@ export default function ArticleIndex({ categories }: Props) {
       <main className="container">
         {categories.map((cat) => (
           <section key={cat.dir} className={styles.categorySection}>
+            <h1 className={styles.mainTitle}>
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter
+                                .typeString('Article')          // １行目
+                                .start();                        // 実行
+                        }}
+                        options={{
+                            autoStart: true,  // マウント直後に始める
+                            loop: false,      // 一度きり
+                            delay: 100,       // 打鍵間隔
+                            deleteSpeed: 50,
+                            cursor: "",  // ※ループしないので無視されます
+                        }}
+                    />
+                </h1>
+                <div className={styles.mainTitleLine} />
             {/* 見出し */}
             <h2 className={styles.categoryTitle}>
               <Link href={cat.href}>{cat.label}</Link>
