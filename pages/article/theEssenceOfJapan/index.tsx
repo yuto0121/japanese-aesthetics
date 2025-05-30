@@ -66,23 +66,6 @@ export default function ArticleEssence({ articles }: Props) {
         />
       </header>
 
-      {featured && (
-        <section className={styles.featured}>
-          <h2 className={styles.featuredHeadline}>Featured Article</h2>
-
-          <Link href={`/article/theEssenceOfJapan/${featured.slug}`} className={styles.featuredBody}>
-            <Image
-              src={featured.hero}
-              alt={featured.title}
-              width={180}
-              height={180}
-              className={styles.featuredImg}
-            />
-            <p className={styles.featuredText}>{featured.title}</p>
-          </Link>
-        </section>
-      )}
-
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>
 
