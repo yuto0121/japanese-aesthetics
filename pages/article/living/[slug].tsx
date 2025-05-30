@@ -4,6 +4,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
@@ -53,17 +54,38 @@ export const getStaticProps: GetStaticProps<PropsLiving> = async ({ params }) =>
 export default function LivingArticle({ title, date, hero, tags, html: bodyHtml }: PropsLiving) {
   return (
     <>
+      <Head>
+        <title>{`${title} | Living`}</title>
+        <meta name="description" content={`${title} – Japanese living article`} />
+      </Head>
+
+      {/* ─ global nav ─────────────────────────── */}
       <Navigation />
 
-      <header className={styles.header}>
-        <h1 className={styles.title}>{title}</h1>
-        <Image src={hero} alt={`${title} hero`} width={200} height={200} className={styles.kanji} priority />
-        <p className={styles.meta}>
-          {date} ・ {tags.join(' / ')}
-        </p>
-      </header>
+      {/* ─ article wrapper ────────────────────── */}
+      <article className={styles.wrapper}>
+        {/* ─ header ──────────────────────────── */}
+        <header className={styles.header}>
+          <h1 className={styles.title}>{title}</h1>
+          <Image
+            src={hero}
+            alt={`${title} hero`}
+            width={200}
+            height={200}
+            className={styles.kanji}
+            priority
+          />
+        </header>
 
-      <main className={styles.articleBody} dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+        {/* ─ meta ─────────────────────────────── */}
+        <p className={styles.meta}>{date} ・ {tags.join(' / ')}</p>
+
+        {/* ─ body ─────────────────────────────── */}
+        <section
+          className={styles.articleBody}
+          dangerouslySetInnerHTML={{ __html: bodyHtml }}
+        />
+      </article>
 
       <div className={styles.backWrap}>
         <Link href="/article/living" className={styles.navBtn}>
