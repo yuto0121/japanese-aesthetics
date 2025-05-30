@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
+import Typewriter from 'typewriter-effect';
 import { GetStaticProps } from 'next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation as SwiperNavigation, A11y } from 'swiper/modules';
