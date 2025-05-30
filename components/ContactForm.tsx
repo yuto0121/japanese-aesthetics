@@ -4,6 +4,7 @@ import { FormEvent, useState } from 'react';
 import * as yup from 'yup';
 import { sendContactEmail } from '../lib/sendContactEmail';
 import { EmailData } from '../types/email';
+import styles from '../styles/Contact.module.css';
 
 // Yup バリデーションスキーマ
 const schema = yup.object<EmailData>({
@@ -55,7 +56,7 @@ export default function ContactForm() {
     return (
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
             {banner && (
-                <div className={`rounded p-3 text-sm ${banner.status === 'success' ? 'bg-green-100' : 'bg-red-100'}`}>
+                <div className={`${styles.banner} ${styles[banner.status]}`}>
                     {banner.message}
                 </div>
             )}
