@@ -62,6 +62,10 @@
     object-fit: cover;
 }
 
+.essenceImageWrap :global(img) {
+    object-fit: contain !important;
+}
+
 /* テキストカラム */
 .slideTextBox {
     flex: 0 0 45%;
