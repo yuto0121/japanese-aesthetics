@@ -1,3 +1,10 @@
+---
+title: "in'ei"
+date: "2025-01-10"
+tags: [in'ei]
+hero: "/images/article/theEssenceOfJapan/hero_in-ei.png"
+---
+
 # In Praise of Shadows
 
 **In Praise of Shadows**—originally titled **陰翳礼讃** (*In'ei Raisan*)—is a classic 1933 essay by Japanese author Jun'ichirō Tanizaki. It celebrates the subtle beauty of shadows, muted light, and the gentle interplay of darkness and illumination in traditional Japanese aesthetics.

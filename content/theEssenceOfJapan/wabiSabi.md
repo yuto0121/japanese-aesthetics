@@ -1,3 +1,10 @@
+---
+title: "wabi-sabi"
+date: "2025-01-10"
+tags: [wabi-sabi]
+hero: "/images/article/theEssenceOfJapan/hero_wabi-sabi.png"
+---
+
 # Wabi-Sabi: The Beauty of Imperfection
 
 **Wabi-sabi** is a Japanese aesthetic and worldview that finds beauty in imperfection, impermanence, and simplicity. It celebrates the natural cycle of growth and decay, embracing the marks of time and the humble, unpretentious qualities of everyday objects.

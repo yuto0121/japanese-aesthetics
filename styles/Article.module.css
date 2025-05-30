@@ -1,8 +1,8 @@
-/* ======== 見出しまわり ======================================= */
+/* ====== 見出しまわり ===================================== */
 .mainTitle {
     font-size: 80px;
     font-weight: bold;
-    margin: 7rem 0 2rem 0;
+    margin: 4.5rem 0 2rem 0;
     line-height: 1.1;
     margin-left: 2rem;
     text-align: left;
@@ -11,187 +11,118 @@
 .mainTitleLine {
     border-bottom: 2px solid #111;
     width: calc(100% - 4rem);
-    margin: 7rem 0 2.5rem 2rem;
+    margin: 4.5rem 0 2.5rem 2rem;
 }
 
-/* ======== 検索＋タグ ======================================= */
-.searchSection {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-    margin: 0 2rem 6rem 2rem;
+/* =========  セクション全体  ========= */
+.categorySection {
+    margin: 8rem 0;
+    padding: 0 2rem;
 }
 
-.searchBox {
-    flex: 1 1 45%;
+/* =========  見出し  ========= */
+.categoryTitle {
+    font-size: 64px;
+    font-weight: 800;
+    margin: 0 0 2.5rem;
+    line-height: 1.1;
 }
 
-.searchLabel {
-    font-size: 28px;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-.searchInput {
+/* =========  スライダー  ========= */
+.categorySwiper {
     width: 100%;
-    font-size: 24px;
-    border: none;
-    border-bottom: 2px solid #111;
-    padding: 0.25rem 0;
-    outline: none;
 }
 
-.tagsBox {
-    flex: 1 1 55%;
-    background: #e0e0e0;
-    padding: 2rem;
+/* Swiper の矢印を全ページ共通で装飾。
+     CSS Modules 制約回避のため :global ブロックにまとめる */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #111;
+    width: 48px;
+    height: 48px;
 }
 
-.tagsTitle {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.tagsList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-    row-gap: 0.75rem;
-}
-
-.tagButton {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 0;
-}
-
-.tagButton:hover,
-.tagButton:focus {
-    text-decoration: underline;
-}
-
-.conceptSection {
-    width: 100vw;
-    /* min-height: 100vh;  Uncomment for full-screen height */
-    background-image: url('/images/article/concept_bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    margin: 0;
-    padding: 4rem 2rem;
-
-    display: flex;
-    flex-direction: column;
-    /* or row, as you prefer */
-    align-items: left;
-    color: #000000;
-    position: relative;
-    margin-bottom: 10rem;
-}
-
-.conceptInner {
-    position: relative;
-    z-index: 1;
-}
-
-.conceptList {
-    margin: 1rem 0;
-    list-style: none;
-    padding: 0;
-}
-
-.conceptLink {
-    text-decoration: none;
-    /* other link styles */
-}
-
-
-/* ======== プレビュー行（Fashion / Cuisine / Living） ======== */
-.previewRow {
+/* =========  スライド  ========= */
+.slide {
     display: flex;
     gap: 4rem;
-    margin: 0 2rem 8rem 2rem;
-}
-
-/* 画像ラッパー */
-.previewImageWrap {
-    margin-left: auto;
-    /* ← これで画像が右端にくっつく */
-}
-
-/* 左カラム */
-.previewTextBox {
-    flex: 0 0 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.previewTitle {
-    font-size: 60px;
-    font-weight: 700;
-    margin: 0 0 3rem 0;
-}
-
-.previewSubcats {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    line-height: 2;
-}
-
-.previewLink {
-    font-size: 26px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    margin-top: 4rem;
+    box-sizing: border-box;
 }
 
-.arrow {
-    display: inline-block;
-}
-
-/* 右カラム */
-.previewImageWrap {
-    flex: 0 0 800px;
-    height: 400px;
+/* 画像カラム */
+.slideImageWrap {
+    flex: 0 0 55%;
+    height: 460px;
+    position: relative;
     overflow: hidden;
 }
 
-.previewImage {
-    width: 100%;
-    height: 100%;
+.slideImage {
     object-fit: cover;
-    display: block;
 }
 
-/* ======== レスポンシブ対応 =================================== */
-@media (max-width: 768px) {
+/* テキストカラム */
+.slideTextBox {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
-    .searchSection,
-    .previewRow {
+.slideMeta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #555;
+}
+
+.slideTitleLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.slideTitle {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* =========  レスポンシブ  ========= */
+@media (max-width: 1024px) {
+    .slideImageWrap {
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide {
         flex-direction: column;
         gap: 2rem;
     }
 
-    .previewTextBox {
-        flex: none;
+    .slideImageWrap {
+        width: 100%;
+        height: 300px;
     }
 
-    .previewImageWrap {
-        flex: none;
-        height: 300px;
-        /* スマホ時は高さ固定 */
+    .slideTextBox {
+        width: 100%;
+    }
+
+    .categoryTitle {
+        font-size: 48px;
+    }
+
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 36px;
+        height: 36px;
+    }
+
+    @media (max-width: 480px) {
+        .slideTitle {
+            font-size: 32px;
+        }
     }
 }

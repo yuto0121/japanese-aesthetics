@@ -1,3 +1,10 @@
+---
+title: "ma"
+date: "2025-01-10"
+tags: [ma]
+hero: "/images/article/theEssenceOfJapan/hero_ma.png"
+---
+
 # Ma: The Space Between
 
 **Ma** (間) is a fundamental Japanese aesthetic concept that values the spaces or intervals between things—whether physical, temporal, or relational. Rather than emptiness or void, **ma** is an active, charged gap that shapes rhythm, perception, and meaning.

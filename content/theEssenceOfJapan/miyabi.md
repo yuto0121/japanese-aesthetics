@@ -1,3 +1,10 @@
+---
+title: "miyabi"
+date: "2025-01-10"
+tags: [miyabi]
+hero: "/images/article/theEssenceOfJapan/hero_miyabi.png"
+---
+
 # Miyabi: The Elegance of Courtly Refinement
 
 **Miyabi** (雅), often translated as "courtly elegance" or "refinement," is a classical Japanese aesthetic ideal rooted in the Heian period (794–1185). It celebrates polished sophistication, graceful manners, and the delicate beauty of cultured expression.

@@ -1,3 +1,10 @@
+---
+title: "yohaku"
+date: "2025-01-10"
+tags: [yohaku]
+hero: "/images/article/theEssenceOfJapan/hero_yohaku.png"
+---
+
 # Yohaku: The Beauty of Empty Space
 
 **Yohaku** (余白), often translated as "margin," "blank space," or "negative space," is a Japanese design and aesthetic principle that celebrates the power of what is left unsaid, unseen, or unfilled. By embracing emptiness rather than filling every corner, yohaku creates balance, focus, and a sense of calm.
