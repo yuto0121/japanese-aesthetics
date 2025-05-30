@@ -78,7 +78,10 @@ export default function ArticleLiving({ articles }: Props) {
         <section className={styles.featured}>
           <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
-          <Link href={`/article/living/${featured.slug}`} className={styles.featuredBody}>
+          <Link
+            href={`/article/living/${featured.slug}`}
+            className={styles.featuredBody}
+          >
             <Image
               src={featured.hero}
               alt={featured.title}
