@@ -14,6 +14,86 @@
     margin: 7rem 0 2.5rem 2rem;
 }
 
+/* ======== スライダー ======================================== */
+.sliderWrapper {
+    width: 100%;
+    margin: 0 auto 8rem;
+    position: relative;
+}
+
+/* Swiper の矢印 */
+:global(.swiper-button-prev),
+:global(.swiper-button-next) {
+    color: #111;
+    width: 48px;
+    height: 48px;
+}
+
+:global(.swiper-button-prev) {
+    left: 10px;
+}
+
+:global(.swiper-button-next) {
+    right: 10px;
+}
+
+/* スライド本体 */
+.slide {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* 左カラム：画像 */
+.slideImageWrap {
+    flex: 0 0 55%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideImage {
+    object-fit: cover;
+}
+
+/* 右カラム：テキスト */
+.slideTextBox {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slideTitle {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0 0 3rem 0;
+}
+
+.slideSubcats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.slideLink {
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 4rem;
+}
+
+.arrow {
+    display: inline-block;
+}
+
 /* ======== 検索＋タグ ======================================= */
 .searchSection {
     display: flex;
@@ -76,122 +156,40 @@
     text-decoration: underline;
 }
 
-.conceptSection {
-    width: 100vw;
-    /* min-height: 100vh;  Uncomment for full-screen height */
-    background-image: url('/images/article/concept_bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    margin: 0;
-    padding: 4rem 2rem;
-
-    display: flex;
-    flex-direction: column;
-    /* or row, as you prefer */
-    align-items: left;
-    color: #000000;
-    position: relative;
-    margin-bottom: 10rem;
-}
-
-.conceptInner {
-    position: relative;
-    z-index: 1;
-}
-
-.conceptList {
-    margin: 1rem 0;
-    list-style: none;
-    padding: 0;
-}
-
-.conceptLink {
-    text-decoration: none;
-    /* other link styles */
-}
-
-
-/* ======== プレビュー行（Fashion / Cuisine / Living） ======== */
-.previewRow {
-    display: flex;
-    gap: 4rem;
-    margin: 0 2rem 8rem 2rem;
-}
-
-/* 画像ラッパー */
-.previewImageWrap {
-    margin-left: auto;
-    /* ← これで画像が右端にくっつく */
-}
-
-/* 左カラム */
-.previewTextBox {
-    flex: 0 0 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.previewTitle {
-    font-size: 60px;
-    font-weight: 700;
-    margin: 0 0 3rem 0;
-}
-
-.previewSubcats {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    line-height: 2;
-}
-
-.previewLink {
-    font-size: 26px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-top: 4rem;
-}
-
-.arrow {
-    display: inline-block;
-}
-
-/* 右カラム */
-.previewImageWrap {
-    flex: 0 0 800px;
-    height: 400px;
-    overflow: hidden;
-}
-
-.previewImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
 /* ======== レスポンシブ対応 =================================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .slideImageWrap {
+        height: 400px;
+    }
+}
 
-    .searchSection,
-    .previewRow {
+@media (max-width: 768px) {
+    .slide {
         flex-direction: column;
         gap: 2rem;
     }
 
-    .previewTextBox {
-        flex: none;
+    .slideImageWrap {
+        width: 100%;
+        height: 300px;
     }
 
-    .previewImageWrap {
-        flex: none;
-        height: 300px;
-        /* スマホ時は高さ固定 */
+    .slideTextBox {
+        width: 100%;
+    }
+
+    .searchSection {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slideTitle {
+        font-size: 40px;
+    }
+
+    .slideLink {
+        font-size: 22px;
     }
 }
