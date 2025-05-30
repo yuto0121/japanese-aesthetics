@@ -215,3 +215,164 @@
 .navBtn:hover {
     background: #f7f7f7;
 }
+
+
+/* ===============================
+   CuisineArticle.module.css (updated)
+   =============================== */
+
+/* ---------- Common Layout ---------- */
+.wrapper {
+    padding-inline: 2rem;
+    /* match other article style */
+    padding-bottom: 6rem;
+    margin-inline: auto;
+    max-width: 100rem;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* ---------- Header ---------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 4.5rem;
+    /* top spacing only */
+    gap: 2rem;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 2px;
+    background: #111;
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 800;
+    margin-top: 2rem;
+    font-family: "EB Garamond", serif;
+    line-height: 1.05;
+}
+
+.kanji {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+}
+
+/* ---------- Meta ---------- */
+.meta {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+}
+
+/* ---------- Article Body ---------- */
+.articleBody {
+    max-width: 120ch;
+    margin-inline: auto;
+    margin-block: 3rem 0;
+    padding-bottom: 2rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.articleBody h1,
+.articleBody h2,
+.articleBody h3,
+.articleBody h4 {
+    font-family: "EB Garamond", serif;
+    font-weight: 700;
+    margin-block: 3rem 1.25rem;
+}
+
+.articleBody h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.articleBody h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.articleBody h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.articleBody h4 {
+    font-size: 1rem;
+}
+
+.articleBody p {
+    margin-block: 1.25rem;
+}
+
+/* Markdown images */
+.markdownImg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-block: 2rem;
+}
+
+/* Code blocks */
+.articleBody pre {
+    max-width: 100%;
+    overflow-x: auto;
+    background: #0d0d0d;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Blockquotes */
+.articleBody blockquote {
+    border-left: 4px solid #f37021;
+    padding-left: 1rem;
+    color: #555;
+    font-style: italic;
+    margin-inline: 0;
+}
+
+.articleBody strong {
+    font-weight: 700;
+    color: #f37021;
+}
+
+/* ---------- Back Link ---------- */
+.backWrap {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.navBtn {
+    background: none;
+    border: 1px solid #bfbfbf;
+    padding: 0.4rem 1.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navBtn:hover {
+    background: #f7f7f7;
+}
