@@ -20,13 +20,19 @@
 }
 
 /* ────────── Heading ────────── */
-.heading {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: .02em;
-    margin-bottom: 1.25rem;
-    border-bottom: 2px solid var(--color-accent, #111);
-    padding-bottom: .5rem;
+.mainTitle {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 4.5rem 0 2rem 0;
+    line-height: 1.1;
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.mainTitleLine {
+    border-bottom: 2px solid #111;
+    width: calc(100% - 4rem);
+    margin: 4.5rem 0 2.5rem 2rem;
 }
 
 /* ────────── Meta line ──────── */

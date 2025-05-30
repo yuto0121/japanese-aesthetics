@@ -89,7 +89,8 @@ export default function SearchPage({ articles }: Props) {
       <Navigation />
 
       <main className={styles.wrapper}>
-        <h1 className={styles.heading}>Search</h1>
+        <h1 className={styles.mainTitle}>Search</h1>
+        <div className={styles.mainTitleLine} />
 
         {q ? (
           <>
