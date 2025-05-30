@@ -56,6 +56,32 @@ export default function ArticleEssence({ articles }: Props) {
             options={{ autoStart: true, loop: false, delay: 100, deleteSpeed: 50, cursor: '' }}
           />
         </h1>
+        <Image
+          src="/images/kanji_essence.png"
+          alt="Kanji for essence"
+          width={150}
+          height={150}
+          className={styles.kanji}
+          priority
+        />
+      </header>
+
+      {featured && (
+        <section className={styles.featured}>
+          <h2 className={styles.featuredHeadline}>Featured Article</h2>
+
+          <Link href={`/article/theEssenceOfJapan/${featured.slug}`} className={styles.featuredBody}>
+            <Image
+              src={featured.hero}
+              alt={featured.title}
+              width={180}
+              height={180}
+              className={styles.featuredImg}
+            />
+            <p className={styles.featuredText}>{featured.title}</p>
+          </Link>
+        </section>
+      )}
       </header>
 
       <section className={styles.articleGridSection}>

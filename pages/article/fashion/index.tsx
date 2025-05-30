@@ -74,10 +74,7 @@ export default function ArticleFashion({ articles }: PropsFashion) {
         <section className={styles.featured}>
           <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
-          <Link
-            href={`/article/fashion/${featured.slug}`}
-            className={styles.featuredBody}
-          >
+          <Link href={`/article/fashion/${featured.slug}`} className={styles.featuredBody}>
             <Image
               src={featured.hero}
               alt={featured.title}
