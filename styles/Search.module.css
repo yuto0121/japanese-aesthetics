@@ -7,18 +7,6 @@
     animation: fade-in 0.4s ease;
 }
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
 /* ────────── Heading ────────── */
 .heading {
     font-size: 2rem;
@@ -85,18 +73,4 @@
     text-align: center;
     font-size: 0.95rem;
     color: var(--color-muted, #888);
-}
-
-/* ────────── Dark-mode tweak ── */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-surface: #1b1b1b;
-        --color-accent: #fff;
-        --color-muted: #aaa;
-        --color-border: #333;
-    }
-
-    .item {
-        border-color: var(--color-border);
-    }
 }
