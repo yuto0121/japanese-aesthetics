@@ -59,7 +59,7 @@
 }
 
 .slideImage {
-    object-fit: cover;
+    object-fit: fill;
 }
 
 /* テキストカラム */
