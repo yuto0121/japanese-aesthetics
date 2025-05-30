@@ -22,18 +22,18 @@
 }
 
 /* Swiper の矢印 */
-:global(.swiper-button-prev),
-:global(.swiper-button-next) {
+.swiper-button-prev,
+.swiper-button-next {
     color: #111;
     width: 48px;
     height: 48px;
 }
 
-:global(.swiper-button-prev) {
+.swiper-button-prev {
     left: 10px;
 }
 
-:global(.swiper-button-next) {
+.swiper-button-next {
     right: 10px;
 }
 
