@@ -17,6 +17,7 @@ type ArticleMeta = {
   tags: string[];
   hero: string;          // 画像パス
   date: string;          // YYYY-MM-DD
+  excerpt: string;       // 記事の抜粋
 };
 
 type Props = { articles: ArticleMeta[] };
@@ -30,13 +31,14 @@ export const getStaticProps: GetStaticProps<Props> = () => {
     .map((file) => {
       const slug = file.replace(/\.md$/, '');
       const raw = fs.readFileSync(path.join(LIVING_DIR, file), 'utf8');
-      const { data } = matter(raw);
+      const { data, content } = matter(raw);
       return {
         slug,
         title: data.title as string,
         tags: data.tags as string[],
         hero: data.hero as string,
         date: data.date as string,
+        excerpt: content.slice(0, 200) + '...', // 最初の200文字を抜粋
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -84,7 +86,10 @@ export default function ArticleLiving({ articles }: Props) {
               height={180}
               className={styles.featuredImg}
             />
-            <p className={styles.featuredText}>{featured.title}</p>
+            <div className={styles.featuredContent}>
+              <p className={styles.featuredText}>{featured.title}</p>
+              <p className={styles.featuredExcerpt}>{featured.excerpt}</p>
+            </div>
           </Link>
         </section>
       )}
