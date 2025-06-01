@@ -127,6 +127,8 @@ export default function Home() {
           </a>
         </Link>
       </main>
+
+      <Footer />
     </div>
   );
 }
