@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import styles from '../styles/TheEssenceOfJapan.module.css';
 
-
 export default function TheEssenceOfJapan() {
   const concepts = [
     { slug: 'wabiSabi', label: 'wabi–sabi', style: styles.wabiSabi },
@@ -21,7 +20,6 @@ export default function TheEssenceOfJapan() {
       <Link href="/article/theEssenceOfJapan" className={styles.beautyConceptsTitle}>
         <h2>The Essence of Japan</h2>
       </Link>
-
 
       <div className={styles.beautyConceptsGrid}>
         {concepts.map(({ slug, label, style }) => (

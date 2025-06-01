@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps<Props> = () => {
           date: data.date as string,
         };
       })
-      .sort((a, b) => (a.date < b.date ? 1 : -1)); // 新しい順
+      .sort((a, b) => (a.date < b.date ? 1 : -1)); 
 
     return { label, dir, href, articles };
   });
