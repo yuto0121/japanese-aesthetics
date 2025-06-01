@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const links = [
-    { href: "/articles", label: "Articles" },
+    { href: "/article", label: "Article" },
     { href: "/about", label: "About us" },
     { href: "/contact", label: "Contact" },
     { href: "/privacy", label: "Privacy Policy" },
