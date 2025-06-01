@@ -8,7 +8,6 @@ import Link from 'next/link';
 import path from 'path';
 import { remark } from 'remark';
 import html from 'remark-html';
-import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSlug.module.css';
 
 type Props = {
@@ -56,8 +55,6 @@ export default function EssenceArticle({ title, date, hero, tags, html: bodyHtml
         <title>{`${title} | The Essence of Japan`}</title>
         <meta name="description" content={`${title} – Japanese aesthetic concept`} />
       </Head>
-
-      <Navigation />
 
       <article className={styles.wrapper}>
         <header className={styles.header}>

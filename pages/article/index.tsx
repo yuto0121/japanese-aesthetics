@@ -1,17 +1,16 @@
 // pages/article/index.tsx
 import fs from 'fs';
 import matter from 'gray-matter';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
-import Typewriter from 'typewriter-effect';
-import { GetStaticProps } from 'next';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation as SwiperNavigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { A11y, Navigation as SwiperNavigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Typewriter from 'typewriter-effect';
 
-import Navigation from '../../components/Navigation';
 import styles from '../../styles/Article.module.css';
 
 /* ──────────────────
@@ -40,9 +39,9 @@ type Props = { categories: Category[] };
 ────────────────── */
 const CATEGORY_PRESETS = [
   { label: 'The Essence of Japan', dir: 'theEssenceOfJapan', href: '/article/theEssenceOfJapan' },
-  { label: 'Fashion',               dir: 'fashion',          href: '/article/fashion' },
-  { label: 'Cuisine',               dir: 'cuisine',          href: '/article/cuisine' },
-  { label: 'Living',                dir: 'living',           href: '/article/living' },
+  { label: 'Fashion', dir: 'fashion', href: '/article/fashion' },
+  { label: 'Cuisine', dir: 'cuisine', href: '/article/cuisine' },
+  { label: 'Living', dir: 'living', href: '/article/living' },
 ];
 
 /* ──────────────────
@@ -69,7 +68,7 @@ export const getStaticProps: GetStaticProps<Props> = () => {
           date: data.date as string,
         };
       })
-      .sort((a, b) => (a.date < b.date ? 1 : -1)); 
+      .sort((a, b) => (a.date < b.date ? 1 : -1));
 
     return { label, dir, href, articles };
   });
@@ -83,7 +82,6 @@ export const getStaticProps: GetStaticProps<Props> = () => {
 export default function ArticleIndex({ categories }: Props) {
   return (
     <>
-      <Navigation />
 
       <main className="container">
         <h1 className={styles.mainTitle}>

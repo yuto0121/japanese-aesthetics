@@ -2,7 +2,6 @@
 
 import Typewriter from 'typewriter-effect';
 import ContactForm from '../components/ContactForm';
-import Navigation from '../components/Navigation';
 
 import {
     FaFacebookF,
@@ -16,9 +15,6 @@ import styles from '../styles/Contact.module.css';
 export default function Contact() {
     return (
         <div>
-            {/* ─── ナビゲーション ───────────────────────── */}
-            <Navigation />
-
             {/* ─── メイン ───────────────────────────────── */}
             <main className="container">
                 {/* 見出し */}

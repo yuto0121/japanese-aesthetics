@@ -1,16 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
 import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div>
-      <Navigation />
-
       <main className="container">
         <h1 className={styles.mainTitle}>
           <Typewriter
@@ -128,7 +124,6 @@ export default function Home() {
           </a>
         </Link>
       </main>
-      <Footer />
     </div>
   );
 }
