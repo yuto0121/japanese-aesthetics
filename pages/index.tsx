@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
+import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import styles from '../styles/Home.module.css';
