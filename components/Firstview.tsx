@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import styles from "./Firstview.module.css";
+import styles from "../styles/Firstview.module.css";
 
 interface FirstviewProps {
     /** Fired when the splash finishes so parent can unmount */
