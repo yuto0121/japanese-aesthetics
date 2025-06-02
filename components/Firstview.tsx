@@ -1,144 +1,100 @@
 import React, { useEffect, useRef } from "react";
 
 interface FirstviewProps {
-    /** Callback fired when the intro finishes (user scrolled to the end) */
+    /** Called when the 3 s brush animation ends so that the parent can hide this splash */
     onFinish: () => void;
 }
 
 /**
- * Intro splash that shows a calligraphy‑style circle that gradually draws as the user scrolls.
- * Moving the cursor paints additional brush strokes.
- * When the scroll reaches the bottom (100 % progress), `onFinish` is triggered so the parent can
- * unmount this component and reveal the real homepage.
+ * 3‑second ensō (円相) brush animation shown only on the first site visit.
+ * ‑ Renders an SVG path that animates its stroke‑dashoffset from full length to 0.
+ * ‑ Adds a rough filter to mimic calligraphy ink.
+ * ‑ Fades out, then fires `onFinish()` so the parent component can unmount it.
  */
 const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const circleRef = useRef<SVGCircleElement>(null);
-    const pathLenRef = useRef<number>(0);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const pathRef = useRef<SVGPathElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
-    /* ── initialise circle dasharray / dashoffset ─────────────────────────── */
     useEffect(() => {
-        if (!circleRef.current) return;
-        const len = circleRef.current.getTotalLength();
-        pathLenRef.current = len;
-        circleRef.current.style.strokeDasharray = `${len}`;
-        circleRef.current.style.strokeDashoffset = `${len}`;
-    }, []);
+        const path = pathRef.current;
+        if (!path) return;
 
-    /* ── scroll‑based drawing progress & completion check ─────────────────── */
-    useEffect(() => {
-        const el = containerRef.current;
-        if (!el) return;
+        // Measure path length once and set up dasharray/offset.
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = `${len}`;
+        path.style.strokeDashoffset = `${len}`;
 
-        const onScroll = () => {
-            const max = el.scrollHeight - el.clientHeight;
-            const prog = el.scrollTop / max;
-            if (circleRef.current) {
-                const offset = pathLenRef.current * (1 - prog);
-                circleRef.current.style.strokeDashoffset = `${offset}`;
+        // Force reflow so the browser acknowledges the initial dashoffset before the transition.
+        path.getBoundingClientRect();
+
+        // Animate stroke‑dashoffset to 0 over 3 s.
+        path.style.transition = "stroke-dashoffset 3s ease-in-out";
+        path.style.strokeDashoffset = "0";
+
+        // After drawing completes, fade the splash and notify parent.
+        const t1 = setTimeout(() => {
+            if (wrapperRef.current) {
+                wrapperRef.current.style.transition = "opacity 0.4s ease";
+                wrapperRef.current.style.opacity = "0";
             }
-            if (prog >= 1) {
-                onFinish();
-            }
-        };
+        }, 3000);
 
-        el.addEventListener("scroll", onScroll, { passive: true });
-        return () => el.removeEventListener("scroll", onScroll);
-    }, [onFinish]);
-
-    /* ── cursor brush‑stroke drawing on canvas ─────────────────────────────── */
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
-
-        // full‑size canvas
-        const resize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
-        resize();
-        window.addEventListener("resize", resize);
-
-        // draw as the mouse moves
-        let prev: { x: number; y: number } | null = null;
-        const draw = (e: MouseEvent) => {
-            if (!ctx) return;
-            if (!prev) {
-                prev = { x: e.clientX, y: e.clientY };
-                return;
-            }
-            ctx.lineWidth = 10;
-            ctx.lineCap = "round";
-            ctx.strokeStyle = "#000";
-            ctx.beginPath();
-            ctx.moveTo(prev.x, prev.y);
-            ctx.lineTo(e.clientX, e.clientY);
-            ctx.stroke();
-            prev = { x: e.clientX, y: e.clientY };
-        };
-
-        const reset = () => (prev = null);
-
-        window.addEventListener("mousemove", draw);
-        window.addEventListener("mouseup", reset);
-        window.addEventListener("mouseleave", reset);
+        const t2 = setTimeout(onFinish, 3400); // Parent unmount slightly after fade.
 
         return () => {
-            window.removeEventListener("resize", resize);
-            window.removeEventListener("mousemove", draw);
-            window.removeEventListener("mouseup", reset);
-            window.removeEventListener("mouseleave", reset);
+            clearTimeout(t1);
+            clearTimeout(t2);
         };
-    }, []);
+    }, [onFinish]);
 
-    /* ── render ────────────────────────────────────────────────────────────── */
     return (
-        <div ref={containerRef} className="fvWrapper">
-            {/* scrollable spacer to give us ~150 vh of scroll range */}
-            <div style={{ height: "150vh" }} />
+        <div ref={wrapperRef} className="fvWrapper">
+            <svg viewBox="0 0 200 200" className="ensoSvg">
+                <defs>
+                    {/* Subtle noise filter to roughen the stroke like real ink */}
+                    <filter id="brush-rough">
+                        <feTurbulence
+                            type="fractalNoise"
+                            baseFrequency="0.9"
+                            numOctaves="3"
+                            result="noise"
+                        />
+                        <feGaussianBlur in="noise" stdDeviation="1.2" result="blur" />
+                        <feBlend in="SourceGraphic" in2="blur" mode="multiply" />
+                    </filter>
+                </defs>
 
-            {/* central SVG circle */}
-            <svg viewBox="0 0 200 200" className="circleSvg">
-                <circle
-                    ref={circleRef}
-                    cx="100"
-                    cy="100"
-                    r="80"
+                {/* Ensō path – one‑stroke circle */}
+                <path
+                    ref={pathRef}
+                    d="M100 10
+             C45 10 10 45 10 100
+             C10 155 45 190 100 190
+             C155 190 190 155 190 100
+             C190 45 155 10 100 10"
                     fill="none"
                     stroke="#000"
-                    strokeWidth="10"
+                    strokeWidth="20"
                     strokeLinecap="round"
+                    strokeLinejoin="round"
+                    filter="url(#brush-rough)"
                 />
             </svg>
-
-            {/* brush‑stroke canvas overlay */}
-            <canvas ref={canvasRef} className="brushCanvas" />
 
             <style jsx>{`
         .fvWrapper {
           position: fixed;
           inset: 0;
           background: #fff;
-          overflow-y: scroll;
-          -webkit-overflow-scrolling: touch;
-          overscroll-behavior: contain; /* prevent body bouncing */
+          display: flex;
+          justify-content: center;
+          align-items: center;
           z-index: 9999;
+          pointer-events: none; /* avoid interfering with page links */
         }
-        .circleSvg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 50vmin;
-          height: 50vmin;
-          pointer-events: none;
-        }
-        .brushCanvas {
-          position: absolute;
-          inset: 0;
+        .ensoSvg {
+          width: 60vmin;
+          height: 60vmin;
         }
       `}</style>
         </div>
