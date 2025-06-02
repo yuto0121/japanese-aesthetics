@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import Firstview from '../components/Firstview';
 import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
@@ -9,29 +9,12 @@ import styles from '../styles/Home.module.css';
 
 
 export default function Home() {
-  const [showFV, setShowFV] = useState<boolean | null>(null);
+  const [showFV, setShowFV] = useState(true);
 
-  // ① 初回マウント時に localStorage を確認
-  useEffect(() => {
-    const seen = localStorage.getItem('firstviewShown') === 'true';
-    setShowFV(!seen);   // seen=false → showFV=true で Firstview 表示
-  }, []);
-
-  // ② localStorage 判定が済むまでレンダリングを保留
-  if (showFV === null) return null;
-
-  // ③ Firstview 表示ルート
   if (showFV) {
-    return (
-      <Firstview
-        onFinish={() => {
-          localStorage.setItem('firstviewShown', 'true');
-          setShowFV(false);
-        }}
-      />
-    );
+    return <Firstview onFinish={() => setShowFV(false)} />;
   }
-
+  /* ↓ここから既存の Home の JSX を返す ↓ */
   return (
     <div>
       <main className="container">
