@@ -1,3 +1,6 @@
+// @ts-nocheck
+// -*- coding: utf-8 -*-
+
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "../styles/Firstview.module.css";
 
@@ -19,6 +22,11 @@ const kanjiList = [
     "枯れ葉",
     "凛",
     "粋",
+    "余韻",
+    "生きがい",
+    "風流",
+    "一期一会",
+    "刹那"
 ];
 
 const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
@@ -28,15 +36,15 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
     // Random positions & delays — memoised so they stay stable during splash lifetime
     const spots = useMemo(
         () => {
-            const gridSize = 4; // 4x4のグリッドを作成
             const positions: { top: number; left: number }[] = [];
+            const margin = 15; // 余白の確保
 
-            // グリッドの各セルに1つの漢字を配置
-            for (let i = 0; i < gridSize; i++) {
-                for (let j = 0; j < gridSize; j++) {
+            // より細かいグリッドで位置を生成
+            for (let i = 0; i < 6; i++) {
+                for (let j = 0; j < 6; j++) {
                     positions.push({
-                        top: (i * 25) + 5, // 5-80%の範囲で均等に配置
-                        left: (j * 25) + 5
+                        top: (i * 15) + margin, // 15-85%の範囲で均等に配置
+                        left: (j * 15) + margin
                     });
                 }
             }

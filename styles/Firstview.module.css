@@ -2,33 +2,40 @@
 
 .wrapper {
     position: fixed;
-    inset: 0;
-    background: #fff;
-    overflow: hidden;
-    font-family: "Yuji Syuku", serif;
-    z-index: 9999;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
 }
 
-.hide {
+.wrapper.hide {
     opacity: 0;
 }
 
 .char {
     position: absolute;
-    font-size: clamp(48px, 6vw, 96px);
-    color: #000;
+    font-size: 2.5rem;
     opacity: 0;
-    transform: scale(0.5);
-    animation: fadeInScale 0.8s ease-out forwards;
-    animation-delay: var(--delay, 0s);
-    white-space: nowrap;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: var(--delay);
+    font-weight: 500;
+    color: #333;
 }
 
-@keyframes fadeInScale {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
