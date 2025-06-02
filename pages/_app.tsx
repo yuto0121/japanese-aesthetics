@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Navigation />
       <Component {...pageProps} />
-      {!isFirstview && <Footer />}
+      <Footer />
     </>
   )
 }
