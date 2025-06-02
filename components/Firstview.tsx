@@ -34,14 +34,15 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
     const spots = useMemo(
         () => {
             const positions: { top: number; left: number }[] = [];
-            const margin = 20; // 余白を増やす
+            const margin = 15; // 画面端からの余白
+            const gridSize = 4; // 4x4のグリッド
 
-            // より細かいグリッドで位置を生成
-            for (let i = 0; i < 8; i++) {
-                for (let j = 0; j < 8; j++) {
+            // 4x4のグリッドで均等に配置
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
                     positions.push({
-                        top: (i * 10) + margin, // 20-90%の範囲で均等に配置
-                        left: (j * 10) + margin
+                        top: (i * 20) + margin, // 15-75%の範囲で均等に配置
+                        left: (j * 20) + margin
                     });
                 }
             }
