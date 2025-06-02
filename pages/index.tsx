@@ -3,10 +3,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import Firstview from '../components/Firstview';
+import Footer from '../components/Footer';
 import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import styles from '../styles/Home.module.css';
-
-
 
 export default function Home() {
   const [showFV, setShowFV] = useState(true);
@@ -133,6 +132,8 @@ export default function Home() {
             </section>
           </a>
         </Link>
+
+        <Footer />
       </main>
     </div>
   );
