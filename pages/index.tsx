@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import Firstview from '../components/Firstview';
 import Footer from '../components/Footer';
@@ -8,7 +8,16 @@ import TheEssenceOfJapan from '../components/TheEssenceOfJapan';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const [showFV, setShowFV] = useState(true);
+  const [showFV, setShowFV] = useState(false);
+
+  useEffect(() => {
+    // 初回訪問かどうかをチェック
+    const hasVisited = localStorage.getItem('hasVisited');
+    if (!hasVisited) {
+      setShowFV(true);
+      localStorage.setItem('hasVisited', 'true');
+    }
+  }, []);
 
   if (showFV) {
     return <Firstview onFinish={() => setShowFV(false)} />;
