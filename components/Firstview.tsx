@@ -37,12 +37,14 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
             const margin = 15; // 画面端からの余白
             const gridSize = 4; // 4x4のグリッド
 
-            // 4x4のグリッドで均等に配置
+            // 4x4のグリッドで基本位置を生成
             for (let i = 0; i < gridSize; i++) {
                 for (let j = 0; j < gridSize; j++) {
+                    // 基本位置に±5%のランダムなオフセットを追加
+                    const randomOffset = () => (Math.random() - 0.5) * 10;
                     positions.push({
-                        top: (i * 20) + margin, // 15-75%の範囲で均等に配置
-                        left: (j * 20) + margin
+                        top: (i * 20) + margin + randomOffset(),
+                        left: (j * 20) + margin + randomOffset()
                     });
                 }
             }
