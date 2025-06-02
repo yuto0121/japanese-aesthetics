@@ -1,6 +1,3 @@
-// @ts-nocheck
-// -*- coding: utf-8 -*-
-
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "../styles/Firstview.module.css";
 
