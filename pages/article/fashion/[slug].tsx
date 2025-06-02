@@ -6,7 +6,6 @@ import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import path from 'path';
 import { remark } from 'remark';
 import html from 'remark-html';
@@ -83,11 +82,6 @@ export default function FashionArticle({ title, date, hero, tags, html: bodyHtml
         />
       </article>
 
-      <div className={styles.backWrap}>
-        <Link href="/article/fashion" className={styles.navBtn}>
-          ← Back to Fashion
-        </Link>
-      </div>
     </>
   );
 }

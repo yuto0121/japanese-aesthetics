@@ -1,4 +1,3 @@
-/* components/Navigation.tsx */
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,14 +8,12 @@ const Navigation = () => {
   const router = useRouter();
 
   /* ────────── UI state ────────── */
-  const [drawerOpen,  setDrawerOpen]  = useState(false);
   const [searchOpen,  setSearchOpen]  = useState(false);
   const [articleOpen, setArticleOpen] = useState(false);
   const [searchTerm,  setSearchTerm]  = useState('');
 
-  /* すべて閉じるユーティリティ */
+  /* すべて閉じるユーティリティ（ハンバーガーは hover 制御に変更） */
   const closeAll = () => {
-    setDrawerOpen(false);
     setSearchOpen(false);
     setArticleOpen(false);
   };
@@ -39,13 +36,11 @@ const Navigation = () => {
       {/* ─ search icon ────────────── */}
       <button
         className={styles.searchToggle}
-        onClick={() => {
-          setSearchOpen(!searchOpen);
-          setDrawerOpen(false);      // 検索を開くときは drawer を閉じる
-        }}
+        onClick={() => setSearchOpen(!searchOpen)}
         aria-label="検索を開く"
         aria-expanded={searchOpen}
       >
+        {/* loupe */}
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -67,45 +62,46 @@ const Navigation = () => {
         </form>
       )}
 
-      {/* ─ hamburger ──────────────── */}
-      <button
-        className={`${styles.burger} ${drawerOpen ? styles.open : ''}`}
-        onClick={() => {
-          setDrawerOpen(!drawerOpen);
-          setSearchOpen(false);
-        }}
-        aria-label="メニューを開く"
-        aria-expanded={drawerOpen}
-      >
-        <span /><span /><span />
-      </button>
+      {/* ─ hamburger + horizontal menu (hover) ─ */}
+      <div className={styles.burgerWrapper}>
+        {/* ハンバーガーは見た目だけ。hover/focus でメニューを開く */}
+        <button
+          className={styles.burger}
+          aria-label="メニューを開く"
+          aria-haspopup="true"
+        >
+          <span /><span /><span />
+        </button>
 
-      {/* ─ drawer menu ────────────── */}
-      <nav className={`${styles.drawer} ${drawerOpen ? styles.show : ''}`}
-           aria-hidden={!drawerOpen}>
-        <ul className={styles.menu}>
-          <li><Link href="/" onClick={closeAll}>HOME</Link></li>
-          <li><Link href="/about" onClick={closeAll}>ABOUT&nbsp;US</Link></li>
+        <nav className={styles.drawer}>
+          <ul className={styles.menu}>
+            <li><Link href="/" onClick={closeAll}>HOME</Link></li>
+            <li><Link href="/about" onClick={closeAll}>ABOUT&nbsp;US</Link></li>
 
-          {/* ARTICLE 親項目 */}
-          <li>
-            <button className={styles.toggleButton}
-                    onClick={() => setArticleOpen(!articleOpen)}
-                    aria-expanded={articleOpen}>
-              ARTICLE
-            </button>
-            <ul className={`${styles.subMenu} ${articleOpen ? styles.openSub : ''}`}
-                aria-hidden={!articleOpen}>
-              <li><Link href="/article/theEssenceOfJapan" onClick={closeAll}>The&nbsp;Essence&nbsp;of&nbsp;Japan</Link></li>
-              <li><Link href="/article/cuisine"            onClick={closeAll}>Cuisine</Link></li>
-              <li><Link href="/article/fashion"            onClick={closeAll}>Fashion</Link></li>
-              <li><Link href="/article/living"             onClick={closeAll}>Living</Link></li>
-            </ul>
-          </li>
+            {/* ARTICLE 親項目（サブメニューは従来どおりクリックで展開） */}
+            <li>
+              <button
+                className={styles.toggleButton}
+                onClick={() => setArticleOpen(!articleOpen)}
+                aria-expanded={articleOpen}
+              >
+                ARTICLE
+              </button>
+              <ul
+                className={`${styles.subMenu} ${articleOpen ? styles.openSub : ''}`}
+                aria-hidden={!articleOpen}
+              >
+                <li><Link href="/article/theEssenceOfJapan" onClick={closeAll}>The&nbsp;Essence&nbsp;of&nbsp;Japan</Link></li>
+                <li><Link href="/article/cuisine"            onClick={closeAll}>Cuisine</Link></li>
+                <li><Link href="/article/fashion"            onClick={closeAll}>Fashion</Link></li>
+                <li><Link href="/article/living"             onClick={closeAll}>Living</Link></li>
+              </ul>
+            </li>
 
-          <li><Link href="/contact" onClick={closeAll}>CONTACT</Link></li>
-        </ul>
-      </nav>
+            <li><Link href="/contact" onClick={closeAll}>CONTACT</Link></li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };
