@@ -8,7 +8,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
 import Typewriter from 'typewriter-effect';
-import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
 
 
@@ -51,8 +50,6 @@ export default function ArticleFashion({ articles }: PropsFashion) {
 
   return (
     <>
-      <Navigation />
-
       <header className={styles.header}>
         <h1 className={styles.title}>
           <Typewriter

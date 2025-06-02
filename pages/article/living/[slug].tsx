@@ -10,7 +10,6 @@ import Link from 'next/link';
 import path from 'path';
 import { remark } from 'remark';
 import html from 'remark-html';
-import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSlug.module.css';
 
 type PropsLiving = {
@@ -58,9 +57,6 @@ export default function LivingArticle({ title, date, hero, tags, html: bodyHtml 
         <title>{`${title} | Living`}</title>
         <meta name="description" content={`${title} – Japanese living article`} />
       </Head>
-
-      {/* ─ global nav ─────────────────────────── */}
-      <Navigation />
 
       {/* ─ article wrapper ────────────────────── */}
       <article className={styles.wrapper}>

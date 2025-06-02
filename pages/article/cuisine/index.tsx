@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
 import Typewriter from 'typewriter-effect';
-import Navigation from '../../../components/Navigation';
 import styles from '../../../styles/ArticleSub.module.css';
 
 type ArticleMeta = {
@@ -48,9 +47,6 @@ export default function ArticleCuisine({ articles }: Props) {
 
   return (
     <>
-      {/* ─ global nav ─────────────────────────── */}
-      <Navigation />
-
       {/* ─ page header ────────────────────────── */}
       <header className={styles.header}>
         <h1 className={styles.title}>

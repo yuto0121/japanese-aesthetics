@@ -106,7 +106,6 @@
    import path from 'path';
    import { remark } from 'remark';
    import html from 'remark-html';
-   import Navigation from '../../../components/Navigation';
    import styles from '../../../styles/ArticleSlug.module.css';
    
    type Props = {
@@ -163,8 +162,6 @@
            <meta name="description" content={`${title} – Japanese cuisine article`} />
          </Head>
    
-         {/* ─ global nav ─────────────────────────── */}
-         <Navigation />
    
          {/* ─ article wrapper ────────────────────── */}
          <article className={styles.wrapper}>

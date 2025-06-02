@@ -1,22 +1,21 @@
 /* pages/search/index.tsx */
 import fs from 'fs';
 import matter from 'gray-matter';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 import path from 'path';
 import { useMemo } from 'react';
-import { useRouter } from 'next/router';
-import Navigation from '../../components/Navigation';
 import styles from '../../styles/Search.module.css';
 
 /* ───────────── Types ───────────── */
 type Article = {
-  title:   string;
-  slug:    string;
-  tags:    string[];
-  hero:    string;
+  title: string;
+  slug: string;
+  tags: string[];
+  hero: string;
   content: string;
 };
 type Props = { articles: Article[] };
@@ -53,10 +52,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       const { data, content } = matter(raw);
 
       articles.push({
-        title:   (data.title as string) ?? file.replace(/\.md$/, ''),
-        slug:    `/article/${section}/${file.replace(/\.md$/, '')}`,
-        tags:    (data.tags as string[]) ?? [],
-        hero:    (data.hero as string) ?? '/images/placeholder.png',
+        title: (data.title as string) ?? file.replace(/\.md$/, ''),
+        slug: `/article/${section}/${file.replace(/\.md$/, '')}`,
+        tags: (data.tags as string[]) ?? [],
+        hero: (data.hero as string) ?? '/images/placeholder.png',
         content,
       });
     }
@@ -85,8 +84,6 @@ export default function SearchPage({ articles }: Props) {
         <title>{q ? `“${q}” | Search` : 'Search'}</title>
         <meta name="description" content="Search results" />
       </Head>
-
-      <Navigation />
 
       <main className={styles.wrapper}>
         <h1 className={styles.mainTitle}>Search</h1>

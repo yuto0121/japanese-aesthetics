@@ -5,7 +5,6 @@ import {
     FaYoutube,
 } from 'react-icons/fa';
 import Typewriter from 'typewriter-effect';
-import Navigation from '../components/Navigation';
 import styles from '../styles/About.module.css';
 
 
@@ -13,8 +12,6 @@ export default function About() {
 
     return (
         <div>
-            <Navigation />
-
             <main className="container">
                 <h1 className={styles.mainTitle}>
                     <Typewriter
