@@ -27,13 +27,29 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
 
     // Random positions & delays — memoised so they stay stable during splash lifetime
     const spots = useMemo(
-        () =>
-            kanjiList.map((char) => {
-                const top = Math.random() * 70 + 10; // 10‑80 %
-                const left = Math.random() * 70 + 10;
-                const delay = Math.random() * 2; // 0‑2 s
-                return { char, top, left, delay } as const;
-            }),
+        () => {
+            const gridSize = 4; // 4x4のグリッドを作成
+            const positions: { top: number; left: number }[] = [];
+
+            // グリッドの各セルに1つの漢字を配置
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    positions.push({
+                        top: (i * 25) + 5, // 5-80%の範囲で均等に配置
+                        left: (j * 25) + 5
+                    });
+                }
+            }
+
+            // 位置をシャッフル
+            const shuffledPositions = positions.sort(() => Math.random() - 0.5);
+
+            return kanjiList.map((char, index) => {
+                const position = shuffledPositions[index % positions.length];
+                const delay = Math.random() * 2; // 0-2秒の遅延
+                return { char, ...position, delay } as const;
+            });
+        },
         []
     );
 
