@@ -19,19 +19,15 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
         const path = pathRef.current;
         if (!path) return;
 
-        // Measure path length once and set up dasharray/offset.
         const len = path.getTotalLength();
         path.style.strokeDasharray = `${len}`;
         path.style.strokeDashoffset = `${len}`;
 
-        // Force reflow so the browser acknowledges the initial dashoffset before the transition.
         path.getBoundingClientRect();
 
-        // Animate stroke‑dashoffset to 0 over 3 s.
-        path.style.transition = "stroke-dashoffset 3s ease-in-out";
+        path.style.transition = "stroke-dashoffset 3s cubic-bezier(0.4, 0, 0.2, 1)";
         path.style.strokeDashoffset = "0";
 
-        // After drawing completes, fade the splash and notify parent.
         const t1 = setTimeout(() => {
             if (wrapperRef.current) {
                 wrapperRef.current.style.transition = "opacity 0.4s ease";
@@ -39,7 +35,7 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
             }
         }, 3000);
 
-        const t2 = setTimeout(onFinish, 3400); // Parent unmount slightly after fade.
+        const t2 = setTimeout(onFinish, 3400);
 
         return () => {
             clearTimeout(t1);
@@ -55,26 +51,32 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
                     <filter id="brush-rough">
                         <feTurbulence
                             type="fractalNoise"
-                            baseFrequency="0.9"
-                            numOctaves="3"
+                            baseFrequency="0.8"
+                            numOctaves="4"
                             result="noise"
                         />
-                        <feGaussianBlur in="noise" stdDeviation="1.2" result="blur" />
-                        <feBlend in="SourceGraphic" in2="blur" mode="multiply" />
+                        <feDisplacementMap
+                            in="SourceGraphic"
+                            in2="noise"
+                            scale="2"
+                            xChannelSelector="R"
+                            yChannelSelector="G"
+                        />
+                        <feGaussianBlur stdDeviation="0.5" />
                     </filter>
                 </defs>
 
                 {/* Ensō path – one‑stroke circle */}
                 <path
                     ref={pathRef}
-                    d="M100 10
-             C45 10 10 45 10 100
-             C10 155 45 190 100 190
-             C155 190 190 155 190 100
-             C190 45 155 10 100 10"
+                    d="M100 190
+                     C155 190 190 155 190 100
+                     C190 45 155 10 100 10
+                     C45 10 10 45 10 100
+                     C10 155 45 190 100 190"
                     fill="none"
                     stroke="#000"
-                    strokeWidth="20"
+                    strokeWidth="16"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     filter="url(#brush-rough)"
@@ -93,8 +95,8 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
           pointer-events: none; /* avoid interfering with page links */
         }
         .ensoSvg {
-          width: 60vmin;
-          height: 60vmin;
+          width: 50vmin;
+          height: 50vmin;
         }
       `}</style>
         </div>
