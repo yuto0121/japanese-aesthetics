@@ -8,16 +8,15 @@ interface FirstviewProps {
 
 const totalDuration = 3200; // ms until fade‑out starts
 const kanjiList = [
-    "美",
-    "侘",
-    "寂",
+    "美しさ",
+    "侘び寂び",
     "雅",
-    "幽",
-    "玄",
-    "静",
-    "簡",
-    "素",
-    "枯",
+    "幽玄",
+    "間",
+    "静寂",
+    "簡素",
+    "もののあはれ",
+    "金継ぎ",
     "凛",
     "粋",
 ];
