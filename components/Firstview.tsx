@@ -6,7 +6,7 @@ interface FirstviewProps {
     onFinish: () => void;
 }
 
-const totalDuration = 3200; // ms until fade‑out starts
+const totalDuration = 3000; // 3秒後にフェードアウト開始
 const kanjiList = [
     "幽玄",
     "間",
@@ -19,6 +19,11 @@ const kanjiList = [
     "枯れ葉",
     "凛",
     "粋",
+    "余韻",
+    "生きがい",
+    "風流",
+    "一期一会",
+    "刹那"
 ];
 
 const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
@@ -28,15 +33,18 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
     // Random positions & delays — memoised so they stay stable during splash lifetime
     const spots = useMemo(
         () => {
-            const gridSize = 4; // 4x4のグリッドを作成
             const positions: { top: number; left: number }[] = [];
+            const margin = 15; // 画面端からの余白
+            const gridSize = 4; // 4x4のグリッド
 
-            // グリッドの各セルに1つの漢字を配置
+            // 4x4のグリッドで基本位置を生成
             for (let i = 0; i < gridSize; i++) {
                 for (let j = 0; j < gridSize; j++) {
+                    // 基本位置に±5%のランダムなオフセットを追加
+                    const randomOffset = () => (Math.random() - 0.5) * 10;
                     positions.push({
-                        top: (i * 25) + 5, // 5-80%の範囲で均等に配置
-                        left: (j * 25) + 5
+                        top: (i * 20) + margin + randomOffset(),
+                        left: (j * 20) + margin + randomOffset()
                     });
                 }
             }
@@ -46,7 +54,7 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
 
             return kanjiList.map((char, index) => {
                 const position = shuffledPositions[index % positions.length];
-                const delay = Math.random() * 2; // 0-2秒の遅延
+                const delay = Math.random() * 1.5; // 遅延時間を短く
                 return { char, ...position, delay } as const;
             });
         },
