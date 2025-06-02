@@ -1,67 +1,144 @@
-import { motion } from "framer-motion";
-import { useEffect } from "react";
-import Typewriter from "typewriter-effect";
+import React, { useEffect, useRef } from "react";
 
 interface FirstviewProps {
-    /** Called after the 3‑second splash finishes */
+    /** Callback fired when the intro finishes (user scrolled to the end) */
     onFinish: () => void;
 }
 
 /**
- * 3‑second splash shown on first load.
- * Left‑top: typing English title.
- * Right‑top: vertical Japanese calligraphy animation.
+ * Intro splash that shows a calligraphy‑style circle that gradually draws as the user scrolls.
+ * Moving the cursor paints additional brush strokes.
+ * When the scroll reaches the bottom (100 % progress), `onFinish` is triggered so the parent can
+ * unmount this component and reveal the real homepage.
  */
 const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
-    // hide the splash after 3 s
+    const containerRef = useRef<HTMLDivElement>(null);
+    const circleRef = useRef<SVGCircleElement>(null);
+    const pathLenRef = useRef<number>(0);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+
+    /* ── initialise circle dasharray / dashoffset ─────────────────────────── */
     useEffect(() => {
-        const t = setTimeout(() => onFinish(), 3000);
-        return () => clearTimeout(t);
+        if (!circleRef.current) return;
+        const len = circleRef.current.getTotalLength();
+        pathLenRef.current = len;
+        circleRef.current.style.strokeDasharray = `${len}`;
+        circleRef.current.style.strokeDashoffset = `${len}`;
+    }, []);
+
+    /* ── scroll‑based drawing progress & completion check ─────────────────── */
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        const onScroll = () => {
+            const max = el.scrollHeight - el.clientHeight;
+            const prog = el.scrollTop / max;
+            if (circleRef.current) {
+                const offset = pathLenRef.current * (1 - prog);
+                circleRef.current.style.strokeDashoffset = `${offset}`;
+            }
+            if (prog >= 1) {
+                onFinish();
+            }
+        };
+
+        el.addEventListener("scroll", onScroll, { passive: true });
+        return () => el.removeEventListener("scroll", onScroll);
     }, [onFinish]);
 
+    /* ── cursor brush‑stroke drawing on canvas ─────────────────────────────── */
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        // full‑size canvas
+        const resize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+        resize();
+        window.addEventListener("resize", resize);
+
+        // draw as the mouse moves
+        let prev: { x: number; y: number } | null = null;
+        const draw = (e: MouseEvent) => {
+            if (!ctx) return;
+            if (!prev) {
+                prev = { x: e.clientX, y: e.clientY };
+                return;
+            }
+            ctx.lineWidth = 10;
+            ctx.lineCap = "round";
+            ctx.strokeStyle = "#000";
+            ctx.beginPath();
+            ctx.moveTo(prev.x, prev.y);
+            ctx.lineTo(e.clientX, e.clientY);
+            ctx.stroke();
+            prev = { x: e.clientX, y: e.clientY };
+        };
+
+        const reset = () => (prev = null);
+
+        window.addEventListener("mousemove", draw);
+        window.addEventListener("mouseup", reset);
+        window.addEventListener("mouseleave", reset);
+
+        return () => {
+            window.removeEventListener("resize", resize);
+            window.removeEventListener("mousemove", draw);
+            window.removeEventListener("mouseup", reset);
+            window.removeEventListener("mouseleave", reset);
+        };
+    }, []);
+
+    /* ── render ────────────────────────────────────────────────────────────── */
     return (
-        <div className="wrapper">
-            {/* English title – typing */}
-            <div className="enTitle">
-                <Typewriter
-                    onInit={(tw) => tw.typeString("Japanese Aesthetics").start()}
-                    options={{ autoStart: false, delay: 80, loop: false, cursor: "" }}
+        <div ref={containerRef} className="fvWrapper">
+            {/* scrollable spacer to give us ~150 vh of scroll range */}
+            <div style={{ height: "150vh" }} />
+
+            {/* central SVG circle */}
+            <svg viewBox="0 0 200 200" className="circleSvg">
+                <circle
+                    ref={circleRef}
+                    cx="100"
+                    cy="100"
+                    r="80"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="10"
+                    strokeLinecap="round"
                 />
-            </div>
+            </svg>
 
-            {/* Japanese title – brush/vertical animation */}
-            <motion.div
-                className="jpTitle"
-                initial={{ opacity: 0, y: -40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2, ease: "easeOut" }}
-            >
-                日本の美
-            </motion.div>
+            {/* brush‑stroke canvas overlay */}
+            <canvas ref={canvasRef} className="brushCanvas" />
 
-            {/* Inline scoped CSS */}
             <style jsx>{`
-        .wrapper {
+        .fvWrapper {
           position: fixed;
           inset: 0;
           background: #fff;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          padding: 2rem;
-          z-index: 9999; /* over everything */
+          overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain; /* prevent body bouncing */
+          z-index: 9999;
         }
-        .enTitle {
-          font-size: 2rem;
-          font-weight: 500;
-          color: #000;
+        .circleSvg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50vmin;
+          height: 50vmin;
+          pointer-events: none;
         }
-        .jpTitle {
-          font-size: 3rem;
-          font-family: "Yuji Syuku", "Noto Serif JP", serif; /* brush‑style */
-          writing-mode: vertical-rl;
-          color: #000;
-          line-height: 1.2;
+        .brushCanvas {
+          position: absolute;
+          inset: 0;
         }
       `}</style>
         </div>
