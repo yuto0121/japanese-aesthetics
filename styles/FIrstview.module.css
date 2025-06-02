@@ -17,13 +17,11 @@
 
 .char {
     position: absolute;
-    /* Responsive brush size: ~48‑96 px across typical laptop widths */
     font-size: clamp(48px, 6vw, 96px);
     color: #000;
     opacity: 0;
     transform: scale(0.5);
     animation: fadeInScale 0.8s ease-out forwards;
-    /* Each element gets inline --delay set from TSX */
     animation-delay: var(--delay, 0s);
     white-space: nowrap;
 }
