@@ -9,6 +9,7 @@
     padding-bottom: 6rem;
     margin-inline: auto;
     max-width: 100rem;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 /* ---------- Header ---------- */
@@ -43,7 +44,7 @@
     font-size: 80px;
     font-weight: 800;
     margin-top: 2rem;
-    font-family: "EB Garamond", serif;
+    font-family: "Noto Sans JP", sans-serif;
     line-height: 1.05;
 }
 
@@ -79,7 +80,7 @@
 .articleBody h2,
 .articleBody h3,
 .articleBody h4 {
-    font-family: "EB Garamond", serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 700;
     margin-block: 3rem 1.25rem;
 }
