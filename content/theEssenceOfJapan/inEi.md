@@ -1,23 +1,23 @@
 ---
 title: "in'ei"
 date: "2025-01-10"
-tags: [in'ei]
+tags: [in-ei]
 hero: "/images/article/theEssenceOfJapan/hero_in-ei.png"
 ---
 
 # In Praise of Shadows
 
-**In Praise of Shadows**—originally titled **陰翳礼讃** (*In'ei Raisan*)—is a classic 1933 essay by Japanese author Jun'ichirō Tanizaki. It celebrates the subtle beauty of shadows, muted light, and the gentle interplay of darkness and illumination in traditional Japanese aesthetics.
+**In Praise of Shadows**—originally titled **陰翳礼讃** (*In-ei Raisan*)—is a classic 1933 essay by Japanese author Jun'ichirō Tanizaki. It celebrates the subtle beauty of shadows, muted light, and the gentle interplay of darkness and illumination in traditional Japanese aesthetics.
 
 ---
 
 ## 1. Definition and Essence
 
-### **陰翳 (In'ei)**  
-  Literally "shadows and obscurity," *in'ei* evokes the delicate gradations between light and dark—an aesthetic that values what is hidden or half-glimpsed over what is boldly illuminated.
+### **陰翳 (In-ei)**  
+  Literally "shadows and obscurity," *in-ei* evokes the delicate gradations between light and dark—an aesthetic that values what is hidden or half-glimpsed over what is boldly illuminated.
 
 ### **Core Idea**  
-  Where Western taste often prizes brightness and clarity, *in'ei* finds depth, warmth, and mystery in dimness, inviting a contemplative mood.
+  Where Western taste often prizes brightness and clarity, *in-ei* finds depth, warmth, and mystery in dimness, inviting a contemplative mood.
 
 ---
 

@@ -9,6 +9,7 @@
     "dev": "next dev --hostname 0.0.0.0"
   },
   "dependencies": {
+    "framer-motion": "^12.15.0",
     "gray-matter": "^4.0.3",
     "marked": "^15.0.12",
     "next": "^14.2.28",

@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap");
+
+.wrapper {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    overflow: hidden;
+    font-family: "Yuji Syuku", serif;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.char {
+    position: absolute;
+    font-size: clamp(48px, 6vw, 96px);
+    color: #000;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInScale 0.8s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+    white-space: nowrap;
+}
+
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

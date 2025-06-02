@@ -9,10 +9,10 @@ const Navigation = () => {
   const router = useRouter();
 
   /* ────────── UI state ────────── */
-  const [drawerOpen,  setDrawerOpen]  = useState(false);
-  const [searchOpen,  setSearchOpen]  = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [articleOpen, setArticleOpen] = useState(false);
-  const [searchTerm,  setSearchTerm]  = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   /* すべて閉じるユーティリティ */
   const closeAll = () => {
@@ -47,8 +47,8 @@ const Navigation = () => {
         aria-expanded={searchOpen}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -82,7 +82,7 @@ const Navigation = () => {
 
       {/* ─ drawer menu ────────────── */}
       <nav className={`${styles.drawer} ${drawerOpen ? styles.show : ''}`}
-           aria-hidden={!drawerOpen}>
+        aria-hidden={!drawerOpen}>
         <ul className={styles.menu}>
           <li><Link href="/" onClick={closeAll}>HOME</Link></li>
           <li><Link href="/about" onClick={closeAll}>ABOUT&nbsp;US</Link></li>
@@ -90,16 +90,16 @@ const Navigation = () => {
           {/* ARTICLE 親項目 */}
           <li>
             <button className={styles.toggleButton}
-                    onClick={() => setArticleOpen(!articleOpen)}
-                    aria-expanded={articleOpen}>
+              onClick={() => setArticleOpen(!articleOpen)}
+              aria-expanded={articleOpen}>
               ARTICLE
             </button>
             <ul className={`${styles.subMenu} ${articleOpen ? styles.openSub : ''}`}
-                aria-hidden={!articleOpen}>
+              aria-hidden={!articleOpen}>
               <li><Link href="/article/theEssenceOfJapan" onClick={closeAll}>The&nbsp;Essence&nbsp;of&nbsp;Japan</Link></li>
-              <li><Link href="/article/cuisine"            onClick={closeAll}>Cuisine</Link></li>
-              <li><Link href="/article/fashion"            onClick={closeAll}>Fashion</Link></li>
-              <li><Link href="/article/living"             onClick={closeAll}>Living</Link></li>
+              <li><Link href="/article/cuisine" onClick={closeAll}>Cuisine</Link></li>
+              <li><Link href="/article/fashion" onClick={closeAll}>Fashion</Link></li>
+              <li><Link href="/article/living" onClick={closeAll}>Living</Link></li>
             </ul>
           </li>
 
