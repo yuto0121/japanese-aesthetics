@@ -6,7 +6,7 @@ interface FirstviewProps {
     onFinish: () => void;
 }
 
-const totalDuration = 3200; // ms until fade‑out starts
+const totalDuration = 3000; // 3秒後にフェードアウト開始
 const kanjiList = [
     "幽玄",
     "間",
