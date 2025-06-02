@@ -34,14 +34,14 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
     const spots = useMemo(
         () => {
             const positions: { top: number; left: number }[] = [];
-            const margin = 15; // 余白の確保
+            const margin = 20; // 余白を増やす
 
             // より細かいグリッドで位置を生成
-            for (let i = 0; i < 6; i++) {
-                for (let j = 0; j < 6; j++) {
+            for (let i = 0; i < 8; i++) {
+                for (let j = 0; j < 8; j++) {
                     positions.push({
-                        top: (i * 15) + margin, // 15-85%の範囲で均等に配置
-                        left: (j * 15) + margin
+                        top: (i * 10) + margin, // 20-90%の範囲で均等に配置
+                        left: (j * 10) + margin
                     });
                 }
             }
@@ -51,7 +51,7 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
 
             return kanjiList.map((char, index) => {
                 const position = shuffledPositions[index % positions.length];
-                const delay = Math.random() * 2; // 0-2秒の遅延
+                const delay = Math.random() * 1.5; // 遅延時間を短く
                 return { char, ...position, delay } as const;
             });
         },
