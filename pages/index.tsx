@@ -137,3 +137,7 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getInitialProps = () => {
+  return { showFV: true };
+};
