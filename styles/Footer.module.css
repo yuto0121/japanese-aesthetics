@@ -6,8 +6,8 @@
 
 .footer {
     background: #000;
-    margin: 0 0 6rem 0;
-    padding: 0;
+    margin: 0;
+    padding: 4rem 0;
 }
 
 /* UL that holds the links */
@@ -18,6 +18,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    color: #fff;
 }
 
 /* Individual link */
