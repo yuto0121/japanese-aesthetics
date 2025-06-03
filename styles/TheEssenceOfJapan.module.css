@@ -41,6 +41,27 @@
     border-radius: 0.25rem;
 }
 
+.conceptItem .popupImage {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.conceptItem:hover .popupImage {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* ── グリッド上の配置 ─────────────────── */
 .wabiSabi {
     grid-column: 1 / span 2;
