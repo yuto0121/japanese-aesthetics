@@ -114,6 +114,48 @@
     margin-block: 2rem;
 }
 
+/* Image container for side-by-side layout */
+.imageContainer {
+    display: flex;
+    gap: 2rem;
+    margin-block: 2rem;
+    align-items: flex-start;
+}
+
+.imageWrapper {
+    flex: 0 0 300px;
+    position: relative;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.imageCaption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.contentWrapper {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .imageContainer {
+        flex-direction: column;
+    }
+
+    .imageWrapper {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
 /* Code blocks */
 .articleBody pre {
     max-width: 100%;
