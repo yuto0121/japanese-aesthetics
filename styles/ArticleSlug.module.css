@@ -8,7 +8,7 @@
     /* match other article style */
     padding-bottom: 6rem;
     margin-inline: auto;
-    max-width: 60rem;
+    max-width: 50rem;
     font-family: "Noto Sans JP", Georgia, serif;
 }
 
@@ -44,7 +44,7 @@
     font-size: 80px;
     font-weight: 800;
     margin-top: 2rem;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", Georgia, sans-serif;
     line-height: 1.05;
 }
 
@@ -66,11 +66,11 @@
 
 /* ---------- Article Body ---------- */
 .articleBody {
-    max-width: 100ch;
+    max-width: 80ch;
     margin-inline: auto;
     margin-block: 2rem 0;
     padding-bottom: 2rem;
-    line-height: 1.2;
+    line-height: 1.5;
     font-size: 1rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -110,8 +110,51 @@
 .markdownImg {
     max-width: 100%;
     height: auto;
+    align-content: center;
     border-radius: 0.5rem;
     margin-block: 2rem;
+}
+
+/* Image container for side-by-side layout */
+.imageContainer {
+    display: flex;
+    gap: 2rem;
+    margin-block: 2rem;
+    align-items: flex-start;
+}
+
+.imageWrapper {
+    flex: 0 0 300px;
+    position: relative;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.imageCaption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.contentWrapper {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .imageContainer {
+        flex-direction: column;
+    }
+
+    .imageWrapper {
+        flex: 0 0 auto;
+        width: 100%;
+    }
 }
 
 /* Code blocks */

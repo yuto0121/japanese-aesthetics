@@ -1,17 +1,21 @@
 .beautyConceptsSection {
     width: 100%;
-    padding: 0 2rem 8rem 0;
+    padding: 4rem 2rem 8rem 0;
     position: relative;
 }
 
 .beautyConceptsTitle {
-    font-size: 3.5rem;
+    margin-top: 2rem;
+    padding-top: 6rem;
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 8rem;
+    padding-bottom: rem;
 }
 
 .beautyConceptsGrid {
+    padding-top: 6rem;
     position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -39,6 +43,38 @@
     object-fit: cover;
     margin-bottom: 0.75rem;
     border-radius: 0.25rem;
+}
+
+.conceptItem .popupImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.conceptItem span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.conceptItem:hover .popupImage {
+    opacity: 1;
+    visibility: visible;
+}
+
+.conceptItem:hover span {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 /* ── グリッド上の配置 ─────────────────── */

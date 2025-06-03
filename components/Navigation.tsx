@@ -55,7 +55,7 @@ const Navigation = () => {
       </Link>
 
       {/* ─ search icon ────────────── */}
-      <div 
+      <div
         className={styles.searchContainer}
         onMouseEnter={() => !searchFixed && setSearchOpen(true)}
         onMouseLeave={() => !searchFixed && setSearchOpen(false)}
@@ -111,7 +111,10 @@ const Navigation = () => {
             <li><Link href="/about" onClick={closeAll}>ABOUT&nbsp;US</Link></li>
 
             {/* ARTICLE 親項目 */}
-            <li>
+            <li
+              onMouseEnter={() => setArticleOpen(true)}
+              onMouseLeave={() => setArticleOpen(false)}
+            >
               <button className={styles.toggleButton}
                 onClick={() => setArticleOpen(!articleOpen)}
                 aria-expanded={articleOpen}>

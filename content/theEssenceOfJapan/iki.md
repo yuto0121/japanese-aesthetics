@@ -28,15 +28,12 @@ In the 17th century, Edo (now Tokyo) was a bustling center of commerce and enter
 While iki resists rigid rules, three interlocking qualities tend to define it:
 
 **1. Understated Flourish**
-
    Rather than layering dramatic patterns, an iki aesthetic might use a muted palette—grays, indigos, blacks—and punctuate it with a single, unexpected detail. A silk obi tied to reveal a hidden geometric lining or a pocket square that peeks from a dark linen blazer, for instance.
 
 **2. Spontaneity and Wit**
-
    Iki is never contrived. It rewards the person who can act with an almost effortless poise. A geisha’s slight lift of an eyebrow or the offhand placement of a teacup during chanoyu (tea ceremony) can convey playful irony. In spoken word, a joke relies on timing rather than volume.
 
 **3. Quiet Confidence**
-
    There is no need to boast when details alone speak volumes. Well-worn leather shoes, buffed to a soft glow instead of polished to a mirror-like finish, signal a deliberateness that is inherently more sophisticated than brandishing gaudy logos.
 
 ---
@@ -49,9 +46,11 @@ For designers in Tokyo’s back alleys and Paris runways alike, iki remains a re
 
 ## Architecture and Interiors: Simplicity Elevated
 
-**Machiya**, the traditional wooden townhouses of Kyoto, often display tiled façades with deep shadows cast by latticed eaves. Yet if you step inside, furniture is almost nonexistent—just a lacquered low table and a single antique wooden stool. Light is admitted only to highlight one element: perhaps a sculpted beam or the grain of a yokobue (horizontal flute) mounted on the wall.
+![Machiya](/images/article/theEssenceOfJapan/machiya.jpg) 
 
-Contemporary architects echo this restraint with **modern minimalism**: polished concrete floors punctuated by one weathered chestnut chair, or open-plan living rooms that frame a tiny courtyard garden like a living painting. Each room is a study in balance: nothing extraneous, yet nothing feels barren.
+**Machiya**, the traditional wooden townhouses of Kyoto, often display tiled façades with deep shadows cast by latticed eaves. Yet if you step inside, furniture is almost nonexistent—just a lacquered low table and a single antique wooden stool. Light is admitted only to highlight one element: perhaps a sculpted beam or the grain of a yokobue (horizontal flute) mounted on the wall.  
+
+Contemporary architects echo this restraint with **modern minimalism**: polished concrete floors punctuated by one weathered chestnut chair, or open‐plan living rooms that frame a tiny courtyard garden like a living painting. Each room is a study in balance: nothing extraneous, yet nothing feels barren. 
 
 ---
 
@@ -66,19 +65,15 @@ The **tea ceremony** is perhaps the most perfekt embodiment of iki. A tea master
 ## Living with Iki: A Personal Guide
 
 **1. Curate with Intention**
-
    Seek objects that feel authentic. A chipped ceramic cup with an irregular glaze may offer more character than a mass-produced mug.
 
 **2. Polish Your Imperfections**
-
    Embrace the lived-in texture of things. Slightly frayed cuffs on a crisp cotton shirt, a wooden tabletop that bears the patina of years—these are marks of a life fully engaged, not neglected.
 
 **3. Cultivate Grace in Small Moments**
-
    Speak softly. Let humor arise naturally. A well-timed pause can be as compelling as a clever remark.
 
 **4. Add an Unexpected Accent**
-
    A single flower placed off-center on a stark table, a scrap of patterned fabric peeking from a monochrome coat pocket—these small gestures catch the eye precisely because they are so rare.
 
 ---
@@ -86,98 +81,3 @@ The **tea ceremony** is perhaps the most perfekt embodiment of iki. A tea master
 ## The Enduring Appeal of Restraint
 
 In an era of fast fashion and digital overload, iki whispers a reminder that **less can indeed be more**. It teaches that genuine sophistication requires confidence but not self-congratulation; that elegance need not be expensive, only thoughtfully assembled; and that restraint itself can shine. To live with iki is to honor a venerable Japanese tradition, one that prizes authenticity and quiet allure above all.
-
-<!-- 
-# Iki: The Essence of Chic Restraint
-
-**Iki** (粋) is a uniquely Japanese aesthetic and cultural ideal that celebrates refined simplicity, spontaneous elegance, and an unstudied sophistication. Unlike ostentation, iki conveys a sense of cool confidence born of restraint and subtlety.
-
----
-
-## 1. Definition and Origins
-
-### **Meaning of Iki**  
-  Iki literally means “stylish” or “chic,” but its nuance lies in a quietly seductive allure—unaffected, unpretentious, yet unmistakably refined.
-
-### **Historical Roots**  
-  The concept of iki emerged in Edo (modern Tokyo) during the 17th–19th centuries. Merchants and townspeople of the floating world (*ukiyo*) distilled a playful, worldly manner that rejected samurai formality without lapsing into vulgarity.
-
----
-
-## 2. Three Hallmarks of Iki
-
-### **1. Simplicity with a Twist**
-   - Clean lines or forms with a single, unexpected flourish.  
-   - *Example:* A kimono in muted indigo with a bold splash of red at the hem.
-
-### **2. Spontaneity and Originality** 
-   - Natural behavior that hints at an intelligent wit or playful irony.  
-   - *Example:* A casually tilted hat or a glance that conveys more than words.
-
-### **3. Underplayed Confidence**  
-   - The absence of boasting; refinement shown through small details.  
-   - *Example:* Well-worn leather shoes polished to a soft sheen rather than a blinding gloss.
-
----
-
-## 3. Iki in Fashion & Personal Style
-
-### **Kimono and Streetwear**  
-  - Folding a haori jacket to reveal an inner pattern, or wearing Western jackets with traditional geta sandals.  
-  - Mixing luxurious fabric with humble cotton—e.g., pairing a silk scarf with a simple linen shirt.
-
-### **Accessories**
-  - A single designer talisman or a hand-carved netsuke hanging from an obi, balanced by plain clothing.  
-  - Subtle jewelry: a slender chain or tiny ear stud that catches the light discreetly.
-
----
-
-## 4. Iki in Architecture & Interior Design
-
-### **Urban Machiya Townhouses**  
-  - Darkened latticed façades with attention to one elegant detail—a sculpted beam or lacquered door pull.  
-  - Interiors kept uncluttered; furnishings chosen for texture and form, not volume.
-
-### **Modern Minimalism**  
-  - Polished concrete floors juxtaposed with a single antique wooden stool.  
-  - Open-plan spaces that reveal a carefully framed garden view, nothing more.
-
----
-
-## 5. Iki in Arts & Entertainment
-
-### **Kabuki and Ukiyo-e**  
-  - Actors’ minimal make-up lines that accentuate a single expressive feature.  
-  - Woodblock prints with spare compositions—just enough color and detail to intrigue.
-
-### **Tea Ceremony & Haiku**  
-  - A tea master’s swift, assured gestures—every motion purposeful yet seemingly casual.  
-  - Haiku that capture a fleeting moment with precise language and an unforced wit.
-
----
-
-## 6. Cultivating Iki in Daily Life
-
-### **1. Mindful Curation**  
-   Keep possessions few but meaningful; choose items that surprise without shouting.
-
-### **2. Polished Imperfection**  
-   Embrace a lived-in patina—crisp white shirts with slightly frayed cuffs, for example.
-
-### **3. Graceful Interaction**  
-   Speak softly, with timing and humor; let pauses carry as much weight as words.
-
-### **4. Unexpected Touches**  
-   Add a single fresh flower to an otherwise austere table setting.
-
----
-
-## 7. Conclusion
-
-Iki offers a model for living with elegant economy—where less truly is more and subtlety becomes a form of luxury. By integrating its principles of refined restraint, inventive flair, and quiet confidence, we can cultivate a personal style and environment that feels effortlessly sophisticated.
-
----
-
-### **References:**  
--Condé, Mary. *Iki: The Elegance of Edo*. Tokyo University Press, 2005.  
--Hosokawa, Morihiro. *The Japanese Sense of Aesthetics*. Kodansha International, 2010.   -->

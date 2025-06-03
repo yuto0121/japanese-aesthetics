@@ -47,7 +47,7 @@ export default function Home() {
         <div className={styles.mainTitleLine} />
 
         {/* ── Sub category セクション ─────────────────────── */}
-        <section className={styles.MenuSection}>
+        {/* <section className={styles.MenuSection}>
           <Link href="/about" className={styles.AboutTitle}>
             <h1>About us</h1>
           </Link>
@@ -57,7 +57,7 @@ export default function Home() {
           <Link href="/contact" className={styles.ContactTitle}>
             <h1>Contact</h1>
           </Link>
-        </section>
+        </section> */}
 
         {/* ── theEssenceOfJapan セクション ───────────── */}
         <TheEssenceOfJapan />
