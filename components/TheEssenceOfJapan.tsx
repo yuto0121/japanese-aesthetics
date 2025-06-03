@@ -47,8 +47,8 @@ export default function TheEssenceOfJapan() {
                 <Image
                   src={hero}
                   alt={`${label} hero`}
-                  width={150}
-                  height={150}
+                  width={120}
+                  height={120}
                   className={styles.heroImage}
                 />
               </div>

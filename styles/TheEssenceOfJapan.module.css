@@ -163,23 +163,23 @@
 
 .heroPopup {
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     background: white;
-    padding: 0.75rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     pointer-events: none;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .heroImage {
     border-radius: 0.25rem;
     object-fit: cover;
-    width: 150px !important;
-    height: 150px !important;
+    width: 120px !important;
+    height: 120px !important;
 }
 
 /* ポップアップのアニメーション */
@@ -190,7 +190,7 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, 10%);
     }
 
     to {
