@@ -110,6 +110,7 @@
 .markdownImg {
     max-width: 100%;
     height: auto;
+    align-content: center;
     border-radius: 0.5rem;
     margin-block: 2rem;
 }
