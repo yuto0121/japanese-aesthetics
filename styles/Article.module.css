@@ -31,13 +31,14 @@
 /* =========  スライダー  ========= */
 .categorySwiper {
     width: 100%;
+    color: #000000;
 }
 
 /* Swiper の矢印を全ページ共通で装飾。
      CSS Modules 制約回避のため :global ブロックにまとめる */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #111;
+    color: #000000;
     width: 48px;
     height: 48px;
 }
