@@ -5,7 +5,9 @@
 }
 
 .footer {
-    margin: 0 2rem 6rem;
+    background: #000;
+    margin: 0 0 6rem 0;
+    padding: 0;
 }
 
 /* UL that holds the links */
@@ -29,4 +31,12 @@
 
 .link:hover {
     opacity: 0.7;
+}
+
+.copyright {
+    color: #aaa;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: 400;
 }
