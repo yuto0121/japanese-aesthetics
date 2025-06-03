@@ -5,7 +5,9 @@
 }
 
 .footer {
-    margin: 0 2rem 6rem;
+    background: #000;
+    margin: 0;
+    padding-bottom: 8rem;
 }
 
 /* UL that holds the links */
@@ -13,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding-top: 1rem;
     margin: 0;
     list-style: none;
 }
@@ -22,11 +24,21 @@
 .link {
     font-weight: 600;
     font-size: 1.25rem;
+    padding-top: 1rem;
     text-decoration: none;
-    color: #000;
+    color: #fff;
     transition: opacity 0.15s ease;
 }
 
 .link:hover {
     opacity: 0.7;
+}
+
+.copyright {
+    color: #aaa;
+    font-size: 0.85rem;
+    text-align: center;
+    font-weight: 400;
+    background-color: #000;
+    padding-bottom: 2rem;
 }

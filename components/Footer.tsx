@@ -10,8 +10,8 @@ const links = [
 ];
 
 const Footer: FC = () => (
+    
     <>
-        <div className={styles.footerLine} />
         <footer className={styles.footer}>
             <nav aria-label="Footer">
                 <ul className={styles.navList}>
@@ -25,6 +25,7 @@ const Footer: FC = () => (
                 </ul>
             </nav>
         </footer>
+        <div className={styles.copyright}>© Copyright. All Rights Reserved.</div>
     </>
 );
 
