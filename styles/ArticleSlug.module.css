@@ -44,7 +44,7 @@
     font-size: 80px;
     font-weight: 800;
     margin-top: 2rem;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", Georgia, sans-serif;
     line-height: 1.05;
 }
 
@@ -70,7 +70,7 @@
     margin-inline: auto;
     margin-block: 2rem 0;
     padding-bottom: 2rem;
-    line-height: 1.2;
+    line-height: 1.5;
     font-size: 1rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
