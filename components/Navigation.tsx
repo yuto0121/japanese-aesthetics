@@ -13,11 +13,13 @@ const Navigation = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [articleOpen, setArticleOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchFixed, setSearchFixed] = useState(false);
+  const [drawerFixed, setDrawerFixed] = useState(false);
 
   /* すべて閉じるユーティリティ */
   const closeAll = () => {
-    setDrawerOpen(false);
-    setSearchOpen(false);
+    if (!searchFixed) setSearchOpen(false);
+    if (!drawerFixed) setDrawerOpen(false);
     setArticleOpen(false);
   };
 
@@ -27,6 +29,22 @@ const Navigation = () => {
     if (!searchTerm.trim()) return;
     closeAll();
     router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+  };
+
+  /* 検索欄のクリックハンドラー */
+  const handleSearchClick = () => {
+    setSearchFixed(!searchFixed);
+    if (!searchFixed) {
+      setSearchOpen(true);
+    }
+  };
+
+  /* メニューのクリックハンドラー */
+  const handleDrawerClick = () => {
+    setDrawerFixed(!drawerFixed);
+    if (!drawerFixed) {
+      setDrawerOpen(true);
+    }
   };
 
   return (
@@ -39,13 +57,14 @@ const Navigation = () => {
       {/* ─ search icon ────────────── */}
       <div 
         className={styles.searchContainer}
-        onMouseEnter={() => setSearchOpen(true)}
-        onMouseLeave={() => setSearchOpen(false)}
+        onMouseEnter={() => !searchFixed && setSearchOpen(true)}
+        onMouseLeave={() => !searchFixed && setSearchOpen(false)}
       >
         <button
           className={styles.searchToggle}
           aria-label="検索を開く"
           aria-expanded={searchOpen}
+          onClick={handleSearchClick}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -72,13 +91,14 @@ const Navigation = () => {
       {/* ─ hamburger ──────────────── */}
       <div
         className={styles.burgerContainer}
-        onMouseEnter={() => setDrawerOpen(true)}
-        onMouseLeave={() => setDrawerOpen(false)}
+        onMouseEnter={() => !drawerFixed && setDrawerOpen(true)}
+        onMouseLeave={() => !drawerFixed && setDrawerOpen(false)}
       >
         <button
           className={`${styles.burger} ${drawerOpen ? styles.open : ''}`}
           aria-label="メニューを開く"
           aria-expanded={drawerOpen}
+          onClick={handleDrawerClick}
         >
           <span /><span /><span />
         </button>
