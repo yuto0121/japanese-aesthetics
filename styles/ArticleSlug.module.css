@@ -66,12 +66,12 @@
 
 /* ---------- Article Body ---------- */
 .articleBody {
-    max-width: 120ch;
+    max-width: 100ch;
     margin-inline: auto;
-    margin-block: 3rem 0;
+    margin-block: 2rem 0;
     padding-bottom: 2rem;
-    line-height: 1.5;
-    font-size: 1rem;
+    line-height: 1;
+    font-size: 1.2rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
     font-family: "Noto Sans JP", Georgia, serif;
@@ -81,7 +81,7 @@
 .articleBody h2,
 .articleBody h3,
 .articleBody h4 {
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", Georgia, sans-serif;
     font-weight: 700;
     margin-block: 3rem 1.25rem;
 }
