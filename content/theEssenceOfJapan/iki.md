@@ -28,15 +28,12 @@ In the 17th century, Edo (now Tokyo) was a bustling center of commerce and enter
 While iki resists rigid rules, three interlocking qualities tend to define it:
 
 **1. Understated Flourish**
-
    Rather than layering dramatic patterns, an iki aesthetic might use a muted palette—grays, indigos, blacks—and punctuate it with a single, unexpected detail. A silk obi tied to reveal a hidden geometric lining or a pocket square that peeks from a dark linen blazer, for instance.
 
 **2. Spontaneity and Wit**
-
    Iki is never contrived. It rewards the person who can act with an almost effortless poise. A geisha’s slight lift of an eyebrow or the offhand placement of a teacup during chanoyu (tea ceremony) can convey playful irony. In spoken word, a joke relies on timing rather than volume.
 
 **3. Quiet Confidence**
-
    There is no need to boast when details alone speak volumes. Well-worn leather shoes, buffed to a soft glow instead of polished to a mirror-like finish, signal a deliberateness that is inherently more sophisticated than brandishing gaudy logos.
 
 ---
@@ -48,6 +45,8 @@ For designers in Tokyo’s back alleys and Paris runways alike, iki remains a re
 ---
 
 ## Architecture and Interiors: Simplicity Elevated
+
+![Machiya](/public/images/article/theEssenceOfJapan/machiya.jpg)
 
 **Machiya**, the traditional wooden townhouses of Kyoto, often display tiled façades with deep shadows cast by latticed eaves. Yet if you step inside, furniture is almost nonexistent—just a lacquered low table and a single antique wooden stool. Light is admitted only to highlight one element: perhaps a sculpted beam or the grain of a yokobue (horizontal flute) mounted on the wall.
 
@@ -66,19 +65,15 @@ The **tea ceremony** is perhaps the most perfekt embodiment of iki. A tea master
 ## Living with Iki: A Personal Guide
 
 **1. Curate with Intention**
-
    Seek objects that feel authentic. A chipped ceramic cup with an irregular glaze may offer more character than a mass-produced mug.
 
 **2. Polish Your Imperfections**
-
    Embrace the lived-in texture of things. Slightly frayed cuffs on a crisp cotton shirt, a wooden tabletop that bears the patina of years—these are marks of a life fully engaged, not neglected.
 
 **3. Cultivate Grace in Small Moments**
-
    Speak softly. Let humor arise naturally. A well-timed pause can be as compelling as a clever remark.
 
 **4. Add an Unexpected Accent**
-
    A single flower placed off-center on a stark table, a scrap of patterned fabric peeking from a monochrome coat pocket—these small gestures catch the eye precisely because they are so rare.
 
 ---
