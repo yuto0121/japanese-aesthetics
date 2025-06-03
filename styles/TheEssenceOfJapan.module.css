@@ -43,9 +43,9 @@
 
 .conceptItem .popupImage {
     position: absolute;
-    bottom: 100%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 200px;
     height: 150px;
     object-fit: cover;
@@ -55,12 +55,22 @@
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 10;
-    margin-bottom: 1rem;
+}
+
+.conceptItem span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
 .conceptItem:hover .popupImage {
     opacity: 1;
     visibility: visible;
+}
+
+.conceptItem:hover span {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 /* ── グリッド上の配置 ─────────────────── */
