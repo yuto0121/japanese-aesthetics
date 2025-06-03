@@ -163,38 +163,36 @@
 
 .heroPopup {
     position: absolute;
-    bottom: 100%;
-    left: 50%;
+    bottom: 10%;
+    left: 5%;
     transform: translateX(-50%);
-    z-index: 1000;
+    -index: 1000;
     background: white;
-    padding: 0.5rem;
+    adding: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     pointer-events: none;
-    margin-bottom: 1rem;
+    margin-bott: 1rem;
 }
 
 .heroImage {
-    border-radius: 0.25rem;
+    rder-radius: 0.25rem;
     object-fit: cover;
-    width: 120px !important;
+    width: 20x !important;
     height: 120px !important;
 }
 
-/* ポップアップのアニメーション */
-.heroPopup {
-    animation: fadeIn 0.2s ease-in-out;
+/* ポップアップのアニメーン */
+.hopup {
+    animationdeIn 0.2s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, 10%);
-    }
+@keyfram fadIn {
+    opacity: transform: translate(-50%, %);
+}
 
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
+to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
 }
