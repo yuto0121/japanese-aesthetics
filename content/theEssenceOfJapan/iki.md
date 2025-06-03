@@ -46,9 +46,11 @@ For designers in Tokyo’s back alleys and Paris runways alike, iki remains a re
 
 ## Architecture and Interiors: Simplicity Elevated
 
-| ![Machiya](/images/article/theEssenceOfJapan/machiya.jpg) | **Machiya**, the traditional wooden townhouses of Kyoto, often display tiled façades with deep shadows cast by latticed eaves. Yet if you step inside, furniture is almost nonexistent—just a lacquered low table and a single antique wooden stool. Light is admitted only to highlight one element: perhaps a sculpted beam or the grain of a yokobue (horizontal flute) mounted on the wall.  
-Contemporary architects echo this restraint with **modern minimalism**: polished concrete floors punctuated by one weathered chestnut chair, or open‐plan living rooms that frame a tiny courtyard garden like a living painting. Each room is a study in balance: nothing extraneous, yet nothing feels barren. |
-|---|---|
+![Machiya](/images/article/theEssenceOfJapan/machiya.jpg) 
+
+**Machiya**, the traditional wooden townhouses of Kyoto, often display tiled façades with deep shadows cast by latticed eaves. Yet if you step inside, furniture is almost nonexistent—just a lacquered low table and a single antique wooden stool. Light is admitted only to highlight one element: perhaps a sculpted beam or the grain of a yokobue (horizontal flute) mounted on the wall.  
+
+Contemporary architects echo this restraint with **modern minimalism**: polished concrete floors punctuated by one weathered chestnut chair, or open‐plan living rooms that frame a tiny courtyard garden like a living painting. Each room is a study in balance: nothing extraneous, yet nothing feels barren. 
 
 ---
 
