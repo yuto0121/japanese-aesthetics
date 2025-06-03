@@ -37,75 +37,79 @@ const Navigation = () => {
       </Link>
 
       {/* ─ search icon ────────────── */}
-      <button
-        className={styles.searchToggle}
-        onClick={() => {
-          setSearchOpen(!searchOpen);
-          setDrawerOpen(false);      // 検索を開くときは drawer を閉じる
-        }}
-        aria-label="検索を開く"
-        aria-expanded={searchOpen}
+      <div 
+        className={styles.searchContainer}
+        onMouseEnter={() => setSearchOpen(true)}
+        onMouseLeave={() => setSearchOpen(false)}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
+        <button
+          className={styles.searchToggle}
+          aria-label="検索を開く"
+          aria-expanded={searchOpen}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
 
-      {/* ─ search bar ─────────────── */}
-      {searchOpen && (
-        <form role="search" className={styles.search} onSubmit={onSearch}>
-          <input
-            type="search"
-            placeholder="Search…"
-            autoFocus
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </form>
-      )}
+        {/* ─ search bar ─────────────── */}
+        {searchOpen && (
+          <form role="search" className={styles.search} onSubmit={onSearch}>
+            <input
+              type="search"
+              placeholder="Search…"
+              autoFocus
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
+        )}
+      </div>
 
       {/* ─ hamburger ──────────────── */}
-      <button
-        className={`${styles.burger} ${drawerOpen ? styles.open : ''}`}
-        onClick={() => {
-          setDrawerOpen(!drawerOpen);
-          setSearchOpen(false);
-        }}
-        aria-label="メニューを開く"
-        aria-expanded={drawerOpen}
+      <div
+        className={styles.burgerContainer}
+        onMouseEnter={() => setDrawerOpen(true)}
+        onMouseLeave={() => setDrawerOpen(false)}
       >
-        <span /><span /><span />
-      </button>
+        <button
+          className={`${styles.burger} ${drawerOpen ? styles.open : ''}`}
+          aria-label="メニューを開く"
+          aria-expanded={drawerOpen}
+        >
+          <span /><span /><span />
+        </button>
 
-      {/* ─ drawer menu ────────────── */}
-      <nav className={`${styles.drawer} ${drawerOpen ? styles.show : ''}`}
-        aria-hidden={!drawerOpen}>
-        <ul className={styles.menu}>
-          <li><Link href="/" onClick={closeAll}>HOME</Link></li>
-          <li><Link href="/about" onClick={closeAll}>ABOUT&nbsp;US</Link></li>
+        {/* ─ drawer menu ────────────── */}
+        <nav className={`${styles.drawer} ${drawerOpen ? styles.show : ''}`}
+          aria-hidden={!drawerOpen}>
+          <ul className={styles.menu}>
+            <li><Link href="/" onClick={closeAll}>HOME</Link></li>
+            <li><Link href="/about" onClick={closeAll}>ABOUT&nbsp;US</Link></li>
 
-          {/* ARTICLE 親項目 */}
-          <li>
-            <button className={styles.toggleButton}
-              onClick={() => setArticleOpen(!articleOpen)}
-              aria-expanded={articleOpen}>
-              ARTICLE
-            </button>
-            <ul className={`${styles.subMenu} ${articleOpen ? styles.openSub : ''}`}
-              aria-hidden={!articleOpen}>
-              <li><Link href="/article/theEssenceOfJapan" onClick={closeAll}>The&nbsp;Essence&nbsp;of&nbsp;Japan</Link></li>
-              <li><Link href="/article/cuisine" onClick={closeAll}>Cuisine</Link></li>
-              <li><Link href="/article/fashion" onClick={closeAll}>Fashion</Link></li>
-              <li><Link href="/article/living" onClick={closeAll}>Living</Link></li>
-            </ul>
-          </li>
+            {/* ARTICLE 親項目 */}
+            <li>
+              <button className={styles.toggleButton}
+                onClick={() => setArticleOpen(!articleOpen)}
+                aria-expanded={articleOpen}>
+                ARTICLE
+              </button>
+              <ul className={`${styles.subMenu} ${articleOpen ? styles.openSub : ''}`}
+                aria-hidden={!articleOpen}>
+                <li><Link href="/article/theEssenceOfJapan" onClick={closeAll}>The&nbsp;Essence&nbsp;of&nbsp;Japan</Link></li>
+                <li><Link href="/article/cuisine" onClick={closeAll}>Cuisine</Link></li>
+                <li><Link href="/article/fashion" onClick={closeAll}>Fashion</Link></li>
+                <li><Link href="/article/living" onClick={closeAll}>Living</Link></li>
+              </ul>
+            </li>
 
-          <li><Link href="/contact" onClick={closeAll}>CONTACT</Link></li>
-        </ul>
-      </nav>
+            <li><Link href="/contact" onClick={closeAll}>CONTACT</Link></li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

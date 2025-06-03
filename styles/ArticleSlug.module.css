@@ -8,8 +8,8 @@
     /* match other article style */
     padding-bottom: 6rem;
     margin-inline: auto;
-    max-width: 100rem;
-    font-family: "Noto Sans JP", sans-serif;
+    max-width: 60rem;
+    font-family: "Noto Sans JP", Georgia, serif;
 }
 
 /* ---------- Header ---------- */
@@ -74,6 +74,7 @@
     font-size: 1rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+    font-family: "Noto Sans JP", Georgia, serif;
 }
 
 .articleBody h1,
