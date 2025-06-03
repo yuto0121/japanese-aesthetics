@@ -43,7 +43,7 @@
 
 .conceptItem .popupImage {
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     width: 200px;
@@ -55,6 +55,7 @@
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 10;
+    margin-bottom: 1rem;
 }
 
 .conceptItem:hover .popupImage {
