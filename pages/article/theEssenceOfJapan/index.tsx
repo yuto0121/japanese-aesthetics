@@ -63,7 +63,7 @@ export default function ArticleEssence({ articles }: Props) {
         />
       </header>
 
-      {featured && (
+      {/* {featured && (
         <section className={styles.featured}>
           <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
@@ -78,7 +78,7 @@ export default function ArticleEssence({ articles }: Props) {
             <p className={styles.featuredText}>{featured.title}</p>
           </Link>
         </section>
-      )}
+      )} */}
 
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>
