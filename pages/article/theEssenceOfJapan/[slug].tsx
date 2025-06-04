@@ -34,7 +34,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const { data, content } = matter(raw);
 
   const processed = await remark().use(html).process(content);
-  const htmlString = processed.toString();
+  const htmlString = processed.toString()
+    .replace(/<img/g, '<img class="markdownImg"');
 
   return {
     props: {
