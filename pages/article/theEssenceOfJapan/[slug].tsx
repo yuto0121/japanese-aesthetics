@@ -33,9 +33,24 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const raw = fs.readFileSync(path.join(ESSENCE_DIR, `${slug}.md`), 'utf8');
   const { data, content } = matter(raw);
 
-  const processed = await remark().use(html).process(content);
-  const htmlString = processed.toString()
-    .replace(/<img/g, '<img class="markdownImg"');
+  const processed = await remark()
+    .use(html, {
+      sanitize: false,
+      handlers: {
+        image: (h, node) => {
+          const props = {
+            src: node.url,
+            alt: node.alt || '',
+            width: 800,
+            height: 450,
+            className: styles.markdownImg,
+          };
+          return h(node.position, 'img', props);
+        },
+      },
+    })
+    .process(content);
+  const htmlString = processed.toString();
 
   return {
     props: {
