@@ -44,6 +44,7 @@ export default function About() {
                         By sharing personal anecdotes from my time in Europe alongside examples of modern Japanese living, we aim to offer practical ideas for incorporating these timeless aesthetics into your own lifestyle. Whether you’re curious about updating your wardrobe with subtle, nature-inspired pieces, discovering the quiet elegance of a Japanese tea ceremony, or learning how a simple room layout can encourage mindfulness, our articles will guide you step by step.
 
                         Be sure to check back often for new posts. And if you’d like to have our latest articles delivered straight to your inbox, please enter your email address below to subscribe to our newsletter. Together, let’s explore how Japan’s refined beauty can inspire and uplift us all.
+                    </p>
                 </section>
 
                 <section className={styles.contactRow}>
