@@ -46,7 +46,7 @@ export default function Contact() {
 
                             {/* SNS リンク */}
                             <div className={styles.social}>
-                                <a href="#" aria-label="Instagram">
+                                <a href="https://www.instagram.com/japanese_aesthetics_style/" aria-label="Instagram">
                                     <FaInstagram />
                                 </a>
                             </div>

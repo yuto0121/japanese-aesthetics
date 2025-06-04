@@ -5,10 +5,11 @@
 /* ---------- Common Layout ---------- */
 .wrapper {
     padding-inline: 2rem;
-    /* match other article style */
     padding-bottom: 6rem;
     margin-inline: auto;
     max-width: 50rem;
+    width: 100%;
+    box-sizing: border-box;
     font-family: "Noto Sans JP", Georgia, serif;
 }
 
@@ -202,4 +203,53 @@
 
 .navBtn:hover {
     background: #f7f7f7;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        padding-inline: 1.5rem;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .kanji {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding-inline: 1rem;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .kanji {
+        width: 120px;
+        height: 120px;
+    }
+
+    .articleBody {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .kanji {
+        width: 100px;
+        height: 100px;
+    }
+
+    .articleBody {
+        font-size: 0.9rem;
+    }
 }
