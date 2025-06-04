@@ -217,25 +217,54 @@
 }
 
 /* ── Responsive ───────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .beautyConceptsGrid {
         grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 120px;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .beautyConceptsTitle {
+        font-size: 3rem;
+    }
+
+    .conceptItem {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .beautyConceptsGrid {
+        grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 100px;
+        gap: 0.8rem;
+        padding: 0.8rem;
     }
 
     .beautyConceptsTitle {
         font-size: 2.4rem;
     }
+
+    .conceptItem {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
     .beautyConceptsGrid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         grid-auto-rows: 90px;
+        gap: 0.6rem;
+        padding: 0.6rem;
+    }
+
+    .beautyConceptsTitle {
+        font-size: 2rem;
     }
 
     .conceptItem {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
