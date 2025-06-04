@@ -40,3 +40,17 @@
         transform: translateY(0);
     }
 }
+
+/* タブレット用のスタイル */
+@media screen and (max-width: 1024px) {
+    .char {
+        font-size: 1.5rem;
+    }
+}
+
+/* スマートフォン用のスタイル */
+@media screen and (max-width: 768px) {
+    .char {
+        font-size: 1.2rem;
+    }
+}

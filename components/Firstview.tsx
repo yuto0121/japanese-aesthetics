@@ -34,17 +34,18 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
     const spots = useMemo(
         () => {
             const positions: { top: number; left: number }[] = [];
-            const margin = 15; // 画面端からの余白
-            const gridSize = 4; // 4x4のグリッド
+            const margin = window.innerWidth <= 768 ? 10 : 15; // スマートフォンではマージンを小さく
+            const gridSize = window.innerWidth <= 768 ? 3 : 4; // スマートフォンでは3x3グリッド
 
-            // 4x4のグリッドで基本位置を生成
+            // グリッドで基本位置を生成
             for (let i = 0; i < gridSize; i++) {
                 for (let j = 0; j < gridSize; j++) {
                     // 基本位置に±5%のランダムなオフセットを追加
                     const randomOffset = () => (Math.random() - 0.5) * 10;
+                    const spacing = window.innerWidth <= 768 ? 25 : 20; // スマートフォンでは間隔を広く
                     positions.push({
-                        top: (i * 20) + margin + randomOffset(),
-                        left: (j * 20) + margin + randomOffset()
+                        top: (i * spacing) + margin + randomOffset(),
+                        left: (j * spacing) + margin + randomOffset()
                     });
                 }
             }
@@ -54,7 +55,7 @@ const Firstview: React.FC<FirstviewProps> = ({ onFinish }) => {
 
             return kanjiList.map((char, index) => {
                 const position = shuffledPositions[index % positions.length];
-                const delay = Math.random() * 1.5; // 遅延時間を短く
+                const delay = Math.random() * 1.5;
                 return { char, ...position, delay } as const;
             });
         },
