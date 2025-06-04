@@ -1,8 +1,5 @@
 import {
-    FaFacebookF,
-    FaInstagram,
-    FaLinkedinIn,
-    FaYoutube,
+    FaInstagram
 } from 'react-icons/fa';
 import Typewriter from 'typewriter-effect';
 import styles from '../styles/About.module.css';
@@ -34,11 +31,19 @@ export default function About() {
                 <section className={styles.aboutSection}>
                     <h2 className={styles.aboutTitle}>Our Vision</h2>
                     <h3 className={styles.aboutSubtitle}>“Bringing the Essence of Japanese Beauty to the World”</h3>
-                    <p className={styles.aboutText}>Born and raised in Japan and later having studied in Europe, I was fortunate to immerse myself in a rich tapestry of cultures and perspectives. From that vantage point, I gained a profound appreciation for how uniquely beautiful and distinctive Japan truly is—and I discovered that many core aspects of its aesthetic philosophy defy a direct English equivalent.
+                    <p className={styles.aboutText}>Welcome to our site. I was born and raised in Japan and later had the privilege of studying in Europe. Immersed in diverse cultures and perspectives, I came to deeply appreciate how universal and resonant Japan’s unique aesthetic philosophy can be—especially its minimalist sensibility and the celebration of imperfection (known as “wabi-sabi”). These ideas often defy direct translation into English, yet they offer profound insight and beauty that I believe people around the world should experience firsthand. With that conviction, I created this online magazine to shine a light on the subtle but powerful concepts that define Japanese beauty.
 
-                        With this in mind, I created this online publication to shed light on the subtle, yet powerful concepts that define Japanese beauty. Here, you will find carefully curated articles on “Fashion · Food · Home × Japan,” each offering in-depth insights into Japanese style, culinary traditions, architectural sensibilities, and everyday living—always presented through the lens of Japan’s refined aesthetic.
+                        Here, you’ll find carefully curated articles under the theme “Fashion · Food · Home × Japan.” We’ll explore topics such as:
 
-                        If you would like to receive our newest articles delivered straight to your inbox, please enter your email address below to subscribe to our newsletter. We look forward to exploring Japan’s timeless elegance together.</p>
+                        The art of reducing life to its essentials while still cultivating comfort and warmth through Japanese minimalism
+
+                        Embracing the passage of time and the “incomplete” through wabi-sabi, finding beauty in fleeting moments and natural wear
+
+                        How Japanese cuisine and tableware reveal an attention to detail and seasonal change that can enrich everyday dining
+
+                        By sharing personal anecdotes from my time in Europe alongside examples of modern Japanese living, we aim to offer practical ideas for incorporating these timeless aesthetics into your own lifestyle. Whether you’re curious about updating your wardrobe with subtle, nature-inspired pieces, discovering the quiet elegance of a Japanese tea ceremony, or learning how a simple room layout can encourage mindfulness, our articles will guide you step by step.
+
+                        Be sure to check back often for new posts. And if you’d like to have our latest articles delivered straight to your inbox, please enter your email address below to subscribe to our newsletter. Together, let’s explore how Japan’s refined beauty can inspire and uplift us all.
                 </section>
 
                 <section className={styles.contactRow}>
@@ -50,15 +55,6 @@ export default function About() {
                             </p>
 
                             <div className={styles.social}>
-                                <a href="#" aria-label="Facebook">
-                                    <FaFacebookF />
-                                </a>
-                                <a href="#" aria-label="LinkedIn">
-                                    <FaLinkedinIn />
-                                </a>
-                                <a href="#" aria-label="YouTube">
-                                    <FaYoutube />
-                                </a>
                                 <a href="#" aria-label="Instagram">
                                     <FaInstagram />
                                 </a>
