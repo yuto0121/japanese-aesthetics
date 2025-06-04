@@ -49,21 +49,13 @@ export default function ArticleEssence({ articles }: Props) {
       <header className={styles.header}>
         <h1 className={styles.title}>
           <Typewriter
-            onInit={(tw) => tw.typeString('The Essence of Japan').start()}
+            onInit={(tw) => tw.typeString('The Essence of Japanese Aesthetics').start()}
             options={{ autoStart: true, loop: false, delay: 100, deleteSpeed: 50, cursor: '' }}
           />
         </h1>
-        <Image
-          src="/images/kanji_essence.png"
-          alt="Kanji for essence"
-          width={150}
-          height={150}
-          className={styles.kanji}
-          priority
-        />
       </header>
 
-      {featured && (
+      {/* {featured && (
         <section className={styles.featured}>
           <h2 className={styles.featuredHeadline}>Featured Article</h2>
 
@@ -78,7 +70,7 @@ export default function ArticleEssence({ articles }: Props) {
             <p className={styles.featuredText}>{featured.title}</p>
           </Link>
         </section>
-      )}
+      )} */}
 
       <section className={styles.articleGridSection}>
         <h2 className={styles.articlesHeadline}>Articles</h2>

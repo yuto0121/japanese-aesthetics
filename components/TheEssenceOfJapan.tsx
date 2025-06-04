@@ -14,12 +14,26 @@ export default function TheEssenceOfJapan() {
     { slug: 'yoin', label: 'yoin', style: styles.yoin, image: '/images/article/theEssenceOfJapan/hero_yoin.png' },
     { slug: 'kintsugi', label: 'kintsugi', style: styles.kintsugi, image: '/images/article/theEssenceOfJapan/hero_kintsugi.png' },
     { slug: 'yugen', label: 'yugen', style: styles.yugen, image: '/images/article/theEssenceOfJapan/hero_yugen.png' },
+    { slug: 'kacho-fugetsu', label: 'kacho-fugetsu', style: styles.kachoFugetsu, image: '/images/article/theEssenceOfJapan/hero_kacho-fugetsu.png' },
+    { slug: 'ichigo-ichie', label: 'ichigo-ichie', style: styles.ichigoIchie, image: '/images/article/theEssenceOfJapan/hero_ichigo-ichie.png' },
+    { slug: 'shogyoumujo', label: 'shogyoumujo', style: styles.shogyoumujo, image: '/images/article/theEssenceOfJapan/hero_shogyoumujo.png' },
+    { slug: 'ikigai', label: 'ikigai', style: styles.ikigai, image: '/images/article/theEssenceOfJapan/hero_ikigai.png' },
+    { slug: 'jouyou', label: 'jouyou', style: styles.jouyou, image: '/images/article/theEssenceOfJapan/hero_jouyou.png' },
+    { slug: 'seijaku', label: 'seijaku', style: styles.seijaku, image: '/images/article/theEssenceOfJapan/hero_seijaku.png' },
+    { slug: 'shoujin', label: 'shoujin', style: styles.shoujin, image: '/images/article/theEssenceOfJapan/hero_shoujin.png' },
+    { slug: 'chisoku', label: 'chisoku', style: styles.chisoku, image: '/images/article/theEssenceOfJapan/hero_chisoku.png' },
+    { slug: 'wa', label: 'wa', style: styles.wa, image: '/images/article/theEssenceOfJapan/hero_wa.png' },
+    { slug: 'dou', label: 'dou', style: styles.dou, image: '/images/article/theEssenceOfJapan/hero_dou.png' },
+    { slug: 'setsuna', label: 'setsuna', style: styles.setsuna, image: '/images/article/theEssenceOfJapan/hero_setsuna.png' },
+    { slug: 'shibusa', label: 'shibusa', style: styles.shibusa, image: '/images/article/theEssenceOfJapan/hero_shibusa.png' },
+    { slug: 'rin', label: 'rin', style: styles.rin, image: '/images/article/theEssenceOfJapan/hero_rin.png' },
+    { slug: 'zen', label: 'zen', style: styles.zen, image: '/images/article/theEssenceOfJapan/hero_zen.png' },
   ];
 
   return (
     <section className={styles.beautyConceptsSection}>
       <Link href="/article/theEssenceOfJapan" className={styles.beautyConceptsTitle}>
-        <h2>The Essence of Japan</h2>
+        <h2>The Essence of Japanese Aesthetics</h2>
       </Link>
 
       <div className={styles.beautyConceptsGrid}>

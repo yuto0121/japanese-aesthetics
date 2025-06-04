@@ -4,10 +4,7 @@ import Typewriter from 'typewriter-effect';
 import ContactForm from '../components/ContactForm';
 
 import {
-    FaFacebookF,
-    FaInstagram,
-    FaLinkedinIn,
-    FaYoutube,
+    FaInstagram
 } from 'react-icons/fa';
 
 import styles from '../styles/Contact.module.css';
@@ -49,15 +46,6 @@ export default function Contact() {
 
                             {/* SNS リンク */}
                             <div className={styles.social}>
-                                <a href="#" aria-label="Facebook">
-                                    <FaFacebookF />
-                                </a>
-                                <a href="#" aria-label="LinkedIn">
-                                    <FaLinkedinIn />
-                                </a>
-                                <a href="#" aria-label="YouTube">
-                                    <FaYoutube />
-                                </a>
                                 <a href="#" aria-label="Instagram">
                                     <FaInstagram />
                                 </a>

@@ -128,6 +128,77 @@
     grid-row: 3;
 }
 
+/* 新しい記事のグリッド配置 */
+.kachoFugetsu {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+}
+
+.ichigoIchie {
+    grid-column: 3 / span 2;
+    grid-row: 5;
+}
+
+.shogyoumujo {
+    grid-column: 5 / span 2;
+    grid-row: 5;
+}
+
+.ikigai {
+    grid-column: 2 / span 2;
+    grid-row: 6;
+}
+
+.jouyou {
+    grid-column: 4 / span 2;
+    grid-row: 6;
+}
+
+.seijaku {
+    grid-column: 1 / span 2;
+    grid-row: 7;
+}
+
+.shoujin {
+    grid-column: 3 / span 2;
+    grid-row: 7;
+}
+
+.chisoku {
+    grid-column: 5 / span 2;
+    grid-row: 7;
+}
+
+.wa {
+    grid-column: 2 / span 2;
+    grid-row: 8;
+}
+
+.dou {
+    grid-column: 4 / span 2;
+    grid-row: 8;
+}
+
+.setsuna {
+    grid-column: 1 / span 2;
+    grid-row: 9;
+}
+
+.shibusa {
+    grid-column: 3 / span 2;
+    grid-row: 9;
+}
+
+.rin {
+    grid-column: 5 / span 2;
+    grid-row: 9;
+}
+
+.zen {
+    grid-column: 2 / span 2;
+    grid-row: 10;
+}
+
 /* ── More details ──────────────────────── */
 .moreDetails {
     position: absolute;
