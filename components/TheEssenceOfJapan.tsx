@@ -19,7 +19,7 @@ export default function TheEssenceOfJapan() {
   return (
     <section className={styles.beautyConceptsSection}>
       <Link href="/article/theEssenceOfJapan" className={styles.beautyConceptsTitle}>
-        <h2>The Essence of Japan</h2>
+        <h2>The Essence of Japanese Aesthetics</h2>
       </Link>
 
       <div className={styles.beautyConceptsGrid}>
