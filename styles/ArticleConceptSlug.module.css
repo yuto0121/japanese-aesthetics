@@ -136,3 +136,43 @@
     font-weight: 700;
     color: #f37021;
 }
+
+/* タブレット対応 */
+@media (max-width: 768px) {
+    .wrapper {
+        padding-inline: 1.5rem;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .kanji {
+        width: 150px;
+        height: 150px;
+    }
+
+    .articleBody {
+        font-size: 0.95rem;
+    }
+}
+
+/* スマートフォン対応 */
+@media (max-width: 480px) {
+    .wrapper {
+        padding-inline: 1rem;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .kanji {
+        width: 120px;
+        height: 120px;
+    }
+
+    .articleBody {
+        font-size: 0.9rem;
+    }
+}
